@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
 
   final List<Map<String, dynamic>> clothes = [
     {
-      "image": "blazer.jpg",
+      "image": "blazer.png",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
     },
 
     {
-      "image": "blazer.jpg",
+      "image": "blazer.png",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
     },
 
     {
-      "image": "blazer.jpg",
+      "image": "blazer.png",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",

@@ -12,7 +12,12 @@ class Talabat extends StatefulWidget {
 
 class _TalabatState extends State<Talabat> {
   int SelectedIndex = 0;
-  final List<String> Categories = ['الكل', 'قيد المعالجة', 'تم التسليم'];
+  final List<String> Categories = [
+    'الكل',
+    'قيد المعالجة',
+    'تم التسليم',
+    'ملغي',
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
