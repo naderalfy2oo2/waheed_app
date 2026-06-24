@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:waheed_app/core/components/app_container_color.dart';
 import 'package:waheed_app/core/components/app_container_product.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
-class Cart extends StatelessWidget {
+class Cart extends StatefulWidget {
   const Cart({super.key});
 
+  @override
+  State<Cart> createState() => _CartState();
+}
+
+class _CartState extends State<Cart> {
+  Color selectedColor = const Color(0xff3F4651);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -309,6 +316,98 @@ class Cart extends StatelessWidget {
                               Icon: 'shield.svg',
                               title: 'ضمان التفصيل',
                               color: Color(0xffF8FAFC),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 18),
+
+                      Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          children: [
+                            Text(
+                              'اللون',
+                              style: TextStyle(
+                                color: Color(0xff0A0A0A),
+
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'IBMPlexSansArabic',
+                              ),
+                            ),
+
+                            Spacer(),
+
+                            Text(
+                              'رصاصي داكن',
+                              style: TextStyle(
+                                color: Color(0xff62748E),
+
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'IBMPlexSansArabic',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 12),
+
+                      Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          children: [
+                            AppContainerColor(
+                              color: Color(0xff3F4651),
+                              isSelected:
+                                  selectedColor == const Color(0xff3F4651),
+                              onTap: () {
+                                setState(() {
+                                  selectedColor = const Color(0xff3F4651);
+                                });
+                              },
+                            ),
+
+                            SizedBox(width: 12),
+
+                            AppContainerColor(
+                              color: Color(0xff172554),
+                              isSelected:
+                                  selectedColor == const Color(0xff172554),
+                              onTap: () {
+                                setState(() {
+                                  selectedColor = const Color(0xff172554);
+                                });
+                              },
+                            ),
+
+                            SizedBox(width: 12),
+
+                            AppContainerColor(
+                              color: Color(0xff1A1A1A),
+                              isSelected:
+                                  selectedColor == const Color(0xff1A1A1A),
+                              onTap: () {
+                                setState(() {
+                                  selectedColor = const Color(0xff1A1A1A);
+                                });
+                              },
+                            ),
+
+                            SizedBox(width: 12),
+
+                            AppContainerColor(
+                              color: Color(0xffC9B79C),
+                              isSelected:
+                                  selectedColor == const Color(0xffC9B79C),
+                              onTap: () {
+                                setState(() {
+                                  selectedColor = const Color(0xffC9B79C);
+                                });
+                              },
                             ),
                           ],
                         ),
