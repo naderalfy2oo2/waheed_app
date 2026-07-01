@@ -1,17 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_container_color.dart';
+import 'package:waheed_app/core/components/app_container_description.dart';
 import 'package:waheed_app/core/components/app_container_product.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
-class Cart extends StatefulWidget {
-  const Cart({super.key});
+import '../../core/components/custom_bottom_sheet.dart';
+import '../../core/components/item_listview_builder.dart';
+
+class DetailProduct extends StatefulWidget {
+  const DetailProduct({super.key});
 
   @override
-  State<Cart> createState() => _CartState();
+  State<DetailProduct> createState() => _DetailProductState();
 }
 
-class _CartState extends State<Cart> {
+class _DetailProductState extends State<DetailProduct> {
   Color selectedColor = const Color(0xff3F4651);
+
+  final List<Map<String, dynamic>> clothes = [
+    {
+      "image": "blazer.png",
+      "title": "كلاسيك",
+      "subTitle": "بدلة سوداء ثلاثية القطع",
+    },
+
+    {
+      "image": "blazer.png",
+      "title": "كلاسيك",
+      "subTitle": "بدلة سوداء ثلاثية القطع",
+    },
+
+    {
+      "image": "blazer.png",
+      "title": "كلاسيك",
+      "subTitle": "بدلة سوداء ثلاثية القطع",
+    },
+
+    {
+      "image": "blazer.png",
+      "title": "كلاسيك",
+      "subTitle": "بدلة سوداء ثلاثية القطع",
+    },
+
+    {
+      "image": "blazer.png",
+      "title": "كلاسيك",
+      "subTitle": "بدلة سوداء ثلاثية القطع",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -227,7 +263,7 @@ class _CartState extends State<Cart> {
                   borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   child: Column(
                     children: [
                       Align(
@@ -412,6 +448,131 @@ class _CartState extends State<Cart> {
                           ],
                         ),
                       ),
+
+                      SizedBox(height: 26),
+
+                      Align(
+                        alignment: AlignmentGeometry.topEnd,
+                        child: Text(
+                          'الوصف',
+                          style: TextStyle(
+                            color: Color(0xff0A0A0A),
+
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'IBMPlexSansArabic',
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 12),
+
+                      Align(
+                        alignment: AlignmentGeometry.topEnd,
+                        child: Text(
+                          'بدلة رجالية كلاسيكية بقصة عصرية أنيقة، مصنوعة من أجود الأقمشة \n وتُفصّل خصيصاً وفقاً لقياساتك التي تدخلها عبر معالج القياسات. مثالية\n                                                       للمناسبات الرسمية والاجتماعات.',
+                          style: TextStyle(
+                            color: Color(0xff45556C),
+
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'IBMPlexSansArabic',
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 12),
+
+                      Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          children: [
+                            AppContainerDescription(title: 'خياطة يدوية'),
+                            SizedBox(width: 12),
+
+                            AppContainerDescription(title: 'بطانة حريرية'),
+
+                            SizedBox(width: 12),
+
+                            AppContainerDescription(title: 'قصة سليم فيت'),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 25),
+
+                      Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          children: [
+                            AppImage(image: 'Text.svg', width: 16, height: 16),
+
+                            SizedBox(width: 8),
+
+                            Text(
+                              'منتجات مشابهة',
+                              style: TextStyle(
+                                color: Color(0xff0A0A0A),
+
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'IBMPlexSansArabic',
+                              ),
+                            ),
+
+                            Spacer(),
+
+                            TextButton.icon(
+                              onPressed: () {},
+                              label: Row(
+                                children: [
+                                  Text(
+                                    'عرض الكل',
+
+                                    style: TextStyle(
+                                      color: Color(0xff314158),
+
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'IBMPlexSansArabic',
+                                    ),
+                                  ),
+
+                                  AppImage(
+                                    image: 'Icon.svg',
+                                    width: 12,
+                                    height: 12,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 16),
+
+                      SizedBox(
+                        height: 330,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: clothes.length,
+
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 8),
+                              child: SizedBox(
+                                width: 175,
+                                child: ItemListviewBuilder(
+                                  image: clothes[index]["image"],
+                                  title: clothes[index]["title"],
+                                  Subtitle: clothes[index]["subTitle"],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -419,6 +580,8 @@ class _CartState extends State<Cart> {
             ],
           ),
         ),
+
+        bottomNavigationBar: const CustomBottomSheet(),
       ),
     );
   }

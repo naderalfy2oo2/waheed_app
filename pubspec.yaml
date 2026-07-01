@@ -14,6 +14,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.3.0
+
+
+
+
+
+ 
   lottie: ^3.3.3
   smooth_page_indicator: ^2.0.1
 

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:waheed_app/home/cart.dart';
 import 'package:waheed_app/home/pages/talabat.dart';
 
 import 'core/components/app_image.dart';
-import 'home/pages/cart.dart';
+import 'home/pages/detail_product.dart';
 import 'home/pages/home.dart';
 import 'home/pages/profile.dart';
 
