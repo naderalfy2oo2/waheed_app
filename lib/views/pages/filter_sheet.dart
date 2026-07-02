@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:waheed_app/core/components/app_button.dart';
-import 'package:waheed_app/core/components/app_image.dart';
+import 'package:waheed_app/core/components/app_range_slider.dart';
 
-import '../../core/components/app_range_slider.dart';
+import '../../core/components/app_button.dart';
+import '../../core/components/app_image.dart';
 
 class FilterSheet extends StatefulWidget {
   const FilterSheet({super.key});

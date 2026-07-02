@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-import 'package:waheed_app/home/customized_size/jacket_size.dart';
+
+import '../../views/customized_size/jacket_size.dart';
 
 class CustomBottomSheet extends StatefulWidget {
   const CustomBottomSheet({super.key});
@@ -64,7 +65,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                     shape: BoxShape.circle,
                                   ),
                                   child: AppImage(
-                                    image: 'iconsax-add.svg',
+                                    image: 'add.svg',
                                     width: 24,
                                     height: 24,
                                   ),
@@ -98,7 +99,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                     ),
                                   ),
                                   child: AppImage(
-                                    image: 'iconsax-minus.svg',
+                                    image: 'minus.svg',
                                     width: 24,
                                     height: 24,
                                   ),
@@ -171,7 +172,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
                 AppButton(
                   title: 'المتابعة لتحديد القياسات',
-                  icon: 'iconsax-tick-circle.svg',
+                  icon: 'tick-circle.svg',
                   onPressed: () {
                     print("Pressed");
                     Navigator.push(

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/home/pages/home.dart';
 import 'package:waheed_app/splash.dart';
-
-import 'view.dart';
 
 void main() {
   runApp(const waheedApp());

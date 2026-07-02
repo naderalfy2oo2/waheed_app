@@ -102,7 +102,7 @@ class OrderCard extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(6),
-                    child: AppImage(image: 'suit.jpg', width: 56, height: 56),
+                    child: AppImage(image: 'view2.png', width: 56, height: 56),
                   ),
                   SizedBox(width: 12),
                   Column(

@@ -31,7 +31,8 @@ class AppButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AppImage(image: icon ?? "", width: 24, height: 24),
+            // AppImage(image: icon ?? "", width: 24, height: 24),
+            if (icon != null) AppImage(image: icon!, width: 24, height: 24),
             Text(
               title,
               style: TextStyle(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/core/components/app_container_color.dart';
-import 'package:waheed_app/core/components/app_container_description.dart';
 import 'package:waheed_app/core/components/app_container_product.dart';
-import 'package:waheed_app/core/components/app_image.dart';
 
+import '../../core/components/app_container_color.dart';
+import '../../core/components/app_container_description.dart';
+import '../../core/components/app_image.dart';
 import '../../core/components/custom_bottom_sheet.dart';
 import '../../core/components/item_listview_builder.dart';
 
@@ -19,31 +19,31 @@ class _DetailProductState extends State<DetailProduct> {
 
   final List<Map<String, dynamic>> clothes = [
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "كلاسيك",
       "subTitle": "بدلة سوداء ثلاثية القطع",
     },
 
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "كلاسيك",
       "subTitle": "بدلة سوداء ثلاثية القطع",
     },
 
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "كلاسيك",
       "subTitle": "بدلة سوداء ثلاثية القطع",
     },
 
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "كلاسيك",
       "subTitle": "بدلة سوداء ثلاثية القطع",
     },
 
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "كلاسيك",
       "subTitle": "بدلة سوداء ثلاثية القطع",
     },
@@ -89,7 +89,7 @@ class _DetailProductState extends State<DetailProduct> {
 
                     child: Center(
                       child: AppImage(
-                        image: 'shopping-cart.svg',
+                        image: 'cart.svg',
                         width: 24,
                         height: 24,
                         fit: BoxFit.cover,
@@ -159,7 +159,7 @@ class _DetailProductState extends State<DetailProduct> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(16),
                           child: AppImage(
-                            image: 'blazer.png',
+                            image: 'view2.png',
                             width: double.infinity,
                             height: 374,
                             fit: BoxFit.cover,
@@ -190,7 +190,7 @@ class _DetailProductState extends State<DetailProduct> {
                                 SizedBox(width: 4),
 
                                 AppImage(
-                                  image: 'iconsax-tick-circle.svg',
+                                  image: 'tick-circle.svg',
                                   width: 16,
                                   height: 16,
                                 ),
@@ -322,7 +322,7 @@ class _DetailProductState extends State<DetailProduct> {
                             ),
                           ),
 
-                          AppImage(image: 'Star.svg', width: 14, height: 14),
+                          AppImage(image: 'star.svg', width: 14, height: 14),
                         ],
                       ),
 

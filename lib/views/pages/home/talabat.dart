@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/core/components/app_image.dart';
-
-import '../../core/order_card.dart';
+import '../../../core/components/app_image.dart';
+import '../../../core/order_card.dart';
 
 class Talabat extends StatefulWidget {
   const Talabat({super.key});
@@ -65,7 +64,7 @@ class _TalabatState extends State<Talabat> {
                           textDirection: TextDirection.rtl,
                           children: [
                             AppImage(
-                              image: 'iconsax-calendar.svg',
+                              image: 'calendar.svg',
                               width: 20,
                               height: 20,
                             ),
@@ -84,7 +83,7 @@ class _TalabatState extends State<Talabat> {
 
                             Spacer(),
                             AppImage(
-                              image: 'iconsax-arrow-down4.svg',
+                              image: 'arrow-down.svg',
                               width: 16,
                               height: 16,
                             ),
@@ -185,7 +184,7 @@ class _TalabatState extends State<Talabat> {
                           BackgroundColorContainer: Color(
                             0xff1E3A8A1A,
                           ).withValues(alpha: .10),
-                          image: 'group.svg',
+                          image: 'truck-fast.svg',
                           buttons: [
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
@@ -239,7 +238,7 @@ class _TalabatState extends State<Talabat> {
                           title: "تم التسليم",
 
                           BackgroundColorContainer: Color(0xffDCFCE7),
-                          image: 'correct_icon.svg',
+                          image: 'correct_green_color.svg',
                           buttons: [
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
@@ -271,7 +270,7 @@ class _TalabatState extends State<Talabat> {
                         title: "تم التسليم",
 
                         BackgroundColorContainer: Color(0xffDCFCE7),
-                        image: 'correct_icon.svg',
+                        image: 'correct_green_color.svg',
                         buttons: [
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(

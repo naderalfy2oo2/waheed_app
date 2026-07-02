@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-import 'package:waheed_app/home/pages/detail_product.dart';
+import 'package:waheed_app/views/pages/detail_product.dart';
 
 class ItemGridviewHome extends StatelessWidget {
   final String? image;
@@ -64,7 +64,7 @@ class ItemGridviewHome extends StatelessWidget {
                 textDirection: TextDirection.rtl,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  AppImage(image: 'Star.svg', width: 12, height: 12),
+                  AppImage(image: 'star.svg', width: 12, height: 12),
 
                   SizedBox(width: 4),
 

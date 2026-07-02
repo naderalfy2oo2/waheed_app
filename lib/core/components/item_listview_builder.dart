@@ -68,7 +68,7 @@ class ItemListviewBuilder extends StatelessWidget {
 
                     child: Center(
                       child: AppImage(
-                        image: 'iconsax-heart.svg',
+                        image: 'heart.svg',
                         width: 16,
                         height: 16,
                       ),
@@ -127,7 +127,7 @@ class ItemListviewBuilder extends StatelessWidget {
 
                 SizedBox(width: 4),
 
-                AppImage(image: 'Star.svg', width: 12, height: 12),
+                AppImage(image: 'star.svg', width: 12, height: 12),
               ],
             ),
 
@@ -145,11 +145,7 @@ class ItemListviewBuilder extends StatelessWidget {
 
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: AppImage(
-                      image: 'Clip path group.svg',
-                      width: 16,
-                      height: 16,
-                    ),
+                    child: AppImage(image: 'cart.svg', width: 16, height: 16),
                   ),
                 ),
 

@@ -45,17 +45,24 @@ class _JacketSizeState extends State<JacketSize> {
               ),
             ),
 
-            AppButton(
-              title: 'التالي',
-              icon: 'iconsax-arrow-left.svg',
-              onPressed: () {
-                if (currentStepIndex < titles.length - 1) {
-                  setState(() {
-                    currentStepIndex++;
-                  });
-                }
-              },
+            SizedBox(height: 16),
+
+            Row(children: [
+                
+              ],
             ),
+
+            // AppButton(
+            //   title: 'التالي',
+            //   icon: 'iconsax-arrow-left.svg',
+            //   onPressed: () {
+            //     if (currentStepIndex < titles.length - 1) {
+            //       setState(() {
+            //         currentStepIndex++;
+            //       });
+            //     }
+            //   },
+            // ),
           ],
         ),
       ),

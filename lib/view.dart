@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/home/cart.dart';
-import 'package:waheed_app/home/pages/talabat.dart';
 
 import 'core/components/app_image.dart';
-import 'home/pages/detail_product.dart';
-import 'home/pages/home.dart';
-import 'home/pages/profile.dart';
+
+import 'views/pages/home/cart.dart';
+import 'views/pages/home/home.dart';
+import 'views/pages/home/profile.dart';
+import 'views/pages/home/talabat.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -20,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
   final list = [
     _model(icon: 'home.svg', page: Home(), title: 'الرئيسية'),
     _model(icon: 'talabat.svg', page: Talabat(), title: 'طلباتي'),
-    _model(icon: 'shopping-cart.svg', page: Cart(), title: 'العربة'),
+    _model(icon: 'cart.svg', page: Cart(), title: 'العربة'),
     _model(icon: 'profile.svg', page: Profile(), title: 'حسابي'),
   ];
   @override

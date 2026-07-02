@@ -1,13 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:waheed_app/core/components/app_image.dart';
-import 'package:waheed_app/core/components/app_input.dart';
-import 'package:waheed_app/core/components/custom_container_home.dart';
 
-import '../../core/components/custom_row_text_home.dart';
-import '../../core/components/item_gridView_home.dart';
-import 'filter_sheet.dart';
+import '../../../core/components/custom_row_text_home.dart';
+import '../../../core/components/app_image.dart';
+import '../../../core/components/app_input.dart';
+import '../../../core/components/custom_container_home.dart';
+import '../../../core/components/item_gridView_home.dart';
+import '../filter_sheet.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -27,29 +27,14 @@ class _HomeState extends State<Home> {
 
   final List<Map<String, dynamic>> clothes = [
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",
       "name": "إيجار",
     },
     {
-      "image": "suit.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-
-    {
-      "image": "blazer.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "suit.jpg",
+      "image": "view1.jpg",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",
@@ -57,14 +42,29 @@ class _HomeState extends State<Home> {
     },
 
     {
-      "image": "blazer.png",
+      "image": "view2.png",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",
       "name": "إيجار",
     },
     {
-      "image": "suit.jpg",
+      "image": "view1.jpg",
+      "title": "بدلة كلاسيكية سوداء",
+      "subTitle": "صوف إيطالي فاخر",
+      "price": "2,450",
+      "name": "إيجار",
+    },
+
+    {
+      "image": "view2.png",
+      "title": "بدلة كلاسيكية سوداء",
+      "subTitle": "صوف إيطالي فاخر",
+      "price": "2,450",
+      "name": "إيجار",
+    },
+    {
+      "image": "view1.jpg",
       "title": "بدلة كلاسيكية سوداء",
       "subTitle": "صوف إيطالي فاخر",
       "price": "2,450",
@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.white,
           title: Row(
             children: [
-              AppImage(image: 'Vector 3.svg', width: 32, height: 32),
+              AppImage(image: 'splash.svg', width: 32, height: 32),
               SizedBox(width: 4),
 
               Text.rich(
@@ -130,7 +130,11 @@ class _HomeState extends State<Home> {
                     ),
                   ),
 
-                  child: AppImage(image: 'Frame.svg', width: 150, height: 150),
+                  child: AppImage(
+                    image: 'notification_sound.svg',
+                    width: 150,
+                    height: 150,
+                  ),
                 ),
               ),
             ),
