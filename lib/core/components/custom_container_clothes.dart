@@ -57,7 +57,11 @@ class CustomContainerClothes extends StatelessWidget {
 
               child: Center(
                 child: isCompleted
-                    ? AppImage(image: 'Clip path .svg', width: 24, height: 24)
+                    ? AppImage(
+                        image: 'circle_correct.svg',
+                        width: 24,
+                        height: 24,
+                      )
                     : Text(
                         toArabicDigits(Steplevel),
 

@@ -4,19 +4,19 @@ import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_container_size.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/custom_container_clothes.dart';
-import 'package:waheed_app/views/customized_size/shirt_size.dart';
 
 import '../../core/components/app_container_size _selection _counter.dart';
+import 'pant_size.dart';
 
-class JacketSize extends StatefulWidget {
-  const JacketSize({super.key});
+class ShirtSize extends StatefulWidget {
+  const ShirtSize({super.key});
 
   @override
-  State<JacketSize> createState() => _JacketSizeState();
+  State<ShirtSize> createState() => _ShirtSizeState();
 }
 
-class _JacketSizeState extends State<JacketSize> {
-  int currentStepIndex = 0;
+class _ShirtSizeState extends State<ShirtSize> {
+  int currentStepIndex = 1;
   String selectedSize = 'M';
 
   final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
@@ -59,7 +59,7 @@ class _JacketSizeState extends State<JacketSize> {
                   AppImage(image: 'stars_gold_color.svg'),
 
                   Text(
-                    'الخطوة ١ من ٤',
+                    'الخطوة ٢ من ٤',
                     style: TextStyle(
                       color: Color(0xffC9A961),
                       fontSize: 12,
@@ -78,7 +78,7 @@ class _JacketSizeState extends State<JacketSize> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'الجاكيت',
+                  'القميص',
                   style: TextStyle(
                     color: Color(0xff0A0A0A),
 
@@ -96,7 +96,7 @@ class _JacketSizeState extends State<JacketSize> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'قياسات الجاكيت العلوية',
+                  'قياسات الرقبة والأكمام',
                   style: TextStyle(
                     color: Color(0xff62748E),
                     fontSize: 14,
@@ -276,37 +276,84 @@ class _JacketSizeState extends State<JacketSize> {
             SizedBox(height: 16),
 
             AppContainerSizeSelectionCounter(
-              title1: 'محيط الصدر',
-              title2: 'حول أوسع جزء من الصدر',
-              title3: 'عرض الكتفين',
-              title4: 'من كتف إلى كتف',
+              title1: 'محيط الرقبة',
+              title2: 'عند الياقة',
+              title3: 'محيط الصدر',
+              title4: 'حول أوسع جزء من الصدر',
               title5: 'طول الكم',
               title6: 'من الكتف إلى المعصم',
-              title7: 'طول الجاكيت',
-              title8: 'من الرقبة إلى الحافة السفلية',
-              text1: '94',
-              text2: '44',
+
+              text1: '39',
+              text2: '94',
               text3: '62',
-              text4: '70',
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 16),
           ],
         ),
       ),
       bottomNavigationBar: SafeArea(
-        child: AppButton(
-          title: 'التالي',
-          icon: 'arrow-left_white_color.svg',
-          textDirection: TextDirection.ltr,
-          onPressed: () {
-            if (currentStepIndex < titles.length - 1) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const ShirtSize()),
-              );
-            }
-          },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+
+          child: Row(
+            children: [
+              SizedBox(
+                width: 142,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: 56,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: Color(0xff000000),
+                        style: BorderStyle.solid,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xffFFFFFF),
+                          offset: const Offset(0, 2),
+                          blurRadius: 8,
+                          spreadRadius: 0,
+                        ),
+                      ],
+                    ),
+
+                    child: Center(
+                      child: Text(
+                        'السابق',
+                        style: TextStyle(
+                          color: Color(0xff000000),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          fontFamily: 'IBMPlexSansArabic',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(width: 10),
+
+              Expanded(
+                child: AppButton(
+                  title: 'التالي',
+                  icon: 'arrow-left_white_color.svg',
+                  textDirection: TextDirection.ltr,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => PantsSize()),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

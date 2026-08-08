@@ -9,6 +9,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leadingWidth: 85,
+
       automaticallyImplyLeading: false,
       backgroundColor: Color(0xffFFFFFF),
       centerTitle: true,
@@ -23,9 +25,10 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
 
-      actions: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+      leading: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: InkWell(
+          onTap: () => Navigator.pop(context),
           child: Container(
             width: 48,
             height: 48,
@@ -38,7 +41,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             child: AppImage(image: icon ?? "", width: 24, height: 24),
           ),
         ),
-      ],
+      ),
     );
   }
 

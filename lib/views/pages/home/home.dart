@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:waheed_app/views/pages/home/favourite.dart';
+import 'package:waheed_app/views/pages/home/notices.dart';
 
 import '../../../core/components/custom_row_text_home.dart';
 import '../../../core/components/app_image.dart';
@@ -81,63 +85,96 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.white,
           title: Row(
             children: [
-              AppImage(image: 'splash.svg', width: 32, height: 32),
+              SizedBox(
+                width: 50,
+                height: 50,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => Notices()),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(8),
+                    margin: EdgeInsets.all(8),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      color: Color(0xffFFFFFF),
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(
+                        style: BorderStyle.solid,
+                        color: Color(0xffEAEAEA),
+                      ),
+                    ),
+
+                    child: AppImage(
+                      image: 'notification_sound.svg',
+                      width: 150,
+                      height: 150,
+                    ),
+                  ),
+                ),
+              ),
               SizedBox(width: 4),
 
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'WAHEED HASSAN\n',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w800,
+              SizedBox(
+                width: 50,
+                height: 50,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => Favourite()),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(8),
+                    margin: EdgeInsets.all(8),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      color: Color(0xffFFFFFF),
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(
+                        style: BorderStyle.solid,
+                        color: Color(0xffECECEC),
                       ),
                     ),
 
-                    TextSpan(
-                      text: 'MEN’S SUITS',
-
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                  ],
+                    child: AppImage(image: 'heart.svg', width: 24, height: 24),
+                  ),
                 ),
               ),
             ],
           ),
 
           actions: [
-            SizedBox(
-              width: 50,
-              height: 50,
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      style: BorderStyle.solid,
-                      color: Color(0xffECECEC),
+            Text.rich(
+              textAlign: TextAlign.left,
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'WAHEED HASSAN\n',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w800,
                     ),
                   ),
 
-                  child: AppImage(
-                    image: 'notification_sound.svg',
-                    width: 150,
-                    height: 150,
+                  TextSpan(
+                    text: 'MEN’S SUITS',
+
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
+            AppImage(image: 'splash.svg', width: 32, height: 32),
           ],
         ),
 
@@ -145,30 +182,26 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               SizedBox(height: 25),
-              Directionality(
-                textDirection: TextDirection.rtl,
-
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Builder(
-                    builder: (context) {
-                      return AppInput(
-                        filled: true,
-                        fillColor: Color(0xffEAEAEA),
-                        labelText: 'البحث عن منتج...',
-                        preifixIcon: AppImage(image: 'search.svg'),
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            showBottomSheet(
-                              context: context,
-                              builder: (context) => FilterSheet(),
-                            );
-                          },
-                          child: AppImage(image: 'tabbar.svg'),
-                        ),
-                      );
-                    },
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Builder(
+                  builder: (context) {
+                    return AppInput(
+                      filled: true,
+                      fillColor: Color(0xffFFFFFF),
+                      labelText: 'البحث عن منتج...',
+                      preifixIcon: AppImage(image: 'search.svg'),
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          showBottomSheet(
+                            context: context,
+                            builder: (context) => FilterSheet(),
+                          );
+                        },
+                        child: AppImage(image: 'tabbar.svg'),
+                      ),
+                    );
+                  },
                 ),
               ),
 
@@ -210,10 +243,12 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
+
               SizedBox(height: 12),
 
               Padding(
                 padding: const EdgeInsets.only(top: 1),
+
                 child: AnimatedSmoothIndicator(
                   activeIndex: countIndex,
                   count: image.length,

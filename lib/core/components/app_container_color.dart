@@ -29,7 +29,7 @@ class AppContainerColor extends StatelessWidget {
           ),
         ),
         child: isSelected
-            ? AppImage(image: 'correct.svg', width: 16, height: 16)
+            ? AppImage(image: 'correct_white_color.svg', width: 16, height: 16)
             : null,
       ),
     );

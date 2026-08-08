@@ -5,6 +5,8 @@ import 'package:waheed_app/views/pages/detail_product.dart';
 class ItemGridviewHome extends StatelessWidget {
   final String? image;
   final String? title;
+  final bool showFavorite;
+  final String heartIcon;
 
   final String? name;
   final String? subTitle;
@@ -16,6 +18,8 @@ class ItemGridviewHome extends StatelessWidget {
     this.price,
     this.name,
     this.image,
+    this.showFavorite = true,
+    this.heartIcon = 'heart.svg',
   });
 
   @override
@@ -45,18 +49,56 @@ class ItemGridviewHome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
-              ),
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
 
-              child: AppImage(
-                image: image ?? "",
-                width: double.infinity,
-                fit: BoxFit.cover,
-                height: 176,
-              ),
+                  child: AppImage(
+                    image: image ?? "",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    height: 176,
+                  ),
+                ),
+
+                if (showFavorite)
+                  Positioned(
+                    top: 8,
+                    left: 8,
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFFFFFFE5).withValues(alpha: 0.9),
+                        borderRadius: BorderRadius.circular(42770700),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0x1A000000),
+                            offset: const Offset(0, 1),
+                            blurRadius: 2,
+                            spreadRadius: -1,
+                          ),
+                          BoxShadow(
+                            color: const Color(0x1A000000),
+                            offset: const Offset(0, 1),
+                            blurRadius: 3,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                      ),
+                      child: AppImage(
+                        image: heartIcon,
+                        width: 20,
+                        height: 20,
+                        color: const Color(0xff292D32),
+                      ),
+                    ),
+                  ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

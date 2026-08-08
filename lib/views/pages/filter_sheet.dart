@@ -34,15 +34,12 @@ class _FilterSheetState extends State<FilterSheet> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: _Item(),
-                ),
+                _Item(),
 
                 SizedBox(height: 16),
 
                 Align(
-                  alignment: AlignmentDirectional.topEnd,
+                  alignment: AlignmentDirectional.topStart,
                   child: Text(
                     'الأقسام',
                     style: TextStyle(
@@ -102,7 +99,7 @@ class _FilterSheetState extends State<FilterSheet> {
                 SizedBox(height: 16),
 
                 Align(
-                  alignment: AlignmentDirectional.topEnd,
+                  alignment: AlignmentDirectional.topStart,
                   child: Text(
                     'نطاق السعر',
                     style: TextStyle(
@@ -142,35 +139,33 @@ class _FilterSheetState extends State<FilterSheet> {
 
                 const SizedBox(height: 20),
 
-                Directionality(
+                Row(
                   textDirection: TextDirection.ltr,
-                  child: Row(
-                    children: [
-                      AppRangeSlider(
-                        title: 'الأعلى',
-                        price: _currentRange.end.round(),
-                      ),
+                  children: [
+                    AppRangeSlider(
+                      title: 'الأعلى',
+                      price: _currentRange.end.round(),
+                    ),
 
-                      SizedBox(width: 20),
-                      Container(
-                        width: 100,
-                        height: 2,
-                        decoration: BoxDecoration(color: Color(0xffE2E8F0)),
-                      ),
+                    SizedBox(width: 20),
+                    Container(
+                      width: 100,
+                      height: 2,
+                      decoration: BoxDecoration(color: Color(0xffE2E8F0)),
+                    ),
 
-                      SizedBox(width: 25),
+                    SizedBox(width: 25),
 
-                      AppRangeSlider(
-                        title: 'الأدنى',
-                        price: _currentRange.start.round(),
-                      ),
-                    ],
-                  ),
+                    AppRangeSlider(
+                      title: 'الأدنى',
+                      price: _currentRange.start.round(),
+                    ),
+                  ],
                 ),
 
                 SizedBox(height: 32),
 
-                AppButton(title: 'عرض النتائج (24)'),
+                AppButton(title: 'عرض النتائج (24)', onPressed: () {}),
               ],
             ),
           ),

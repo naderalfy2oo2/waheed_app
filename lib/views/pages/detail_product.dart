@@ -68,64 +68,12 @@ class _DetailProductState extends State<DetailProduct> {
 
           centerTitle: true,
 
-          leading: SizedBox(
-            width: 48,
-            height: 48,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(99),
-                      border: Border.all(
-                        style: BorderStyle.solid,
-                        color: Color(0xffECECEC),
-                      ),
-                    ),
-
-                    child: Center(
-                      child: AppImage(
-                        image: 'cart.svg',
-                        width: 24,
-                        height: 24,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentGeometry.topLeft,
-                    child: Container(
-                      width: 16,
-                      height: 16,
-                      decoration: BoxDecoration(
-                        color: Color(0xff000000),
-
-                        borderRadius: BorderRadius.circular(99),
-                      ),
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        '2',
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'IBMPlexSansArabic',
-                          color: Color(0xffFFFFFF),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(12),
+          leading: Padding(
+            padding: const EdgeInsets.all(12),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Container(
                 width: 48,
                 height: 48,
@@ -140,6 +88,63 @@ class _DetailProductState extends State<DetailProduct> {
                   shape: BoxShape.circle,
                 ),
                 child: AppImage(image: 'arrow-left.svg', width: 24, height: 24),
+              ),
+            ),
+          ),
+
+          actions: [
+            SizedBox(
+              width: 48,
+              height: 48,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(99),
+                        border: Border.all(
+                          style: BorderStyle.solid,
+                          color: Color(0xffECECEC),
+                        ),
+                      ),
+
+                      child: Center(
+                        child: AppImage(
+                          image: 'cart.svg',
+                          width: 24,
+                          height: 24,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentGeometry.topLeft,
+                      child: Container(
+                        width: 16,
+                        height: 16,
+                        decoration: BoxDecoration(
+                          color: Color(0xff000000),
+
+                          borderRadius: BorderRadius.circular(99),
+                        ),
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          '2',
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'IBMPlexSansArabic',
+                            color: Color(0xffFFFFFF),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -179,6 +184,12 @@ class _DetailProductState extends State<DetailProduct> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                AppImage(
+                                  image: 'tick-circle.svg',
+                                  width: 16,
+                                  height: 16,
+                                ),
+                                SizedBox(width: 4),
                                 Text(
                                   "تفصيل علي المقاس",
                                   style: TextStyle(
@@ -186,13 +197,6 @@ class _DetailProductState extends State<DetailProduct> {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                   ),
-                                ),
-                                SizedBox(width: 4),
-
-                                AppImage(
-                                  image: 'tick-circle.svg',
-                                  width: 16,
-                                  height: 16,
                                 ),
                               ],
                             ),
@@ -219,7 +223,7 @@ class _DetailProductState extends State<DetailProduct> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: AppImage(
-                            image: 'view2.jpg',
+                            image: 'view2.png',
                             width: 82,
                             height: 80,
                             fit: BoxFit.cover,
@@ -229,7 +233,7 @@ class _DetailProductState extends State<DetailProduct> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: AppImage(
-                            image: 'view3.jpg',
+                            image: 'view3.png',
                             width: 82,
                             height: 80,
                             fit: BoxFit.cover,
@@ -239,7 +243,7 @@ class _DetailProductState extends State<DetailProduct> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: AppImage(
-                            image: 'view4.jpg',
+                            image: 'view4.png',
                             width: 82,
                             height: 80,
                             fit: BoxFit.cover,
@@ -295,19 +299,14 @@ class _DetailProductState extends State<DetailProduct> {
                       ),
 
                       Row(
-                        textDirection: TextDirection.rtl,
-
                         children: [
-                          Directionality(
-                            textDirection: TextDirection.rtl,
-                            child: Text(
-                              '(124تقيم)',
-                              style: TextStyle(
-                                color: Color(0xff62748E),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'IBMPlexSansArabic',
-                              ),
+                          Text(
+                            '(124تقيم)',
+                            style: TextStyle(
+                              color: Color(0xff62748E),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                           SizedBox(width: 8),
@@ -328,131 +327,122 @@ class _DetailProductState extends State<DetailProduct> {
 
                       SizedBox(height: 16),
 
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          children: [
-                            AppContainerProduct(
-                              Icon: 'medal.svg',
-                              title: 'جودة عالية',
-                              color: Color(0xffF8FAFC),
-                            ),
+                      Row(
+                        children: [
+                          AppContainerProduct(
+                            Icon: 'medal.svg',
+                            title: 'جودة عالية',
+                            color: Color(0xffF8FAFC),
+                          ),
 
-                            SizedBox(width: 8),
+                          SizedBox(width: 8),
 
-                            AppContainerProduct(
-                              Icon: 'truck-fast.svg',
-                              title: 'توصيل 3–7 أيام',
-                              color: Color(0xffF8FAFC),
-                            ),
+                          AppContainerProduct(
+                            Icon: 'truck-fast.svg',
+                            title: 'توصيل 3–7 أيام',
+                            color: Color(0xffF8FAFC),
+                          ),
 
-                            SizedBox(width: 8),
+                          SizedBox(width: 8),
 
-                            AppContainerProduct(
-                              Icon: 'shield.svg',
-                              title: 'ضمان التفصيل',
-                              color: Color(0xffF8FAFC),
-                            ),
-                          ],
-                        ),
+                          AppContainerProduct(
+                            Icon: 'shield.svg',
+                            title: 'ضمان التفصيل',
+                            color: Color(0xffF8FAFC),
+                          ),
+                        ],
                       ),
 
                       SizedBox(height: 18),
 
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          children: [
-                            Text(
-                              'اللون',
-                              style: TextStyle(
-                                color: Color(0xff0A0A0A),
+                      Row(
+                        children: [
+                          Text(
+                            'اللون',
+                            style: TextStyle(
+                              color: Color(0xff0A0A0A),
 
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'IBMPlexSansArabic',
-                              ),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'IBMPlexSansArabic',
                             ),
+                          ),
 
-                            Spacer(),
+                          Spacer(),
 
-                            Text(
-                              'رصاصي داكن',
-                              style: TextStyle(
-                                color: Color(0xff62748E),
+                          Text(
+                            'رصاصي داكن',
+                            style: TextStyle(
+                              color: Color(0xff62748E),
 
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'IBMPlexSansArabic',
-                              ),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'IBMPlexSansArabic',
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
 
                       SizedBox(height: 12),
 
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          children: [
-                            AppContainerColor(
-                              color: Color(0xff3F4651),
-                              isSelected:
-                                  selectedColor == const Color(0xff3F4651),
-                              onTap: () {
-                                setState(() {
-                                  selectedColor = const Color(0xff3F4651);
-                                });
-                              },
-                            ),
+                      Row(
+                        children: [
+                          AppContainerColor(
+                            color: Color(0xff3F4651),
+                            isSelected:
+                                selectedColor == const Color(0xff3F4651),
+                            onTap: () {
+                              setState(() {
+                                selectedColor = const Color(0xff3F4651);
+                              });
+                            },
+                          ),
 
-                            SizedBox(width: 12),
+                          SizedBox(width: 12),
 
-                            AppContainerColor(
-                              color: Color(0xff172554),
-                              isSelected:
-                                  selectedColor == const Color(0xff172554),
-                              onTap: () {
-                                setState(() {
-                                  selectedColor = const Color(0xff172554);
-                                });
-                              },
-                            ),
+                          AppContainerColor(
+                            color: Color(0xff172554),
+                            isSelected:
+                                selectedColor == const Color(0xff172554),
+                            onTap: () {
+                              setState(() {
+                                selectedColor = const Color(0xff172554);
+                              });
+                            },
+                          ),
 
-                            SizedBox(width: 12),
+                          SizedBox(width: 12),
 
-                            AppContainerColor(
-                              color: Color(0xff1A1A1A),
-                              isSelected:
-                                  selectedColor == const Color(0xff1A1A1A),
-                              onTap: () {
-                                setState(() {
-                                  selectedColor = const Color(0xff1A1A1A);
-                                });
-                              },
-                            ),
+                          AppContainerColor(
+                            color: Color(0xff1A1A1A),
+                            isSelected:
+                                selectedColor == const Color(0xff1A1A1A),
+                            onTap: () {
+                              setState(() {
+                                selectedColor = const Color(0xff1A1A1A);
+                              });
+                            },
+                          ),
 
-                            SizedBox(width: 12),
+                          SizedBox(width: 12),
 
-                            AppContainerColor(
-                              color: Color(0xffC9B79C),
-                              isSelected:
-                                  selectedColor == const Color(0xffC9B79C),
-                              onTap: () {
-                                setState(() {
-                                  selectedColor = const Color(0xffC9B79C);
-                                });
-                              },
-                            ),
-                          ],
-                        ),
+                          AppContainerColor(
+                            color: Color(0xffC9B79C),
+                            isSelected:
+                                selectedColor == const Color(0xffC9B79C),
+                            onTap: () {
+                              setState(() {
+                                selectedColor = const Color(0xffC9B79C);
+                              });
+                            },
+                          ),
+                        ],
                       ),
 
                       SizedBox(height: 26),
 
                       Align(
-                        alignment: AlignmentGeometry.topEnd,
+                        alignment: AlignmentGeometry.topRight,
                         child: Text(
                           'الوصف',
                           style: TextStyle(
@@ -468,86 +458,110 @@ class _DetailProductState extends State<DetailProduct> {
                       SizedBox(height: 12),
 
                       Align(
-                        alignment: AlignmentGeometry.topEnd,
-                        child: Text(
-                          'بدلة رجالية كلاسيكية بقصة عصرية أنيقة، مصنوعة من أجود الأقمشة \n وتُفصّل خصيصاً وفقاً لقياساتك التي تدخلها عبر معالج القياسات. مثالية\n                                                       للمناسبات الرسمية والاجتماعات.',
-                          style: TextStyle(
-                            color: Color(0xff45556C),
+                        alignment: AlignmentGeometry.topRight,
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text:
+                                    'بدلة رجالية كلاسيكية بقصة عصرية أنيقة، مصنوعة من أجود الأقمشة\n',
+                                style: TextStyle(
+                                  color: Color(0xff45556C),
 
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'IBMPlexSansArabic',
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'IBMPlexSansArabic',
+                                ),
+                              ),
+
+                              TextSpan(
+                                text:
+                                    'وتُفصّل خصيصاً وفقاً لقياساتك التي تدخلها عبر معالج القياسات. مثالية.\n',
+                                style: TextStyle(
+                                  color: Color(0xff45556C),
+
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'IBMPlexSansArabic',
+                                ),
+                              ),
+
+                              TextSpan(
+                                text: ' للمناسبات الرسمية والاجتماعات.',
+                                style: TextStyle(
+                                  color: Color(0xff45556C),
+
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'IBMPlexSansArabic',
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
 
                       SizedBox(height: 12),
 
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          children: [
-                            AppContainerDescription(title: 'خياطة يدوية'),
-                            SizedBox(width: 12),
+                      Row(
+                        children: [
+                          AppContainerDescription(title: 'خياطة يدوية'),
+                          SizedBox(width: 12),
 
-                            AppContainerDescription(title: 'بطانة حريرية'),
+                          AppContainerDescription(title: 'بطانة حريرية'),
 
-                            SizedBox(width: 12),
+                          SizedBox(width: 12),
 
-                            AppContainerDescription(title: 'قصة سليم فيت'),
-                          ],
-                        ),
+                          AppContainerDescription(title: 'قصة سليم فيت'),
+                        ],
                       ),
 
                       SizedBox(height: 25),
 
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          children: [
-                            AppImage(image: 'Text.svg', width: 16, height: 16),
+                      Row(
+                        children: [
+                          AppImage(image: 'stars.svg', width: 16, height: 16),
 
-                            SizedBox(width: 8),
+                          SizedBox(width: 8),
 
-                            Text(
-                              'منتجات مشابهة',
-                              style: TextStyle(
-                                color: Color(0xff0A0A0A),
+                          Text(
+                            'منتجات مشابهة',
+                            style: TextStyle(
+                              color: Color(0xff0A0A0A),
 
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'IBMPlexSansArabic',
-                              ),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'IBMPlexSansArabic',
                             ),
+                          ),
 
-                            Spacer(),
+                          Spacer(),
 
-                            TextButton.icon(
-                              onPressed: () {},
-                              label: Row(
-                                children: [
-                                  Text(
-                                    'عرض الكل',
+                          TextButton.icon(
+                            onPressed: () {},
+                            label: Row(
+                              children: [
+                                Text(
+                                  'عرض الكل',
 
-                                    style: TextStyle(
-                                      color: Color(0xff314158),
+                                  style: TextStyle(
+                                    color: Color(0xff314158),
 
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                      fontFamily: 'IBMPlexSansArabic',
-                                    ),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'IBMPlexSansArabic',
                                   ),
+                                ),
 
-                                  AppImage(
-                                    image: 'Icon.svg',
-                                    width: 12,
-                                    height: 12,
-                                  ),
-                                ],
-                              ),
+                                AppImage(
+                                  image: 'Icon.svg',
+                                  width: 12,
+                                  height: 12,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
 
                       SizedBox(height: 16),

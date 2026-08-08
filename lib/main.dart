@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/splash.dart';
+
+import 'view.dart';
 
 void main() {
   runApp(const waheedApp());
@@ -15,7 +16,11 @@ class waheedApp extends StatelessWidget {
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       debugShowCheckedModeBanner: false,
 
-      home: Splash(),
+      builder: (context, child) {
+        return Directionality(textDirection: TextDirection.rtl, child: child!);
+      },
+
+      home: HomeView(),
     );
   }
 }

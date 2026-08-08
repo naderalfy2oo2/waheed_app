@@ -4,23 +4,23 @@ import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_container_size.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/custom_container_clothes.dart';
-import 'package:waheed_app/views/customized_size/shirt_size.dart';
+import 'package:waheed_app/views/customized_size/review.dart';
 
 import '../../core/components/app_container_size _selection _counter.dart';
 
-class JacketSize extends StatefulWidget {
-  const JacketSize({super.key});
+class PantsSize extends StatefulWidget {
+  const PantsSize({super.key});
 
   @override
-  State<JacketSize> createState() => _JacketSizeState();
+  State<PantsSize> createState() => _PantsSizeState();
 }
 
-class _JacketSizeState extends State<JacketSize> {
-  int currentStepIndex = 0;
-  String selectedSize = 'M';
+class _PantsSizeState extends State<PantsSize> {
+  int currentStepIndex = 2;
+  String selectedSize = '28';
 
   final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
-  final sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  final sizes = ['28', '30', '32', '34', '36'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +59,7 @@ class _JacketSizeState extends State<JacketSize> {
                   AppImage(image: 'stars_gold_color.svg'),
 
                   Text(
-                    'الخطوة ١ من ٤',
+                    'الخطوة ٣ من ٤',
                     style: TextStyle(
                       color: Color(0xffC9A961),
                       fontSize: 12,
@@ -78,7 +78,7 @@ class _JacketSizeState extends State<JacketSize> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'الجاكيت',
+                  'البطلون',
                   style: TextStyle(
                     color: Color(0xff0A0A0A),
 
@@ -96,7 +96,7 @@ class _JacketSizeState extends State<JacketSize> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'قياسات الجاكيت العلوية',
+                  'قياسات الخصر والطول',
                   style: TextStyle(
                     color: Color(0xff62748E),
                     fontSize: 14,
@@ -142,7 +142,7 @@ class _JacketSizeState extends State<JacketSize> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(14),
                       child: AppImage(
-                        image: 'shirt.png',
+                        image: 'bantlon.png',
                         width: 64,
                         height: 96,
                       ),
@@ -276,37 +276,85 @@ class _JacketSizeState extends State<JacketSize> {
             SizedBox(height: 16),
 
             AppContainerSizeSelectionCounter(
-              title1: 'محيط الصدر',
-              title2: 'حول أوسع جزء من الصدر',
-              title3: 'عرض الكتفين',
-              title4: 'من كتف إلى كتف',
-              title5: 'طول الكم',
-              title6: 'من الكتف إلى المعصم',
-              title7: 'طول الجاكيت',
-              title8: 'من الرقبة إلى الحافة السفلية',
-              text1: '94',
-              text2: '44',
+              title1: 'محيط الخصر',
+              title2: 'عند منطقة السرة',
+              title3: 'محيط الورك',
+              title4: 'حول أوسع جزء من الورك',
+              title5: 'طول الساق الداخلي',
+              title6: 'من الفخذ الداخلي إلى الكاحل',
+              title7: 'طول البنطلون',
+              title8: 'من الخصر إلى الحافة',
+
+              text1: '39',
+              text2: '94',
               text3: '62',
-              text4: '70',
+              text4: '62',
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 16),
           ],
         ),
       ),
       bottomNavigationBar: SafeArea(
-        child: AppButton(
-          title: 'التالي',
-          icon: 'arrow-left_white_color.svg',
-          textDirection: TextDirection.ltr,
-          onPressed: () {
-            if (currentStepIndex < titles.length - 1) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const ShirtSize()),
-              );
-            }
-          },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+
+          child: Row(
+            children: [
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: 56,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: Color(0xff000000),
+                        style: BorderStyle.solid,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xffFFFFFF),
+                          offset: const Offset(0, 2),
+                          blurRadius: 8,
+                          spreadRadius: 0,
+                        ),
+                      ],
+                    ),
+
+                    child: Center(
+                      child: Text(
+                        'السابق',
+                        style: TextStyle(
+                          color: Color(0xff000000),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          fontFamily: 'IBMPlexSansArabic',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 10),
+
+              Expanded(
+                child: AppButton(
+                  title: 'التالي',
+                  icon: 'arrow-left_white_color.svg',
+                  textDirection: TextDirection.ltr,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => Review()),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
