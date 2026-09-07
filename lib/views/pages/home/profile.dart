@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> e5b45a5 (updated UI and fixed login API)
 import 'package:flutter/material.dart';
 import 'package:waheed_app/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
@@ -23,7 +19,6 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  // bool isUserView = false;
   UserModel? user;
   bool loading = true;
 

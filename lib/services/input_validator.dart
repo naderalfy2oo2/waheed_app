@@ -12,7 +12,7 @@ class InputValidator {
     if (value!.isEmpty) {
       return 'password must be Not Empty';
     } else if (value.length < 7) {
-      return 'password must be  at least 7 digits';
+      return 'password must be at least 7 digits';
     }
     return null;
   }
@@ -21,7 +21,7 @@ class InputValidator {
     if (value!.isEmpty) {
       return 'confirmpassword must be Not Empty';
     } else if (value.length < 7) {
-      return 'confirmpassword must be  at least 7 digits';
+      return 'confirmpassword must be at least 7 digits';
     }
     return null;
   }

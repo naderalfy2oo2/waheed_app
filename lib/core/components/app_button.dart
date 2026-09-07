@@ -36,22 +36,13 @@ class AppButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(16),
           ),
-<<<<<<< HEAD
-         
-=======
 
->>>>>>> e5b45a5 (updated UI and fixed login API)
           backgroundColor: color ?? Colors.black87,
         ),
         onPressed: onPressed,
         child: Row(
           textDirection: textDirection ?? Directionality.of(context),
           mainAxisAlignment: MainAxisAlignment.center,
-
-<<<<<<< HEAD
-        
-=======
->>>>>>> e5b45a5 (updated UI and fixed login API)
           children: [
             if (!iconOnRight && icon != null) ...[
               Transform.flip(
@@ -64,10 +55,6 @@ class AppButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-<<<<<<< HEAD
-              
-=======
->>>>>>> e5b45a5 (updated UI and fixed login API)
                 color: textColor ?? const Color(0xffFFFFFF),
                 fontSize: 20,
                 fontFamily: 'IBMPlexSansArabic',

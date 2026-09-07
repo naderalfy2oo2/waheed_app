@@ -249,8 +249,7 @@ class _ChooseDateState extends State<ChooseDate> {
 
                       GridView.builder(
                         shrinkWrap: true,
-                        physics:
-                            const NeverScrollableScrollPhysics(), // بدل BouncingScrollPhysics
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: time.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
