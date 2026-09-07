@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
+import 'app_Identity_verification.dart';
+
 class DeleteAccountBottomSheet extends StatefulWidget {
   const DeleteAccountBottomSheet({super.key});
 
@@ -91,7 +93,7 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
                   value: isChecked,
                   onChanged: (value) {
                     setState(() {
-                      isChecked = value!;
+                      isChecked = value ?? false;
                     });
                   },
                 ),
@@ -117,13 +119,25 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xffFF4B4B),
+                backgroundColor: isChecked
+                    ? const Color(0xffFF4B4B)
+                    : const Color(0xffFF4B4B).withValues(alpha: .30),
+
                 minimumSize: Size.fromHeight(55),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
-              onPressed: () {},
+              onPressed: isChecked
+                  ? () {
+                      showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Colors.transparent,
+                        isScrollControlled: true,
+                        builder: (_) => AppIdentityVerification(),
+                      );
+                    }
+                  : null,
               child: Text(
                 "حذف الحساب",
                 style: TextStyle(

@@ -1,748 +1,15 @@
-// import 'package:flutter/material.dart';
-// import 'package:waheed_app/core/components/app_button.dart';
-// import 'package:waheed_app/core/components/app_image.dart';
-// import 'package:waheed_app/core/services/auth_service.dart';
-
-// import '../../../core/components/app_deleteAccountBottomSheet.dart';
-
-// class Profile extends StatelessWidget {
-//   const Profile({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListenableBuilder(
-//       listenable: AuthService.instance,
-//       builder: (context, child) {
-//         if (!AuthService.instance.isLoggedIn) {
-//           return const ProfileGuest();
-//         }
-//         return const _UserProfile();
-//       },
-//     );
-//   }
-// }
-
-// class _UserProfile extends StatelessWidget {
-//   const _UserProfile();
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         backgroundColor: Color(0xffEAEAEA),
-//         appBar: AppBar(
-//           title: Text(
-//             'حسابي',
-//             style: TextStyle(
-//               color: Color(0xff000000),
-
-//               fontSize: 18,
-//               fontWeight: FontWeight.w600,
-//               fontFamily: 'IBMPlexSansArabic',
-//             ),
-//           ),
-//           centerTitle: true,
-//         ),
-//         body: SingleChildScrollView(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-
-//             children: [
-//               SizedBox(height: 24.5),
-
-//               Center(
-//                 child: AppImage(
-//                   image: 'profile_icon.svg',
-//                   width: 80,
-//                   height: 80,
-//                 ),
-//               ),
-//               SizedBox(height: 8),
-
-//               Center(
-//                 child: Text(
-//                   'أحمد محمد',
-//                   style: TextStyle(
-//                     color: Color(0xff000000),
-
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.w700,
-//                     fontFamily: 'IBMPlexSansArabic',
-//                   ),
-//                 ),
-//               ),
-
-//               SizedBox(height: 16),
-
-//               Container(
-//                 padding: EdgeInsets.all(16),
-
-//                 width: 370,
-
-//                 decoration: BoxDecoration(
-//                   color: Color(0xffFFFFFF),
-//                   borderRadius: BorderRadius.circular(16),
-//                 ),
-//                 child: Column(
-//                   children: [
-//                     SizedBox(height: 16),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'person.svg',
-//                             width: 20,
-//                             height: 20,
-//                             color: Color(0xff1B1B1B),
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-
-//                         Text(
-//                           'تعديل الملف الشخصي',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-
-//                         Spacer(),
-
-//                         AppImage(
-//                           image: 'arrow_left_blue_color.svg',
-//                           width: 25,
-//                           height: 25,
-//                           color: Color(0xff4F4F4F),
-//                         ),
-//                       ],
-//                     ),
-
-//                     Center(
-//                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                     ),
-
-//                     SizedBox(height: 16),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'earth.svg',
-//                             width: 20,
-//                             height: 20,
-//                             color: Color(0xff1B1B1B),
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-//                         Text(
-//                           'اللغة',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-
-//                         Spacer(),
-
-//                         TextButton(
-//                           onPressed: () {},
-//                           child: Text(
-//                             'الإنجليزية',
-//                             style: TextStyle(
-//                               color: Color(0xff595959),
-//                               fontSize: 16,
-//                               fontWeight: FontWeight.w500,
-//                               fontFamily: 'IBMPlexSansArabic',
-//                             ),
-//                           ),
-//                         ),
-
-//                         AppImage(
-//                           image: 'arrow_left_blue_color.svg',
-//                           width: 25,
-//                           height: 25,
-//                           color: Color(0xff4F4F4F),
-//                         ),
-//                       ],
-//                     ),
-
-//                     Center(
-//                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                     ),
-
-//                     SizedBox(height: 16),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'heart_icon.svg',
-//                             width: 20,
-//                             height: 20,
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-
-//                         Text(
-//                           'المفضلة',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-
-//                     Center(
-//                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                     ),
-
-//                     SizedBox(height: 16),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'box.svg',
-//                             width: 20,
-//                             height: 20,
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-
-//                         Text(
-//                           'طلباتي',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-
-//                     Center(
-//                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                     ),
-
-//                     SizedBox(height: 16),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'headphone.svg',
-//                             width: 20,
-//                             height: 20,
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-
-//                         Text(
-//                           'مركز المساعدة',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ],
-//                 ),
-//               ),
-
-//               SizedBox(height: 16),
-
-//               Container(
-//                 padding: EdgeInsets.all(16),
-//                 width: 370,
-//                 constraints: BoxConstraints(minHeight: 128),
-//                 decoration: BoxDecoration(
-//                   color: Color(0xffFFFFFF),
-//                   borderRadius: BorderRadius.circular(16),
-//                 ),
-//                 child: Column(
-//                   children: [
-//                     SizedBox(height: 16),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'earth.svg',
-//                             width: 20,
-//                             height: 20,
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-
-//                         Text(
-//                           'الشروط والأحكام',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-
-//                     Center(
-//                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                     ),
-
-//                     Row(
-//                       children: [
-//                         Container(
-//                           padding: EdgeInsets.all(8),
-//                           width: 36,
-//                           height: 36,
-//                           decoration: BoxDecoration(
-//                             color: Color(0xffEAEAEA),
-//                             borderRadius: BorderRadius.circular(999),
-//                           ),
-
-//                           child: AppImage(
-//                             image: 'earth.svg',
-//                             width: 20,
-//                             height: 20,
-//                           ),
-//                         ),
-
-//                         SizedBox(width: 8),
-
-//                         Text(
-//                           'سياسة الخصوصية',
-//                           style: TextStyle(
-//                             color: Color(0xff000000),
-//                             fontSize: 16,
-//                             fontWeight: FontWeight.w500,
-//                             fontFamily: 'IBMPlexSansArabic',
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ],
-//                 ),
-//               ),
-
-//               SizedBox(height: 16),
-
-//               Container(
-//                 padding: EdgeInsets.all(16),
-//                 width: 370,
-//                 height: 68,
-//                 decoration: BoxDecoration(
-//                   color: Color(0xffFFFFFF),
-//                   borderRadius: BorderRadius.circular(16),
-//                 ),
-//                 child: Row(
-//                   children: [
-//                     SizedBox(height: 16),
-
-//                     Container(
-//                       padding: EdgeInsets.all(8),
-//                       width: 36,
-//                       height: 36,
-//                       decoration: BoxDecoration(
-//                         color: Color(0xffFF4B4B).withOpacity(0.20),
-//                         borderRadius: BorderRadius.circular(999),
-//                       ),
-
-//                       child: AppImage(
-//                         image: 'delete.svg',
-//                         width: 20,
-//                         height: 20,
-//                         color: Color(0xffFF4B4B),
-//                       ),
-//                     ),
-
-//                     SizedBox(width: 8),
-
-//                     TextButton(
-//                       onPressed: () {
-//                         showModalBottomSheet(
-//                           context: context,
-//                           backgroundColor: Colors.transparent,
-//                           isScrollControlled: true,
-//                           builder: (_) => const DeleteAccountBottomSheet(),
-//                         );
-//                       },
-//                       child: Text(
-//                         'حذف الحساب',
-//                         style: TextStyle(
-//                           color: Color(0xffFF4B4B),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                           fontFamily: 'IBMPlexSansArabic',
-//                         ),
-//                       ),
-//                     ),
-
-//                     Spacer(),
-
-//                     AppImage(
-//                       image: 'arrow_left_blue_color.svg',
-//                       width: 25,
-//                       height: 25,
-//                       color: Color(0xffFF4B4B),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-
-//               SizedBox(height: 32),
-
-//               AppButton(
-//                 title: 'تسجيل الخروج',
-
-//                 onPressed: () {
-//                   AuthService.instance.logout();
-//                 },
-//                 icon: 'logout.svg',
-//                 color: Color(0xFFFF4B4B).withValues(alpha: 0.26),
-//                 iconOnRight: true,
-//                 textColor: const Color(0xFFFF4B4B),
-//               ),
-
-//               SizedBox(height: 86),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-// //???
-
-// import 'package:flutter/material.dart';
-// import 'package:waheed_app/core/components/app_image.dart';
-
-// class ProfileGuest extends StatelessWidget {
-//   const ProfileGuest({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         backgroundColor: const Color(0xffEAEAEA),
-//         appBar: AppBar(
-//           backgroundColor: const Color(0xffEAEAEA),
-//           elevation: 0,
-//           title: const Text(
-//             'حسابي',
-//             style: TextStyle(
-//               color: Color(0xff000000),
-//               fontSize: 18,
-//               fontWeight: FontWeight.w600,
-//               fontFamily: 'IBMPlexSansArabic',
-//             ),
-//           ),
-//           centerTitle: true,
-//         ),
-//         body: SingleChildScrollView(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-//             children: [
-//               const SizedBox(height: 16),
-
-//               // 1. كارت الترحيب (Welcome Card)
-//               Center(
-//                 child: Container(
-//                   width: 370,
-//                   padding: const EdgeInsets.all(24),
-//                   decoration: BoxDecoration(
-//                     color: const Color(0xffFFFFFF),
-//                     borderRadius: BorderRadius.circular(16),
-//                   ),
-//                   child: Column(
-//                     children: [
-//                       const Text(
-//                         'أهلاً بيك في وحيد!',
-//                         style: TextStyle(
-//                           color: Color(0xff000000),
-//                           fontSize: 20,
-//                           fontWeight: FontWeight.w700,
-//                           fontFamily: 'IBMPlexSansArabic',
-//                         ),
-//                       ),
-//                       const SizedBox(height: 8),
-//                       const Text(
-//                         'هنسهل عليك شراء وتأجير البدل وملابس المناسبات',
-//                         textAlign: TextAlign.center,
-//                         style: TextStyle(
-//                           color: Color(0xff595959),
-//                           fontSize: 14,
-//                           fontWeight: FontWeight.w500,
-//                           fontFamily: 'IBMPlexSansArabic',
-//                         ),
-//                       ),
-//                       const SizedBox(height: 24),
-
-//                       // زر تسجيل الدخول
-//                       InkWell(
-//                         onTap: () {
-//                           // TODO: توجيه المستخدم لشاشة تسجيل الدخول
-//                         },
-//                         child: Container(
-//                           width: double.infinity,
-//                           padding: const EdgeInsets.symmetric(vertical: 14),
-//                           decoration: BoxDecoration(
-//                             color: const Color(0xff000000),
-//                             borderRadius: BorderRadius.circular(12),
-//                           ),
-//                           child: Row(
-//                             mainAxisAlignment: MainAxisAlignment.center,
-//                             children: [
-//                               const Text(
-//                                 'تسجيل الدخول / إنشاء حساب',
-//                                 style: TextStyle(
-//                                   color: Colors.white,
-//                                   fontSize: 16,
-//                                   fontWeight: FontWeight.w600,
-//                                   fontFamily: 'IBMPlexSansArabic',
-//                                 ),
-//                               ),
-//                               const SizedBox(width: 8),
-//                               Container(
-//                                 padding: const EdgeInsets.all(4),
-//                                 decoration: const BoxDecoration(
-//                                   color: Colors.white,
-//                                   shape: BoxShape.circle,
-//                                 ),
-//                                 child: const Icon(
-//                                   Icons.person_outline,
-//                                   color: Colors.black,
-//                                   size: 18,
-//                                 ),
-//                               ),
-//                             ],
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-
-//               const SizedBox(height: 24),
-
-//               // عنوان قسم الإعدادات
-//               Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
-//                 child: Align(
-//                   alignment: Alignment.centerRight,
-//                   child: const Text(
-//                     'الإعدادات',
-//                     style: TextStyle(
-//                       color: Color(0xff000000),
-//                       fontSize: 16,
-//                       fontWeight: FontWeight.w700,
-//                       fontFamily: 'IBMPlexSansArabic',
-//                     ),
-//                   ),
-//                 ),
-//               ),
-
-//               const SizedBox(height: 12),
-
-//               // 2. حاوية الإعدادات (Settings Container)
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(16),
-//                   width: 370,
-//                   decoration: BoxDecoration(
-//                     color: const Color(0xffFFFFFF),
-//                     borderRadius: BorderRadius.circular(16),
-//                   ),
-//                   child: Column(
-//                     children: [
-//                       _buildListItem(
-//                         title: 'اللغة',
-//                         iconName: 'earth.svg',
-//                         trailingText: 'الإنجليزية',
-//                       ),
-//                       const Padding(
-//                         padding: EdgeInsets.symmetric(vertical: 12),
-//                         child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                       ),
-//                       _buildListItem(
-//                         title: 'مركز المساعدة',
-//                         iconName: 'headphone.svg',
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-
-//               const SizedBox(height: 16),
-
-//               // 3. حاوية الشروط والسياسات (Policies Container)
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(16),
-//                   width: 370,
-//                   decoration: BoxDecoration(
-//                     color: const Color(0xffFFFFFF),
-//                     borderRadius: BorderRadius.circular(16),
-//                   ),
-//                   child: Column(
-//                     children: [
-//                       _buildListItem(
-//                         title: 'الشروط والأحكام',
-//                         iconName:
-//                             'earth.svg', // يمكنك تغيير اسم الأيقونة إذا كان لديك أيقونة مختلفة
-//                       ),
-//                       const Padding(
-//                         padding: EdgeInsets.symmetric(vertical: 12),
-//                         child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
-//                       ),
-//                       _buildListItem(
-//                         title: 'سياسة الخصوصية',
-//                         iconName:
-//                             'earth.svg', // يمكنك تغيير اسم الأيقونة إذا كان لديك أيقونة مختلفة
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-
-//               const SizedBox(height: 40),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-
-//   // Widget مساعد لتقليل تكرار الأكواد في الصفوف (Rows)
-//   Widget _buildListItem({
-//     required String title,
-//     required String iconName,
-//     String? trailingText,
-//   }) {
-//     return Row(
-//       children: [
-//         Container(
-//           padding: const EdgeInsets.all(8),
-//           width: 36,
-//           height: 36,
-//           decoration: BoxDecoration(
-//             color: const Color(0xffEAEAEA),
-//             borderRadius: BorderRadius.circular(999),
-//           ),
-//           child: AppImage(
-//             image: iconName,
-//             width: 20,
-//             height: 20,
-//             color: const Color(0xff1B1B1B),
-//           ),
-//         ),
-//         const SizedBox(width: 8),
-//         Text(
-//           title,
-//           style: const TextStyle(
-//             color: Color(0xff000000),
-//             fontSize: 16,
-//             fontWeight: FontWeight.w500,
-//             fontFamily: 'IBMPlexSansArabic',
-//           ),
-//         ),
-//         const Spacer(),
-//         if (trailingText != null)
-//           Padding(
-//             padding: const EdgeInsets.only(left: 8.0),
-//             child: Text(
-//               trailingText,
-//               style: const TextStyle(
-//                 color: Color(0xff595959),
-//                 fontSize: 16,
-//                 fontWeight: FontWeight.w500,
-//                 fontFamily: 'IBMPlexSansArabic',
-//               ),
-//             ),
-//           ),
-//         const AppImage(
-//           image: 'arrow_left_blue_color.svg',
-//           width: 25,
-//           height: 25,
-//           color: Color(0xff4F4F4F),
-//         ),
-//       ],
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
+import 'package:waheed_app/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 import '../../../core/components/app_deleteAccountBottomSheet.dart';
+import '../../../model/user_model.dart';
+import '../../../services/dio_helper.dart';
+import '../Terms_conditions.dart';
+import '../privacy_policy.dart';
+import 'favourite.dart';
+import 'talabat.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -752,32 +19,70 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  bool isUserView = true;
+  // bool isUserView = false;
+  UserModel? user;
+  bool loading = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
+  Future<void> getData() async {
+    final res = await DioHelper.getData(path: "api/Users/me");
+    print(res.isSucess);
+    print(res.msg);
+
+    print("${res.isSucess}");
+    print(" ${res.data}");
+    print(" ${res.data.runtimeType}");
+
+    if (res.isSucess && res.data is Map) {
+      user = UserModel.fromJson(Map<String, dynamic>.from(res.data!));
+    }
+
+    if (mounted) {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xffFFFFFF),
-        title: Text(
-          'حسابي',
-          style: TextStyle(
-            color: Color(0xff000000),
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            fontFamily: 'IBMPlexSansArabic',
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Color(0xffFFFFFF),
+          title: Text(
+            'حسابي',
+            style: TextStyle(
+              color: Color(0xff000000),
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'IBMPlexSansArabic',
+            ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
 
-      body: isUserView ? _UserProfile() : ProfileGuest(),
+        body: loading
+            ? Center(child: CircularProgressIndicator())
+            : user != null
+            ? _UserProfile(user: user!)
+            : ProfileGuest(),
+      ),
     );
   }
 }
 
 class _UserProfile extends StatelessWidget {
-  _UserProfile();
+  final UserModel user;
+
+  const _UserProfile({required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -791,7 +96,9 @@ class _UserProfile extends StatelessWidget {
               SizedBox(height: 24.5),
               Center(
                 child: AppImage(
-                  image: 'profile_icon.svg',
+                  image: user.profilePictureUrl.isNotEmpty
+                      ? user.profilePictureUrl
+                      : 'profile_icon.svg',
                   width: 80,
                   height: 80,
                 ),
@@ -799,7 +106,7 @@ class _UserProfile extends StatelessWidget {
               SizedBox(height: 8),
               Center(
                 child: Text(
-                  'أحمد محمد',
+                  user.fullName,
                   style: TextStyle(
                     color: Color(0xff000000),
                     fontSize: 20,
@@ -913,18 +220,28 @@ class _UserProfile extends StatelessWidget {
                     SizedBox(height: 16),
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
-                          ),
-                          child: AppImage(
-                            image: 'heart_icon.svg',
-                            width: 20,
-                            height: 20,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Favourite(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            width: 36,
+                            height: 36,
+                            decoration: BoxDecoration(
+                              color: Color(0xffEAEAEA),
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                            child: AppImage(
+                              image: 'heart_icon.svg',
+                              width: 20,
+                              height: 20,
+                            ),
                           ),
                         ),
                         SizedBox(width: 8),
@@ -945,18 +262,28 @@ class _UserProfile extends StatelessWidget {
                     SizedBox(height: 16),
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
-                          ),
-                          child: AppImage(
-                            image: 'box.svg',
-                            width: 20,
-                            height: 20,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Talabat(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            width: 36,
+                            height: 36,
+                            decoration: BoxDecoration(
+                              color: Color(0xffEAEAEA),
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                            child: AppImage(
+                              image: 'box.svg',
+                              width: 20,
+                              height: 20,
+                            ),
                           ),
                         ),
                         SizedBox(width: 8),
@@ -1035,13 +362,23 @@ class _UserProfile extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 8),
-                        Text(
-                          'الشروط والأحكام',
-                          style: TextStyle(
-                            color: Color(0xff000000),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'IBMPlexSansArabic',
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TermsConditions(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'الشروط والأحكام',
+                            style: TextStyle(
+                              color: Color(0xff000000),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'IBMPlexSansArabic',
+                            ),
                           ),
                         ),
                       ],
@@ -1066,13 +403,23 @@ class _UserProfile extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 8),
-                        Text(
-                          'سياسة الخصوصية',
-                          style: TextStyle(
-                            color: Color(0xff000000),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'IBMPlexSansArabic',
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PrivacyPolicy(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'سياسة الخصوصية',
+                            style: TextStyle(
+                              color: Color(0xff000000),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'IBMPlexSansArabic',
+                            ),
                           ),
                         ),
                       ],
@@ -1222,7 +569,12 @@ class ProfileGuest extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Register()),
+                          );
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 14),
                           decoration: BoxDecoration(
@@ -1290,7 +642,7 @@ class ProfileGuest extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      _buildListItem(
+                      _ListItem(
                         title: 'اللغة',
                         iconName: 'earth.svg',
                         subtitle: 'الإنجليزية',
@@ -1300,7 +652,7 @@ class ProfileGuest extends StatelessWidget {
                         padding: EdgeInsets.symmetric(vertical: 12),
                         child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                       ),
-                      _buildListItem(
+                      _ListItem(
                         title: 'مركز المساعدة',
 
                         iconName: 'headphone.svg',
@@ -1320,17 +672,33 @@ class ProfileGuest extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      _buildListItem(
+                      _ListItem(
                         title: 'الشروط والأحكام',
                         iconName: 'earth.svg',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TermsConditions(),
+                            ),
+                          );
+                        },
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 12),
                         child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                       ),
-                      _buildListItem(
+                      _ListItem(
                         title: 'سياسة الخصوصية',
                         iconName: 'earth.svg',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PrivacyPolicy(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -1344,10 +712,11 @@ class ProfileGuest extends StatelessWidget {
     );
   }
 
-  Widget _buildListItem({
+  Widget _ListItem({
     required String title,
     required String iconName,
     String? subtitle,
+    void Function()? onTap,
   }) {
     return Row(
       children: [
@@ -1390,11 +759,14 @@ class ProfileGuest extends StatelessWidget {
               ),
             ),
           ),
-        const AppImage(
-          image: 'arrow_left_blue_color.svg',
-          width: 16,
-          height: 16,
-          color: Color(0xff4F4F4F),
+        GestureDetector(
+          onTap: onTap,
+          child: const AppImage(
+            image: 'arrow_left_blue_color.svg',
+            width: 16,
+            height: 16,
+            color: Color(0xff4F4F4F),
+          ),
         ),
       ],
     );
