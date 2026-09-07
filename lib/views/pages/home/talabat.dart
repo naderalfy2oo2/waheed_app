@@ -22,6 +22,7 @@ class _TalabatState extends State<Talabat> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text(
             'طلباتي',
             style: TextStyle(

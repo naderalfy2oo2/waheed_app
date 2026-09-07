@@ -12,6 +12,7 @@ class Cart extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0xffEAEAEA),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text(
             'عربة التسوق',
             style: TextStyle(
@@ -52,10 +53,13 @@ class Cart extends StatelessWidget {
 
               SizedBox(height: 32),
 
-              AppButton(
-                title: 'اذهب الي التسوق',
-                onPressed: () {},
-                icon: 'arrow-left_white_color.svg',
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: AppButton(
+                  title: 'اذهب الي التسوق',
+                  onPressed: () {},
+                  icon: 'arrow-left_white_color.svg',
+                ),
               ),
             ],
           ),

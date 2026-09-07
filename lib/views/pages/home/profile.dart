@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5b45a5 (updated UI and fixed login API)
 import 'package:flutter/material.dart';
+import 'package:waheed_app/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 import '../../../core/components/app_deleteAccountBottomSheet.dart';
+import '../../../model/user_model.dart';
+import '../../../services/dio_helper.dart';
+import '../Terms_conditions.dart';
+import '../privacy_policy.dart';
+import 'favourite.dart';
+import 'talabat.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -13,32 +23,70 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  bool isUserView = true;
+  // bool isUserView = false;
+  UserModel? user;
+  bool loading = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
+  Future<void> getData() async {
+    final res = await DioHelper.getData(path: "api/Users/me");
+    print(res.isSucess);
+    print(res.msg);
+
+    print("${res.isSucess}");
+    print(" ${res.data}");
+    print(" ${res.data.runtimeType}");
+
+    if (res.isSucess && res.data is Map) {
+      user = UserModel.fromJson(Map<String, dynamic>.from(res.data!));
+    }
+
+    if (mounted) {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xffFFFFFF),
-        title: Text(
-          'حسابي',
-          style: TextStyle(
-            color: Color(0xff000000),
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            fontFamily: 'IBMPlexSansArabic',
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Color(0xffFFFFFF),
+          title: Text(
+            'حسابي',
+            style: TextStyle(
+              color: Color(0xff000000),
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'IBMPlexSansArabic',
+            ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
 
-      body: isUserView ? _UserProfile() : ProfileGuest(),
+        body: loading
+            ? Center(child: CircularProgressIndicator())
+            : user != null
+            ? _UserProfile(user: user!)
+            : ProfileGuest(),
+      ),
     );
   }
 }
 
 class _UserProfile extends StatelessWidget {
-  _UserProfile();
+  final UserModel user;
+
+  const _UserProfile({required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +100,9 @@ class _UserProfile extends StatelessWidget {
               SizedBox(height: 24.5),
               Center(
                 child: AppImage(
-                  image: 'profile_icon.svg',
+                  image: user.profilePictureUrl.isNotEmpty
+                      ? user.profilePictureUrl
+                      : 'profile_icon.svg',
                   width: 80,
                   height: 80,
                 ),
@@ -60,7 +110,7 @@ class _UserProfile extends StatelessWidget {
               SizedBox(height: 8),
               Center(
                 child: Text(
-                  'أحمد محمد',
+                  user.fullName,
                   style: TextStyle(
                     color: Color(0xff000000),
                     fontSize: 20,
@@ -174,18 +224,28 @@ class _UserProfile extends StatelessWidget {
                     SizedBox(height: 16),
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
-                          ),
-                          child: AppImage(
-                            image: 'heart_icon.svg',
-                            width: 20,
-                            height: 20,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Favourite(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            width: 36,
+                            height: 36,
+                            decoration: BoxDecoration(
+                              color: Color(0xffEAEAEA),
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                            child: AppImage(
+                              image: 'heart_icon.svg',
+                              width: 20,
+                              height: 20,
+                            ),
                           ),
                         ),
                         SizedBox(width: 8),
@@ -206,18 +266,28 @@ class _UserProfile extends StatelessWidget {
                     SizedBox(height: 16),
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
-                          ),
-                          child: AppImage(
-                            image: 'box.svg',
-                            width: 20,
-                            height: 20,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Talabat(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            width: 36,
+                            height: 36,
+                            decoration: BoxDecoration(
+                              color: Color(0xffEAEAEA),
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                            child: AppImage(
+                              image: 'box.svg',
+                              width: 20,
+                              height: 20,
+                            ),
                           ),
                         ),
                         SizedBox(width: 8),
@@ -296,13 +366,23 @@ class _UserProfile extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 8),
-                        Text(
-                          'الشروط والأحكام',
-                          style: TextStyle(
-                            color: Color(0xff000000),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'IBMPlexSansArabic',
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TermsConditions(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'الشروط والأحكام',
+                            style: TextStyle(
+                              color: Color(0xff000000),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'IBMPlexSansArabic',
+                            ),
                           ),
                         ),
                       ],
@@ -327,13 +407,23 @@ class _UserProfile extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 8),
-                        Text(
-                          'سياسة الخصوصية',
-                          style: TextStyle(
-                            color: Color(0xff000000),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'IBMPlexSansArabic',
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PrivacyPolicy(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'سياسة الخصوصية',
+                            style: TextStyle(
+                              color: Color(0xff000000),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'IBMPlexSansArabic',
+                            ),
                           ),
                         ),
                       ],
@@ -483,7 +573,12 @@ class ProfileGuest extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Register()),
+                          );
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 14),
                           decoration: BoxDecoration(
@@ -551,7 +646,7 @@ class ProfileGuest extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      _buildListItem(
+                      _ListItem(
                         title: 'اللغة',
                         iconName: 'earth.svg',
                         subtitle: 'الإنجليزية',
@@ -561,7 +656,7 @@ class ProfileGuest extends StatelessWidget {
                         padding: EdgeInsets.symmetric(vertical: 12),
                         child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                       ),
-                      _buildListItem(
+                      _ListItem(
                         title: 'مركز المساعدة',
 
                         iconName: 'headphone.svg',
@@ -581,17 +676,33 @@ class ProfileGuest extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      _buildListItem(
+                      _ListItem(
                         title: 'الشروط والأحكام',
                         iconName: 'earth.svg',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TermsConditions(),
+                            ),
+                          );
+                        },
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 12),
                         child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                       ),
-                      _buildListItem(
+                      _ListItem(
                         title: 'سياسة الخصوصية',
                         iconName: 'earth.svg',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PrivacyPolicy(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -605,10 +716,11 @@ class ProfileGuest extends StatelessWidget {
     );
   }
 
-  Widget _buildListItem({
+  Widget _ListItem({
     required String title,
     required String iconName,
     String? subtitle,
+    void Function()? onTap,
   }) {
     return Row(
       children: [
@@ -651,11 +763,14 @@ class ProfileGuest extends StatelessWidget {
               ),
             ),
           ),
-        const AppImage(
-          image: 'arrow_left_blue_color.svg',
-          width: 16,
-          height: 16,
-          color: Color(0xff4F4F4F),
+        GestureDetector(
+          onTap: onTap,
+          child: const AppImage(
+            image: 'arrow_left_blue_color.svg',
+            width: 16,
+            height: 16,
+            color: Color(0xff4F4F4F),
+          ),
         ),
       ],
     );
