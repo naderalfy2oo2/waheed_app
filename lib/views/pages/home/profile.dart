@@ -95,7 +95,7 @@ class _UserProfile extends StatelessWidget {
               SizedBox(height: 24.5),
               Center(
                 child: AppImage(
-                  image: user.profilePictureUrl.isNotEmpty
+                  image: user.profilePictureUrl.isEmpty
                       ? user.profilePictureUrl
                       : 'profile_icon.svg',
                   width: 80,

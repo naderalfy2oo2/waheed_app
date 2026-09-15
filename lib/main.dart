@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:waheed_app/auth/start_now.dart';
+import 'auth/register.dart';
 import 'services/helper_methods.dart';
 import 'views/pages/detail_product.dart';
 
@@ -25,7 +26,7 @@ class waheedApp extends StatelessWidget {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },
 
-      home: DetailProduct(),
+      home: Register(),
     );
   }
 }

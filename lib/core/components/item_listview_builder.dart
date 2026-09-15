@@ -5,8 +5,15 @@ class ItemListviewBuilder extends StatelessWidget {
   final String? image;
   final String? title;
   final String? Subtitle;
+  final String? price;
 
-  const ItemListviewBuilder({super.key, this.image, this.title, this.Subtitle});
+  const ItemListviewBuilder({
+    super.key,
+    this.image,
+    this.title,
+    this.Subtitle,
+    this.price,
+  });
 
   @override
   Widget build(BuildContext context) {

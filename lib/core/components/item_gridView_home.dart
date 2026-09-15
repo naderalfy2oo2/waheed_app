@@ -7,6 +7,7 @@ class ItemGridviewHome extends StatelessWidget {
   final String? title;
   final bool showFavorite;
   final String heartIcon;
+  final int? id;
 
   final String? name;
   final String? subTitle;
@@ -20,15 +21,19 @@ class ItemGridviewHome extends StatelessWidget {
     this.image,
     this.showFavorite = true,
     this.heartIcon = 'heart.svg',
+    this.id,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        if (id == null) {
+          return;
+        }
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const DetailProduct()),
+          MaterialPageRoute(builder: (context) => DetailProduct(id: id!)),
         );
       },
       child: Container(
@@ -144,6 +149,7 @@ class ItemGridviewHome extends StatelessWidget {
               child: Text(
                 textDirection: TextDirection.rtl,
                 title ?? "",
+                maxLines: 2,
                 style: TextStyle(
                   color: Color(0xff000000),
                   fontSize: 14,
@@ -161,6 +167,7 @@ class ItemGridviewHome extends StatelessWidget {
               child: Text(
                 textDirection: TextDirection.rtl,
                 subTitle ?? "",
+                maxLines: 2,
                 style: TextStyle(
                   color: Color(0xff6A7282),
                   fontSize: 11,

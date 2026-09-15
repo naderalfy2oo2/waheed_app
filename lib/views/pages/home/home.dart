@@ -9,6 +9,9 @@ import '../../../core/components/app_image.dart';
 import '../../../core/components/app_input.dart';
 import '../../../core/components/custom_container_home.dart';
 import '../../../core/components/item_gridView_home.dart';
+import '../../../model/category_model.dart';
+import '../../../model/product_ model.dart';
+import '../../../services/dio_helper.dart';
 import '../filter_sheet.dart';
 
 class Home extends StatefulWidget {
@@ -27,52 +30,64 @@ class _HomeState extends State<Home> {
     'assets/images/home.png',
   ];
 
-  final List<Map<String, dynamic>> clothes = [
-    {
-      "image": "view2.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "view1.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
+  List<CategoryModel> categories = [];
 
-    {
-      "image": "view2.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "view1.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
+  ProductsResponseModel? productResponse;
+  bool loading = true;
 
-    {
-      "image": "view2.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "view1.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-  ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+    getDataCategory();
+  }
+
+  Future<void> getDataCategory() async {
+    final res = await DioHelper.getData(path: "api/Categories");
+    print(res.isSucess);
+    print(res.msg);
+
+    print("${res.isSucess}");
+    print(" ${res.data}");
+    print(" ${res.data.runtimeType}");
+
+    if (res.isSucess && res.data is List) {
+      categories = (res.data as List)
+          .map(
+            (item) => CategoryModel.fromJson(Map<String, dynamic>.from(item)),
+          )
+          .toList();
+    }
+
+    if (mounted) {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
+
+  Future<void> getData() async {
+    final res = await DioHelper.getData(path: "api/Products");
+    print(res.isSucess);
+    print(res.msg);
+
+    print("${res.isSucess}");
+    print(" ${res.data}");
+    print(" ${res.data.runtimeType}");
+
+    if (res.isSucess && res.data is Map) {
+      productResponse = ProductsResponseModel.fromJson(
+        Map<String, dynamic>.from(res.data!),
+      );
+    }
+
+    if (mounted) {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -272,37 +287,27 @@ class _HomeState extends State<Home> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  textDirection: TextDirection.rtl,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomContainerHome(image: 'Jacket.svg', title: 'بدلات'),
+                child: loading
+                    ? Center(child: CircularProgressIndicator())
+                    : GridView.builder(
+                        itemCount: categories.length,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
 
-                    SizedBox(width: 8),
-
-                    CustomContainerHome(image: 'Shirts.svg', title: 'قمصان'),
-                  ],
-                ),
-              ),
-
-              SizedBox(height: 8),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  textDirection: TextDirection.rtl,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomContainerHome(
-                      image: 'accessories.svg',
-                      title: 'اكسسوارات',
-                    ),
-
-                    SizedBox(width: 8),
-
-                    CustomContainerHome(image: 'shose.svg', title: 'أحذية'),
-                  ],
-                ),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          childAspectRatio: 3.2,
+                        ),
+                        itemBuilder: (context, index) {
+                          final category = categories[index];
+                          return CustomContainerHome(
+                            image: category.iconUrl,
+                            title: category.nameAr,
+                          );
+                        },
+                      ),
               ),
 
               CustomRowTextHome(title: 'أحدث المنتجات', subtitle: 'عرض المزيد'),
@@ -311,27 +316,34 @@ class _HomeState extends State<Home> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: GridView.builder(
-                  itemCount: clothes.length,
+                child: loading
+                    ? Center(child: CircularProgressIndicator())
+                    : GridView.builder(
+                        itemCount: productResponse?.data.length ?? 0,
 
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
 
-                    mainAxisSpacing: 12,
-                    crossAxisSpacing: 12,
-                    childAspectRatio: 0.55,
-                  ),
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-
-                  itemBuilder: (context, index) => ItemGridviewHome(
-                    image: clothes[index]["image"],
-                    title: clothes[index]["title"],
-                    subTitle: clothes[index]["subTitle"],
-                    price: clothes[index]["price"],
-                    name: clothes[index]["name"],
-                  ),
-                ),
+                          mainAxisSpacing: 12,
+                          crossAxisSpacing: 12,
+                          childAspectRatio: 0.48,
+                        ),
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          final product = productResponse!.data[index];
+                          return ItemGridviewHome(
+                            id: product.id,
+                            image: product.mainImageUrl,
+                            title: product.nameAr,
+                            subTitle: product.descriptionAr,
+                            price:
+                                product.discountPrice?.toString() ??
+                                product.price.toString(),
+                            name: product.isRental ? 'شراء' : 'ايجار',
+                          );
+                        },
+                      ),
               ),
             ],
           ),
