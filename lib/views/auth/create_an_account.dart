@@ -3,9 +3,8 @@ import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/app_input.dart';
 import 'package:waheed_app/services/input_validator.dart';
-
-import '../services/dio_helper.dart';
-import '../services/helper_methods.dart';
+import '../../services/dio_helper.dart';
+import '../../services/helper_methods.dart';
 import 'complete_account.dart';
 import 'confirm_an_account.dart';
 

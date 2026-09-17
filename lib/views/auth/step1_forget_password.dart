@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_input.dart';
 import 'package:waheed_app/services/input_validator.dart';
-
-import '../core/components/app_image.dart';
-import '../core/components/change_indicator.dart';
-import '../services/dio_helper.dart';
-import '../services/helper_methods.dart';
+import '../../core/components/app_image.dart';
+import '../../core/components/change_indicator.dart';
+import '../../services/dio_helper.dart';
+import '../../services/helper_methods.dart';
 import 'confirm_an_account.dart';
 import 'step2_forget_password.dart';
 

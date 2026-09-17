@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 
 import '../../../core/components/app_bar_widget.dart';
 import '../../../core/components/app_image.dart';
@@ -13,7 +14,7 @@ class ConfirmChooseDate extends StatefulWidget {
 }
 
 class _ConfirmChooseDateState extends State<ConfirmChooseDate> {
-  late List<DateTime> dates;
+  late List dates;
   int selectedIndex = 0;
 
   @override
@@ -424,10 +425,7 @@ class _ConfirmChooseDateState extends State<ConfirmChooseDate> {
           padding: const EdgeInsets.all(8.0),
           child: GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ConfirmOrder()),
-              );
+              goTo(page: ConfirmOrder());
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),

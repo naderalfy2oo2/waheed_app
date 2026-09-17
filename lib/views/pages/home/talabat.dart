@@ -10,13 +10,8 @@ class Talabat extends StatefulWidget {
 }
 
 class _TalabatState extends State<Talabat> {
-  int SelectedIndex = 0;
-  final List<String> Categories = [
-    'الكل',
-    'قيد المعالجة',
-    'تم التسليم',
-    'ملغي',
-  ];
+  int selectedIndex = 0;
+  final List Categories = ['الكل', 'قيد المعالجة', 'تم التسليم', 'ملغي'];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -103,11 +98,11 @@ class _TalabatState extends State<Talabat> {
                         textDirection: TextDirection.rtl,
 
                         children: List.generate(Categories.length, (index) {
-                          final bool isSelected = SelectedIndex == index;
+                          final bool isSelected = selectedIndex == index;
                           return GestureDetector(
                             onTap: () {
                               setState(() {
-                                SelectedIndex = index;
+                                selectedIndex = index;
                               });
                             },
                             child: Container(

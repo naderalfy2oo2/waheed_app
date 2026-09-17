@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/home/favourite.dart';
 import 'package:waheed_app/views/pages/home/notices.dart';
-
 import '../../../core/components/custom_row_text_home.dart';
 import '../../../core/components/app_image.dart';
 import '../../../core/components/app_input.dart';
@@ -104,10 +104,7 @@ class _HomeState extends State<Home> {
                 height: 50,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => Notices()),
-                    );
+                    goTo(page: Notices());
                   },
                   child: Container(
                     padding: EdgeInsets.all(8),
@@ -137,10 +134,7 @@ class _HomeState extends State<Home> {
                 height: 50,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => Favourite()),
-                    );
+                    goTo(page: Favourite());
                   },
                   child: Container(
                     padding: EdgeInsets.all(8),
@@ -341,6 +335,7 @@ class _HomeState extends State<Home> {
                                 product.discountPrice?.toString() ??
                                 product.price.toString(),
                             name: product.isRental ? 'شراء' : 'ايجار',
+                            showName: true,
                           );
                         },
                       ),

@@ -8,6 +8,7 @@ class ItemGridviewHome extends StatelessWidget {
   final bool showFavorite;
   final String heartIcon;
   final int? id;
+  final bool showName;
 
   final String? name;
   final String? subTitle;
@@ -22,6 +23,7 @@ class ItemGridviewHome extends StatelessWidget {
     this.showFavorite = true,
     this.heartIcon = 'heart.svg',
     this.id,
+    this.showName = true,
   });
 
   @override
@@ -215,35 +217,35 @@ class ItemGridviewHome extends StatelessWidget {
                   ),
 
                   Spacer(),
-
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 42,
-                        height: 23,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(99),
-                          border: Border.all(
-                            style: BorderStyle.solid,
-                            color: Color(0xffE5E7EB),
+                  if (showName)
+                    Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 42,
+                          height: 23,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(99),
+                            border: Border.all(
+                              style: BorderStyle.solid,
+                              color: Color(0xffE5E7EB),
+                            ),
                           ),
-                        ),
 
-                        child: Text(
-                          name ?? "",
-                          style: TextStyle(
-                            color: Color(0xff000000),
-                            fontSize: 10,
-                            fontFamily: 'IBMPlexSansArabic',
-                            fontWeight: FontWeight.w500,
+                          child: Text(
+                            name ?? "",
+                            style: TextStyle(
+                              color: Color(0xff000000),
+                              fontSize: 10,
+                              fontFamily: 'IBMPlexSansArabic',
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:waheed_app/core/components/custom_container_review.dart';
-
 import '../../core/components/app_bar_widget.dart';
 import '../../core/components/app_button.dart';
 import '../../core/components/app_container_size.dart';
@@ -31,7 +30,7 @@ class _ReviewState extends State<Review> {
             SizedBox(height: 24),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: List.generate(
                   titles.length,
@@ -52,7 +51,7 @@ class _ReviewState extends State<Review> {
             SizedBox(height: 16),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10),
 
               child: Row(
                 children: [
@@ -76,7 +75,7 @@ class _ReviewState extends State<Review> {
               alignment: AlignmentGeometry.centerRight,
 
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   'المراجعة',
                   style: TextStyle(
@@ -95,7 +94,7 @@ class _ReviewState extends State<Review> {
             Align(
               alignment: AlignmentGeometry.centerRight,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   'تأكيد القياسات',
                   style: TextStyle(
@@ -112,15 +111,15 @@ class _ReviewState extends State<Review> {
             SizedBox(height: 24),
 
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              padding: const EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.all(16),
               width: 370,
               height: 132,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: const Color(0xffE5E7EB)),
-                boxShadow: const [
+                border: Border.all(color: Color(0xffE5E7EB)),
+                boxShadow: [
                   BoxShadow(
                     color: Color(0x14000000),
                     blurRadius: 16,
@@ -129,7 +128,7 @@ class _ReviewState extends State<Review> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   children: [
                     Align(
@@ -208,13 +207,13 @@ class _ReviewState extends State<Review> {
             Container(
               width: 370,
               height: 107,
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              padding: const EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: const Color(0xffE5E7EB)),
-                boxShadow: const [
+                border: Border.all(color: Color(0xffE5E7EB)),
+                boxShadow: [
                   BoxShadow(
                     color: Color(0x14000000),
                     blurRadius: 16,
@@ -378,7 +377,7 @@ class _ReviewState extends State<Review> {
       ),
       bottomNavigationBar: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: Row(
             children: [
               Expanded(
@@ -392,7 +391,7 @@ class _ReviewState extends State<Review> {
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'السابق',
                         style: TextStyle(
@@ -405,7 +404,7 @@ class _ReviewState extends State<Review> {
                 ),
               ),
 
-              const SizedBox(width: 10),
+              SizedBox(width: 10),
 
               Expanded(
                 flex: 2,
@@ -433,21 +432,21 @@ void showBanner(BuildContext context) {
 
   messenger.showMaterialBanner(
     MaterialBanner(
-      backgroundColor: const Color(0xffFFFFFF),
+      backgroundColor: Color(0xffFFFFFF),
       elevation: 0,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       content: Container(
         height: 48,
         decoration: BoxDecoration(
-          color: const Color(0xff38B67A).withValues(alpha: .80),
+          color: Color(0xff38B67A).withValues(alpha: .80),
           borderRadius: BorderRadius.circular(12),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: EdgeInsets.symmetric(horizontal: 12),
         child: Row(
           children: [
             AppImage(image: 'circle_correct.svg', width: 20, height: 20),
-            const SizedBox(width: 8),
-            const Expanded(
+            SizedBox(width: 8),
+            Expanded(
               child: Text(
                 "تم حفظ القياسات",
                 textAlign: TextAlign.right,
@@ -466,7 +465,7 @@ void showBanner(BuildContext context) {
     ),
   );
 
-  Future.delayed(const Duration(seconds: 2), () {
+  Future.delayed(Duration(seconds: 2), () {
     messenger.hideCurrentMaterialBanner();
   });
 }

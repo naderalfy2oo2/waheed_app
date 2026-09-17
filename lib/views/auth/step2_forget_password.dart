@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
-
-import '../core/components/app_image.dart';
-import '../core/components/change_indicator.dart';
-import '../services/dio_helper.dart';
-import '../services/helper_methods.dart';
+import '../../core/components/app_image.dart';
+import '../../core/components/change_indicator.dart';
+import '../../services/dio_helper.dart';
+import '../../services/helper_methods.dart';
 import 'step1_forget_password.dart';
 import 'step3_forget_password.dart';
 
@@ -63,12 +62,7 @@ class _Step2ForgetPasswordState extends State<Step2ForgetPassword> {
             backgroundColor: Color(0xffFFFFFF),
             leading: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Step1ForgetPassword(),
-                  ),
-                );
+                goTo(page: Step1ForgetPassword());
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

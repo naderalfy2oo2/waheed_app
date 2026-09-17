@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/auth/register.dart';
+import 'package:waheed_app/services/helper_methods.dart';
+import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
-
-import '../core/components/app_image.dart';
+import '../../core/components/app_image.dart';
 
 class CompleteAccount extends StatelessWidget {
   const CompleteAccount({super.key});
@@ -88,10 +88,7 @@ class CompleteAccount extends StatelessWidget {
                 AppButton(
                   title: 'المتابعة لتسجيل الدخول',
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Register()),
-                    );
+                    goTo(page: Register());
                   },
                 ),
               ],

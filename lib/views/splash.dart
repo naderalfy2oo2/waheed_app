@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-import 'package:waheed_app/view.dart';
+import 'package:waheed_app/services/helper_methods.dart';
+import 'package:waheed_app/views/view.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -16,10 +18,7 @@ class _SplashState extends State<Splash> {
     super.initState();
 
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomeView()),
-      );
+      goTo(page: Register());
     });
   }
 

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_bar_widget.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/bottom_sheet.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/delivery_flow/order_successfully_confirmed.dart';
-
 import '../../../core/components/address_ bottom_ sheet.dart';
 
 class RevisionOrder extends StatefulWidget {
@@ -470,12 +470,7 @@ class _RevisionOrderState extends State<RevisionOrder> {
           title: 'تأكيد الطلب',
           icon: 'circle_correct.svg',
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => OrderSuccessfullyConfirmed(),
-              ),
-            );
+            goTo(page: OrderSuccessfullyConfirmed());
           },
         ),
       ),

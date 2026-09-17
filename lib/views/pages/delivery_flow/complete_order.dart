@@ -2,9 +2,9 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/custom_container_choice.dart';
 import 'package:waheed_app/core/components/custom_payment_choice.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/delivery_flow/add_new_address.dart';
 import 'package:waheed_app/views/pages/delivery_flow/revision_order.dart';
-
 import '../../../core/components/add_ card_ bottom_ sheet.dart';
 import '../../../core/components/address_ bottom_ sheet.dart';
 import '../../../core/components/app_bar_widget.dart';
@@ -306,12 +306,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
                 DottedBorder(
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AddNewAddress(),
-                        ),
-                      );
+                      goTo(page: AddNewAddress());
                     },
                     child: Container(
                       width: 370,
@@ -452,10 +447,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
         bottomNavigationBar: BottomSheetWidget(
           title: 'إتمام الطلب',
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => RevisionOrder()),
-            );
+            goTo(page: RevisionOrder());
           },
         ),
       ),

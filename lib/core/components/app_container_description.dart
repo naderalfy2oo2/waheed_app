@@ -8,7 +8,6 @@ class AppContainerDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-
       width: 77,
       height: 25,
       decoration: BoxDecoration(

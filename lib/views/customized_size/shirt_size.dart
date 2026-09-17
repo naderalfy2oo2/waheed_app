@@ -4,7 +4,7 @@ import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_container_size.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/custom_container_clothes.dart';
-
+import 'package:waheed_app/services/helper_methods.dart';
 import '../../core/components/app_container_size _selection _counter.dart';
 import 'pant_size.dart';
 
@@ -31,7 +31,7 @@ class _ShirtSizeState extends State<ShirtSize> {
           children: [
             SizedBox(height: 24),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: List.generate(
                   titles.length,
@@ -52,7 +52,7 @@ class _ShirtSizeState extends State<ShirtSize> {
             SizedBox(height: 16),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10),
 
               child: Row(
                 children: [
@@ -76,7 +76,7 @@ class _ShirtSizeState extends State<ShirtSize> {
               alignment: AlignmentGeometry.centerRight,
 
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   'القميص',
                   style: TextStyle(
@@ -94,7 +94,7 @@ class _ShirtSizeState extends State<ShirtSize> {
             Align(
               alignment: AlignmentGeometry.centerRight,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   'قياسات الرقبة والأكمام',
                   style: TextStyle(
@@ -111,15 +111,15 @@ class _ShirtSizeState extends State<ShirtSize> {
             SizedBox(height: 24),
 
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              padding: const EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.all(16),
               width: 370,
               height: 132,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: const Color(0xffE5E7EB)),
-                boxShadow: const [
+                border: Border.all(color: Color(0xffE5E7EB)),
+                boxShadow: [
                   BoxShadow(
                     color: Color(0x14000000),
                     blurRadius: 16,
@@ -196,13 +196,13 @@ class _ShirtSizeState extends State<ShirtSize> {
             Container(
               width: 370,
               height: 107,
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              padding: const EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: const Color(0xffE5E7EB)),
-                boxShadow: const [
+                border: Border.all(color: Color(0xffE5E7EB)),
+                boxShadow: [
                   BoxShadow(
                     color: Color(0x14000000),
                     blurRadius: 16,
@@ -255,7 +255,7 @@ class _ShirtSizeState extends State<ShirtSize> {
                       sizes.length,
                       (index) => Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          padding: EdgeInsets.symmetric(horizontal: 4),
                           child: AppContainerSize(
                             title: sizes[index],
                             isSelected: selectedSize == sizes[index],
@@ -294,7 +294,7 @@ class _ShirtSizeState extends State<ShirtSize> {
       ),
       bottomNavigationBar: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10),
 
           child: Row(
             children: [
@@ -314,8 +314,8 @@ class _ShirtSizeState extends State<ShirtSize> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xffFFFFFF),
-                          offset: const Offset(0, 2),
+                          color: Color(0xffFFFFFF),
+                          offset: Offset(0, 2),
                           blurRadius: 8,
                           spreadRadius: 0,
                         ),
@@ -345,10 +345,7 @@ class _ShirtSizeState extends State<ShirtSize> {
                   icon: 'arrow-left_white_color.svg',
                   textDirection: TextDirection.ltr,
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => PantsSize()),
-                    );
+                    goTo(page: PantsSize());
                   },
                 ),
               ),

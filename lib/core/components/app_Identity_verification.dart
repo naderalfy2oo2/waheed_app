@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
-
 import 'app_image.dart';
 
 class AppIdentityVerification extends StatefulWidget {

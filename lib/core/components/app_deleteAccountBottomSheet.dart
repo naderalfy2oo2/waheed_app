@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-
 import 'app_Identity_verification.dart';
 
 class DeleteAccountBottomSheet extends StatefulWidget {

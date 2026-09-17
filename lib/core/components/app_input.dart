@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class AppInput extends StatefulWidget {
   final String? labelText;
   final String? suffixText;
-
   final Widget? suffixIcon;
   final Widget? preifixIcon;
   final Color? fillColor;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:waheed_app/core/components/app_image.dart';
 
 class CustomContainerClothes extends StatelessWidget {

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-
-import '../../../core/components/item_gridView_home.dart';
+import 'package:waheed_app/core/components/item_gridView_home.dart';
+import 'package:waheed_app/model/product_ model.dart';
+import 'package:waheed_app/services/dio_helper.dart';
+import 'package:waheed_app/services/helper_methods.dart';
+import 'package:waheed_app/views/pages/home/home.dart';
 
 class Favourite extends StatefulWidget {
   const Favourite({super.key});
@@ -11,67 +14,51 @@ class Favourite extends StatefulWidget {
 }
 
 class _FavouriteState extends State<Favourite> {
-  late final List<bool> favorites = List.filled(clothes.length, false);
+  ProductsResponseModel? productResponse;
 
-  final List<Map<String, dynamic>> clothes = [
-    {
-      "image": "view2.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "view1.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
+  bool loading = true;
 
-    {
-      "image": "view2.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "view1.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
 
-    {
-      "image": "view2.png",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-    {
-      "image": "view1.jpg",
-      "title": "بدلة كلاسيكية سوداء",
-      "subTitle": "صوف إيطالي فاخر",
-      "price": "2,450",
-      "name": "إيجار",
-    },
-  ];
+  Future<void> getData() async {
+    final res = await DioHelper.getData(path: "api/Products");
+
+    print(res.isSucess);
+    print(res.msg);
+    print(res.data);
+    print(res.data.runtimeType);
+
+    if (res.isSucess && res.data is Map) {
+      productResponse = ProductsResponseModel.fromJson(
+        Map<String, dynamic>.from(res.data!),
+      );
+    }
+
+    if (mounted) {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffEAEAEA),
+        backgroundColor: const Color(0xffEAEAEA),
+
         appBar: AppBar(
-          backgroundColor: Color(0xffFFFFFF),
+          backgroundColor: const Color(0xffFFFFFF),
+
           leading: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             child: GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+                goTo(page: Home());
               },
               child: Container(
                 width: 48,
@@ -92,7 +79,8 @@ class _FavouriteState extends State<Favourite> {
               ),
             ),
           ),
-          title: Text(
+
+          title: const Text(
             'المفضلة',
             style: TextStyle(
               color: Color(0xff000000),
@@ -101,40 +89,59 @@ class _FavouriteState extends State<Favourite> {
               fontFamily: 'IBMPlexSansArabic',
             ),
           ),
+
           centerTitle: true,
         ),
+
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: GridView.builder(
-                  itemCount: clothes.length,
 
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                child: loading
+                    ? const Center(child: CircularProgressIndicator())
+                    : GridView.builder(
+                        itemCount: productResponse?.data.length ?? 0,
 
-                    mainAxisSpacing: 12,
-                    crossAxisSpacing: 12,
-                    childAspectRatio: 0.55,
-                  ),
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 12,
+                              crossAxisSpacing: 12,
+                              childAspectRatio: 0.50,
+                            ),
 
-                  itemBuilder: (context, index) => ItemGridviewHome(
-                    image: clothes[index]["image"],
-                    title: clothes[index]["title"],
-                    subTitle: clothes[index]["subTitle"],
-                    price: clothes[index]["price"],
-                    name: clothes[index]["name"],
-                    heartIcon: 'black_heart.svg',
-                  ),
-                ),
+                        physics: const NeverScrollableScrollPhysics(),
+
+                        shrinkWrap: true,
+
+                        itemBuilder: (context, index) {
+                          final product = productResponse!.data[index];
+
+                          return ItemGridviewHome(
+                            id: product.id,
+
+                            image: product.mainImageUrl,
+
+                            title: product.nameAr,
+
+                            subTitle: product.descriptionAr,
+
+                            price:
+                                product.discountPrice?.toString() ??
+                                product.price.toString(),
+
+                            heartIcon: 'black_heart.svg',
+                            showName: false,
+                          );
+                        },
+                      ),
               ),
 
-              SizedBox(height: 135),
+              const SizedBox(height: 135),
             ],
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-
+import 'package:waheed_app/services/helper_methods.dart';
 import '../../views/customized_size/jacket_size.dart';
 
 class CustomBottomSheet extends StatefulWidget {
@@ -173,10 +173,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                 icon: 'tick-circle.svg',
                 onPressed: () {
                   print("Pressed");
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => JacketSize()),
-                  );
+                  goTo(page: JacketSize());
                 },
               ),
             ],

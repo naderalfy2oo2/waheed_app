@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-
 import 'register.dart';
 
 class StartNow extends StatelessWidget {

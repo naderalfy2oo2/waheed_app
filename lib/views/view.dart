@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'core/components/app_image.dart';
+import '../core/components/app_image.dart';
 
-import 'views/pages/home/cart.dart';
-import 'views/pages/home/home.dart';
-import 'views/pages/home/profile.dart';
-import 'views/pages/home/talabat.dart';
+import 'pages/home/cart.dart';
+import 'pages/home/home.dart';
+import 'pages/home/profile.dart';
+import 'pages/home/talabat.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -15,28 +15,28 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  int CurrentIndex = 0;
+  int currentIndex = 0;
 
   final list = [
-    _model(
+    _Model(
       icon: 'home.svg',
       selectedIcon: 'black_home.svg',
       page: Home(),
       title: 'الرئيسية',
     ),
-    _model(
+    _Model(
       icon: 'talabat.svg',
       selectedIcon: 'black_talabt.svg',
       page: Talabat(),
       title: 'طلباتي',
     ),
-    _model(
+    _Model(
       icon: 'shopping-cart.svg',
       selectedIcon: 'black_cart.svg',
       page: Cart(),
       title: 'العربة',
     ),
-    _model(
+    _Model(
       icon: 'profile.svg',
       selectedIcon: 'black_profile.svg',
       page: Profile(),
@@ -46,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: list[CurrentIndex].page,
+      body: list[currentIndex].page,
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
@@ -63,10 +63,10 @@ class _HomeViewState extends State<HomeView> {
 
           type: BottomNavigationBarType.fixed,
           onTap: (value) {
-            CurrentIndex = value;
+            currentIndex = value;
             setState(() {});
           },
-          currentIndex: CurrentIndex,
+          currentIndex: currentIndex,
           selectedFontSize: 12,
           unselectedFontSize: 12,
 
@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
             list.length,
             (index) => BottomNavigationBarItem(
               icon: AppImage(
-                image: CurrentIndex == index
+                image: currentIndex == index
                     ? list[index].selectedIcon
                     : list[index].icon,
               ),
@@ -87,13 +87,13 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class _model {
+class _Model {
   final String icon;
   final String selectedIcon;
   final Widget page;
   final String title;
 
-  _model({
+  _Model({
     required this.icon,
     required this.selectedIcon,
     required this.page,

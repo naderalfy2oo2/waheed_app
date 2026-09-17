@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_range_slider.dart';
-
 import '../../core/components/app_button.dart';
 import '../../core/components/app_image.dart';
 
@@ -12,13 +11,13 @@ class FilterSheet extends StatefulWidget {
 }
 
 class _FilterSheetState extends State<FilterSheet> {
-  int SelectedIndex = 0;
-  final List<String> Categories = ['الكل', 'الأحذية', 'الاكسسوارات', 'القمصان'];
-  RangeValues _currentRange = const RangeValues(0, 1800);
+  int selectedIndex = 0;
+  final List Categories = ['الكل', 'الأحذية', 'الاكسسوارات', 'القمصان'];
+  RangeValues _currentRange = RangeValues(0, 1800);
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+      padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: SizedBox(
         width: double.maxFinite,
         child: Container(
@@ -59,11 +58,11 @@ class _FilterSheetState extends State<FilterSheet> {
                   textDirection: TextDirection.rtl,
 
                   children: List.generate(Categories.length, (index) {
-                    final bool isSelected = SelectedIndex == index;
+                    final bool isSelected = selectedIndex == index;
                     return GestureDetector(
                       onTap: () {
                         setState(() {
-                          SelectedIndex = index;
+                          selectedIndex = index;
                         });
                       },
                       child: Container(

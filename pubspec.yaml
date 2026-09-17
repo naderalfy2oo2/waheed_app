@@ -35,12 +35,12 @@ flutter:
     - assets/fonts/
 
   fonts:
-    - family: Inter
+    - family: inter
       fonts:
-        - asset: assets/fonts/Inter_18pt-ExtraBold.ttf
+        - asset: assets\fonts\inter.ttf
 
-    - family: IBMPlexSansArabic
+    - family: ibmp
       fonts:
-        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+        - asset: assets\fonts\ibmp.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

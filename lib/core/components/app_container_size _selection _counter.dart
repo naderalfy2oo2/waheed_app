@@ -39,8 +39,8 @@ class AppContainerSizeSelectionCounter extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0xffE5E7EB)),
-        boxShadow: const [
+        border: Border.all(color: Color(0xffE5E7EB)),
+        boxShadow: [
           BoxShadow(
             color: Color(0x14000000),
             blurRadius: 16,
@@ -50,7 +50,7 @@ class AppContainerSizeSelectionCounter extends StatelessWidget {
       ),
 
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Column(
           children: [
             SizedBox(height: 16),

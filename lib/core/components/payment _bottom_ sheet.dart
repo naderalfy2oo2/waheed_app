@@ -1,7 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
-
+import 'package:waheed_app/services/helper_methods.dart';
 import 'add_ card_ bottom_ sheet.dart';
 import 'app_image.dart';
 import 'custom_payment_choice.dart';
@@ -119,12 +119,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
               DottedBorder(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AddCardBottomSheet(),
-                      ),
-                    );
+                    goTo(page: AddCardBottomSheet());
                   },
                   child: Container(
                     width: 370,

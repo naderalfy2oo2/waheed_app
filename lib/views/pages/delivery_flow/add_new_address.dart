@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_bar_widget.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-
 import '../../../core/components/address_ bottom_ sheet.dart';
 
 class AddNewAddress extends StatelessWidget {

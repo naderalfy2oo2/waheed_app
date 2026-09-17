@@ -2,8 +2,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/delivery_flow/revision_order.dart';
-
 import '../../views/pages/delivery_flow/add_new_address.dart';
 
 class AdressBottomSheet extends StatelessWidget {
@@ -189,10 +189,7 @@ class AdressBottomSheet extends StatelessWidget {
           DottedBorder(
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AddNewAddress()),
-                );
+                goTo(page: AddNewAddress());
               },
               child: Container(
                 width: 370,
@@ -238,10 +235,7 @@ class AdressBottomSheet extends StatelessWidget {
           AppButton(
             title: 'تأكيد العنوان',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RevisionOrder()),
-              );
+              goTo(page: RevisionOrder());
             },
           ),
         ],

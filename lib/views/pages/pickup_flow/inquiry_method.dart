@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/pickup_flow/choose_date.dart';
 
 import '../../../core/components/add_ card_ bottom_ sheet.dart';
@@ -472,10 +473,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
         bottomNavigationBar: BottomSheetWidget(
           title: 'اختر الموعد',
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ChooseDate()),
-            );
+            goTo(page: ChooseDate());
           },
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/app_input.dart';
-
 import 'payment _bottom_ sheet.dart';
 
 class AddCardBottomSheet extends StatefulWidget {

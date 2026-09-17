@@ -3,9 +3,7 @@ import 'package:waheed_app/core/components/app_image.dart';
 
 class AppContainerProduct extends StatelessWidget {
   final String Icon;
-
   final String title;
-
   final Color _color;
 
   const AppContainerProduct({

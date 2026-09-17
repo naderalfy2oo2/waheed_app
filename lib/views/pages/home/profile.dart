@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:waheed_app/auth/register.dart';
+import 'package:waheed_app/services/helper_methods.dart';
+import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
-
 import '../../../core/components/app_deleteAccountBottomSheet.dart';
 import '../../../model/user_model.dart';
 import '../../../services/dio_helper.dart';
@@ -221,12 +221,7 @@ class _UserProfile extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Favourite(),
-                              ),
-                            );
+                            goTo(page: Favourite());
                           },
                           child: Container(
                             padding: EdgeInsets.all(8),
@@ -263,12 +258,7 @@ class _UserProfile extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Talabat(),
-                              ),
-                            );
+                            goTo(page: Talabat());
                           },
                           child: Container(
                             padding: EdgeInsets.all(8),
@@ -363,12 +353,7 @@ class _UserProfile extends StatelessWidget {
                         SizedBox(width: 8),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TermsConditions(),
-                              ),
-                            );
+                            goTo(page: TermsConditions());
                           },
                           child: Text(
                             'الشروط والأحكام',
@@ -404,12 +389,7 @@ class _UserProfile extends StatelessWidget {
                         SizedBox(width: 8),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PrivacyPolicy(),
-                              ),
-                            );
+                            goTo(page: PrivacyPolicy());
                           },
                           child: Text(
                             'سياسة الخصوصية',
@@ -569,10 +549,7 @@ class ProfileGuest extends StatelessWidget {
                       const SizedBox(height: 16),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Register()),
-                          );
+                          goTo(page: Register());
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 14),
@@ -675,12 +652,7 @@ class ProfileGuest extends StatelessWidget {
                         title: 'الشروط والأحكام',
                         iconName: 'earth.svg',
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => TermsConditions(),
-                            ),
-                          );
+                          goTo(page: TermsConditions());
                         },
                       ),
                       Padding(
@@ -691,12 +663,7 @@ class ProfileGuest extends StatelessWidget {
                         title: 'سياسة الخصوصية',
                         iconName: 'earth.svg',
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => PrivacyPolicy(),
-                            ),
-                          );
+                          goTo(page: PrivacyPolicy());
                         },
                       ),
                     ],

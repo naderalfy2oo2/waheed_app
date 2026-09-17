@@ -4,10 +4,9 @@ import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/app_input.dart';
 import 'package:waheed_app/services/dio_helper.dart';
 import 'package:waheed_app/services/input_validator.dart';
-import 'package:waheed_app/view.dart';
-
-import '../services/helper_methods.dart';
-import '../views/pages/home/home.dart';
+import 'package:waheed_app/views/view.dart';
+import '../../services/helper_methods.dart';
+import '../pages/home/home.dart';
 import 'create_an_account.dart';
 import 'step1_forget_password.dart';
 
@@ -135,12 +134,7 @@ class _RegisterState extends State<Register> {
                                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                               ),
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => CreateAnAccount(),
-                                  ),
-                                );
+                                goTo(page: CreateAnAccount());
                               },
                               child: Text(
                                 ' إنشاء حساب جديد',
@@ -235,12 +229,7 @@ class _RegisterState extends State<Register> {
                           alignment: AlignmentGeometry.centerLeft,
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Step1ForgetPassword(),
-                                ),
-                              );
+                              goTo(page: Step1ForgetPassword());
                             },
                             child: Text(
                               'هل نسيت كلمة المرور ؟',
@@ -267,12 +256,7 @@ class _RegisterState extends State<Register> {
                               }
                               final success = await SendData();
                               if (await SendData()) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HomeView(),
-                                  ),
-                                );
+                                goTo(page: HomeView());
                               }
                             },
                             title: 'تسجيل الدخول',

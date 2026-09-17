@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
+import 'package:waheed_app/services/helper_methods.dart';
 
 import '../home/home.dart';
 import '../home/talabat.dart';
@@ -461,10 +462,7 @@ class ConfirmOrder extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                    );
+                    goTo(page: Home());
                   },
                   child: Container(
                     width: 180,
@@ -516,10 +514,7 @@ class ConfirmOrder extends StatelessWidget {
                 child: AppButton(
                   title: 'تتبع الطلب',
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Talabat()),
-                    );
+                    goTo(page: Talabat());
                   },
                 ),
               ),

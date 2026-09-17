@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
-import 'package:waheed_app/auth/register.dart';
+import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/services/input_validator.dart';
-
-import '../core/components/app_image.dart';
-import '../core/components/app_input.dart';
-import '../core/components/change_indicator.dart';
-import '../services/dio_helper.dart';
-import '../services/helper_methods.dart';
-
+import '../../core/components/app_image.dart';
+import '../../core/components/app_input.dart';
+import '../../core/components/change_indicator.dart';
+import '../../services/dio_helper.dart';
+import '../../services/helper_methods.dart';
 import 'step1_forget_password.dart';
 import 'step2_forget_password.dart';
 
@@ -266,12 +264,7 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                               if (!mounted) return;
 
                               if (success) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Register(),
-                                  ),
-                                );
+                                goTo(page: Register());
                               }
                             },
                           ),

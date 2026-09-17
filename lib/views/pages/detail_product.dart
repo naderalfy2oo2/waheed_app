@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_container_product.dart';
-
 import '../../core/components/app_container_color.dart';
 import '../../core/components/app_container_description.dart';
 import '../../core/components/app_image.dart';
@@ -19,38 +18,6 @@ class DetailProduct extends StatefulWidget {
 
 class _DetailProductState extends State<DetailProduct> {
   Color selectedColor = const Color(0xff3F4651);
-
-  // final List<Map<String, dynamic>> clothes = [
-  //   {
-  //     "image": "view2.png",
-  //     "title": "كلاسيك",
-  //     "subTitle": "بدلة سوداء ثلاثية القطع",
-  //   },
-
-  //   {
-  //     "image": "view2.png",
-  //     "title": "كلاسيك",
-  //     "subTitle": "بدلة سوداء ثلاثية القطع",
-  //   },
-
-  //   {
-  //     "image": "view2.png",
-  //     "title": "كلاسيك",
-  //     "subTitle": "بدلة سوداء ثلاثية القطع",
-  //   },
-
-  //   {
-  //     "image": "view2.png",
-  //     "title": "كلاسيك",
-  //     "subTitle": "بدلة سوداء ثلاثية القطع",
-  //   },
-
-  //   {
-  //     "image": "view2.png",
-  //     "title": "كلاسيك",
-  //     "subTitle": "بدلة سوداء ثلاثية القطع",
-  //   },
-  // ];
 
   ProductModelId? product;
   bool loading = true;
@@ -190,7 +157,7 @@ class _DetailProductState extends State<DetailProduct> {
             : product == null
             ? Center(
                 child: Text(
-                  'حدث خطأ أثناء تحميل المنتج',
+                  'it happend error during operation',
                   style: TextStyle(
                     fontFamily: 'IBMPlexSansArabic',
                     fontSize: 16,
