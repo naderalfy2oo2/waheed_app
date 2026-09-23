@@ -14,14 +14,14 @@ import '../../../model/product_ model.dart';
 import '../../../services/dio_helper.dart';
 import '../filter_sheet.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   int countIndex = 0;
 
   final List<String> image = [
@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
                 height: 50,
                 child: GestureDetector(
                   onTap: () {
-                    goTo(page: Notices());
+                    goTo(page: NoticesPage());
                   },
                   child: Container(
                     padding: EdgeInsets.all(8),
@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                 height: 50,
                 child: GestureDetector(
                   onTap: () {
-                    goTo(page: Favourite());
+                    goTo(page: FavouritePage());
                   },
                   child: Container(
                     padding: EdgeInsets.all(8),
@@ -203,7 +203,7 @@ class _HomeState extends State<Home> {
                         onTap: () {
                           showBottomSheet(
                             context: context,
-                            builder: (context) => FilterSheet(),
+                            builder: (context) => FilterSheetPage(),
                           );
                         },
                         child: AppImage(image: 'tabbar.svg'),

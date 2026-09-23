@@ -6,14 +6,14 @@ import '../../../core/components/app_bar_widget.dart';
 import '../../../core/components/app_image.dart';
 import 'confirm_order.dart';
 
-class ConfirmChooseDate extends StatefulWidget {
-  const ConfirmChooseDate({super.key, required date, required time});
+class ConfirmChooseDatePage extends StatefulWidget {
+  const ConfirmChooseDatePage({super.key, required date, required time});
 
   @override
-  State<ConfirmChooseDate> createState() => _ConfirmChooseDateState();
+  State<ConfirmChooseDatePage> createState() => _ConfirmChooseDatePageState();
 }
 
-class _ConfirmChooseDateState extends State<ConfirmChooseDate> {
+class _ConfirmChooseDatePageState extends State<ConfirmChooseDatePage> {
   late List dates;
   int selectedIndex = 0;
 
@@ -425,7 +425,7 @@ class _ConfirmChooseDateState extends State<ConfirmChooseDate> {
           padding: const EdgeInsets.all(8.0),
           child: GestureDetector(
             onTap: () {
-              goTo(page: ConfirmOrder());
+              goTo(page: ConfirmOrderPage());
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),

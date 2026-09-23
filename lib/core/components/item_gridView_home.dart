@@ -35,7 +35,7 @@ class ItemGridviewHome extends StatelessWidget {
         }
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DetailProduct(id: id!)),
+          MaterialPageRoute(builder: (context) => DetailProductPage(id: id!)),
         );
       },
       child: Container(

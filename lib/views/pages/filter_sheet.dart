@@ -3,14 +3,14 @@ import 'package:waheed_app/core/components/app_range_slider.dart';
 import '../../core/components/app_button.dart';
 import '../../core/components/app_image.dart';
 
-class FilterSheet extends StatefulWidget {
-  const FilterSheet({super.key});
+class FilterSheetPage extends StatefulWidget {
+  const FilterSheetPage({super.key});
 
   @override
-  State<FilterSheet> createState() => _FilterSheetState();
+  State<FilterSheetPage> createState() => _FilterSheetPageState();
 }
 
-class _FilterSheetState extends State<FilterSheet> {
+class _FilterSheetPageState extends State<FilterSheetPage> {
   int selectedIndex = 0;
   final List Categories = ['الكل', 'الأحذية', 'الاكسسوارات', 'القمصان'];
   RangeValues _currentRange = RangeValues(0, 1800);

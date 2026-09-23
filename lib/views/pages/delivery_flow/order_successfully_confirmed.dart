@@ -3,16 +3,16 @@ import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import '../../../core/components/app_shipping_hint.dart';
 
-class OrderSuccessfullyConfirmed extends StatefulWidget {
-  const OrderSuccessfullyConfirmed({super.key});
+class OrderSuccessfullyConfirmedPage extends StatefulWidget {
+  const OrderSuccessfullyConfirmedPage({super.key});
 
   @override
-  State<OrderSuccessfullyConfirmed> createState() =>
-      _OrderSuccessfullyConfirmedState();
+  State<OrderSuccessfullyConfirmedPage> createState() =>
+      _OrderSuccessfullyConfirmedPageState();
 }
 
-class _OrderSuccessfullyConfirmedState
-    extends State<OrderSuccessfullyConfirmed> {
+class _OrderSuccessfullyConfirmedPageState
+    extends State<OrderSuccessfullyConfirmedPage> {
   void showShippingHint(BuildContext context) {
     final overlay = Overlay.of(context);
 

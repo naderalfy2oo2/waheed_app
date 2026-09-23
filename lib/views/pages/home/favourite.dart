@@ -6,14 +6,14 @@ import 'package:waheed_app/services/dio_helper.dart';
 import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/home/home.dart';
 
-class Favourite extends StatefulWidget {
-  const Favourite({super.key});
+class FavouritePage extends StatefulWidget {
+  const FavouritePage({super.key});
 
   @override
-  State<Favourite> createState() => _FavouriteState();
+  State<FavouritePage> createState() => _FavouritePageState();
 }
 
-class _FavouriteState extends State<Favourite> {
+class _FavouritePageState extends State<FavouritePage> {
   ProductsResponseModel? productResponse;
 
   bool loading = true;
@@ -58,7 +58,7 @@ class _FavouriteState extends State<Favourite> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             child: GestureDetector(
               onTap: () {
-                goTo(page: Home());
+                goTo(page: HomePage());
               },
               child: Container(
                 width: 48,

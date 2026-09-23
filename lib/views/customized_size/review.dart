@@ -7,14 +7,14 @@ import '../../core/components/app_container_size.dart';
 import '../../core/components/app_image.dart';
 import '../../core/components/custom_container_clothes.dart';
 
-class Review extends StatefulWidget {
-  const Review({super.key});
+class ReviewView extends StatefulWidget {
+  const ReviewView({super.key});
 
   @override
-  State<Review> createState() => _ReviewState();
+  State<ReviewView> createState() => _ReviewViewState();
 }
 
-class _ReviewState extends State<Review> {
+class _ReviewViewState extends State<ReviewView> {
   int currentStepIndex = 3;
   String selectedSize = '28';
   final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];

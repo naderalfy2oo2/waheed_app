@@ -13,14 +13,14 @@ import '../../../core/components/bottom_sheet.dart';
 import '../../../core/components/custom_revision_container_order.dart';
 import '../../../core/components/payment _bottom_ sheet.dart';
 
-class CompleteOrder extends StatefulWidget {
-  const CompleteOrder({super.key});
+class CompleteOrderPage extends StatefulWidget {
+  const CompleteOrderPage({super.key});
 
   @override
-  State<CompleteOrder> createState() => _CompleteOrderState();
+  State<CompleteOrderPage> createState() => _CompleteOrderPageState();
 }
 
-class _CompleteOrderState extends State<CompleteOrder> {
+class _CompleteOrderPageState extends State<CompleteOrderPage> {
   int selectedPayment = 0;
   int selectedMethod = 0;
   @override
@@ -306,7 +306,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
                 DottedBorder(
                   child: GestureDetector(
                     onTap: () {
-                      goTo(page: AddNewAddress());
+                      goTo(page: AddNewAddressPage());
                     },
                     child: Container(
                       width: 370,
@@ -447,7 +447,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
         bottomNavigationBar: BottomSheetWidget(
           title: 'إتمام الطلب',
           onPressed: () {
-            goTo(page: RevisionOrder());
+            goTo(page: RevisionOrderPage());
           },
         ),
       ),

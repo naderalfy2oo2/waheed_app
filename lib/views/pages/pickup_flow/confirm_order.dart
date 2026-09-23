@@ -6,8 +6,8 @@ import 'package:waheed_app/services/helper_methods.dart';
 import '../home/home.dart';
 import '../home/talabat.dart';
 
-class ConfirmOrder extends StatelessWidget {
-  const ConfirmOrder({super.key});
+class ConfirmOrderPage extends StatelessWidget {
+  const ConfirmOrderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -462,7 +462,7 @@ class ConfirmOrder extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    goTo(page: Home());
+                    goTo(page: HomePage());
                   },
                   child: Container(
                     width: 180,
@@ -514,7 +514,7 @@ class ConfirmOrder extends StatelessWidget {
                 child: AppButton(
                   title: 'تتبع الطلب',
                   onPressed: () {
-                    goTo(page: Talabat());
+                    goTo(page: TalabatPage());
                   },
                 ),
               ),

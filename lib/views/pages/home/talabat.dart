@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../../../core/components/app_image.dart';
 import '../../../core/order_card.dart';
 
-class Talabat extends StatefulWidget {
-  const Talabat({super.key});
+class TalabatPage extends StatefulWidget {
+  const TalabatPage({super.key});
 
   @override
-  State<Talabat> createState() => _TalabatState();
+  State<TalabatPage> createState() => _TalabatPageState();
 }
 
-class _TalabatState extends State<Talabat> {
+class _TalabatPageState extends State<TalabatPage> {
   int selectedIndex = 0;
   final List Categories = ['الكل', 'قيد المعالجة', 'تم التسليم', 'ملغي'];
   @override

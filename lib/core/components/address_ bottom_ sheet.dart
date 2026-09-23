@@ -189,7 +189,7 @@ class AdressBottomSheet extends StatelessWidget {
           DottedBorder(
             child: GestureDetector(
               onTap: () {
-                goTo(page: AddNewAddress());
+                goTo(page: AddNewAddressPage());
               },
               child: Container(
                 width: 370,
@@ -235,7 +235,7 @@ class AdressBottomSheet extends StatelessWidget {
           AppButton(
             title: 'تأكيد العنوان',
             onPressed: () {
-              goTo(page: RevisionOrder());
+              goTo(page: RevisionOrderPage());
             },
           ),
         ],

@@ -8,14 +8,14 @@ import 'package:waheed_app/services/helper_methods.dart';
 import '../../core/components/app_container_size _selection _counter.dart';
 import 'pant_size.dart';
 
-class ShirtSize extends StatefulWidget {
-  const ShirtSize({super.key});
+class ShirtSizeView extends StatefulWidget {
+  const ShirtSizeView({super.key});
 
   @override
-  State<ShirtSize> createState() => _ShirtSizeState();
+  State<ShirtSizeView> createState() => _ShirtSizeViewState();
 }
 
-class _ShirtSizeState extends State<ShirtSize> {
+class _ShirtSizeViewState extends State<ShirtSizeView> {
   int currentStepIndex = 1;
   String selectedSize = 'M';
 
@@ -345,7 +345,7 @@ class _ShirtSizeState extends State<ShirtSize> {
                   icon: 'arrow-left_white_color.svg',
                   textDirection: TextDirection.ltr,
                   onPressed: () {
-                    goTo(page: PantsSize());
+                    goTo(page: PantsSizeView());
                   },
                 ),
               ),

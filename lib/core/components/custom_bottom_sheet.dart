@@ -173,7 +173,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                 icon: 'tick-circle.svg',
                 onPressed: () {
                   print("Pressed");
-                  goTo(page: JacketSize());
+                  goTo(page: JacketSizeView());
                 },
               ),
             ],

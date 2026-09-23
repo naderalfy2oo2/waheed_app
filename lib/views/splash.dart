@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-import 'package:waheed_app/views/view.dart';
+import 'package:waheed_app/views/pages/view.dart';
 
-class Splash extends StatefulWidget {
-  const Splash({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<Splash> createState() => _SplashState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashState extends State<Splash> {
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     // TODO: implement initState

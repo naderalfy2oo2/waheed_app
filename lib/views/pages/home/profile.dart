@@ -11,14 +11,14 @@ import '../privacy_policy.dart';
 import 'favourite.dart';
 import 'talabat.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfilePageState extends State<ProfilePage> {
   UserModel? user;
   bool loading = true;
 
@@ -221,7 +221,7 @@ class _UserProfile extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            goTo(page: Favourite());
+                            goTo(page: FavouritePage());
                           },
                           child: Container(
                             padding: EdgeInsets.all(8),
@@ -258,7 +258,7 @@ class _UserProfile extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            goTo(page: Talabat());
+                            goTo(page: TalabatPage());
                           },
                           child: Container(
                             padding: EdgeInsets.all(8),
@@ -353,7 +353,7 @@ class _UserProfile extends StatelessWidget {
                         SizedBox(width: 8),
                         TextButton(
                           onPressed: () {
-                            goTo(page: TermsConditions());
+                            goTo(page: TermsConditionsPage());
                           },
                           child: Text(
                             'الشروط والأحكام',
@@ -389,7 +389,7 @@ class _UserProfile extends StatelessWidget {
                         SizedBox(width: 8),
                         TextButton(
                           onPressed: () {
-                            goTo(page: PrivacyPolicy());
+                            goTo(page: PrivacyPolicyPage());
                           },
                           child: Text(
                             'سياسة الخصوصية',
@@ -652,7 +652,7 @@ class ProfileGuest extends StatelessWidget {
                         title: 'الشروط والأحكام',
                         iconName: 'earth.svg',
                         onTap: () {
-                          goTo(page: TermsConditions());
+                          goTo(page: TermsConditionsPage());
                         },
                       ),
                       Padding(
@@ -663,7 +663,7 @@ class ProfileGuest extends StatelessWidget {
                         title: 'سياسة الخصوصية',
                         iconName: 'earth.svg',
                         onTap: () {
-                          goTo(page: PrivacyPolicy());
+                          goTo(page: PrivacyPolicyPage());
                         },
                       ),
                     ],

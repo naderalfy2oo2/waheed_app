@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/custom_container_notices.dart';
 import '../../../core/components/app_image.dart';
 
-class Notices extends StatelessWidget {
-  const Notices({super.key});
+class NoticesPage extends StatelessWidget {
+  const NoticesPage({super.key});
 
   @override
   Widget build(BuildContext context) {

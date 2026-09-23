@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../core/components/app_image.dart';
+import '../../core/components/app_image.dart';
 
-import 'pages/home/cart.dart';
-import 'pages/home/home.dart';
-import 'pages/home/profile.dart';
-import 'pages/home/talabat.dart';
+import 'home/cart.dart';
+import 'home/home.dart';
+import 'home/profile.dart';
+import 'home/talabat.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -21,25 +21,25 @@ class _HomeViewState extends State<HomeView> {
     _Model(
       icon: 'home.svg',
       selectedIcon: 'black_home.svg',
-      page: Home(),
+      page: HomePage(),
       title: 'الرئيسية',
     ),
     _Model(
       icon: 'talabat.svg',
       selectedIcon: 'black_talabt.svg',
-      page: Talabat(),
+      page: TalabatPage(),
       title: 'طلباتي',
     ),
     _Model(
       icon: 'shopping-cart.svg',
       selectedIcon: 'black_cart.svg',
-      page: Cart(),
+      page: CartPage(),
       title: 'العربة',
     ),
     _Model(
       icon: 'profile.svg',
       selectedIcon: 'black_profile.svg',
-      page: Profile(),
+      page: ProfilePage(),
       title: 'حسابي',
     ),
   ];

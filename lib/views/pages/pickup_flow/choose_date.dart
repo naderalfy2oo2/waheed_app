@@ -6,14 +6,14 @@ import '../../../core/components/app_button.dart';
 import '../../../core/components/app_image.dart';
 import 'confirm_choose_date.dart';
 
-class ChooseDate extends StatefulWidget {
-  const ChooseDate({super.key});
+class ChooseDatePage extends StatefulWidget {
+  const ChooseDatePage({super.key});
 
   @override
-  State<ChooseDate> createState() => _ChooseDateState();
+  State<ChooseDatePage> createState() => _ChooseDatePageState();
 }
 
-class _ChooseDateState extends State<ChooseDate> {
+class _ChooseDatePageState extends State<ChooseDatePage> {
   late List dates;
   int selectedIndex = 0;
 
@@ -432,7 +432,7 @@ class _ChooseDateState extends State<ChooseDate> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ConfirmChooseDate(
+                        builder: (context) => ConfirmChooseDatePage(
                           date: selectedDate,
                           time: selectedTime,
                         ),

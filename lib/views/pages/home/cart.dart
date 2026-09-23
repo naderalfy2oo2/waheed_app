@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import '../../../core/components/app_button.dart';
 
-class Cart extends StatelessWidget {
-  const Cart({super.key});
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {

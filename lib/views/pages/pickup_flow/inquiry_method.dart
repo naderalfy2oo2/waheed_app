@@ -473,7 +473,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
         bottomNavigationBar: BottomSheetWidget(
           title: 'اختر الموعد',
           onPressed: () {
-            goTo(page: ChooseDate());
+            goTo(page: ChooseDatePage());
           },
         ),
       ),

@@ -9,14 +9,14 @@ import 'package:waheed_app/views/customized_size/review.dart';
 
 import '../../core/components/app_container_size _selection _counter.dart';
 
-class PantsSize extends StatefulWidget {
-  const PantsSize({super.key});
+class PantsSizeView extends StatefulWidget {
+  const PantsSizeView({super.key});
 
   @override
-  State<PantsSize> createState() => _PantsSizeState();
+  State<PantsSizeView> createState() => _PantsSizeViewState();
 }
 
-class _PantsSizeState extends State<PantsSize> {
+class _PantsSizeViewState extends State<PantsSizeView> {
   int currentStepIndex = 2;
   String selectedSize = '28';
 
@@ -347,7 +347,7 @@ class _PantsSizeState extends State<PantsSize> {
                   icon: 'arrow-left_white_color.svg',
                   textDirection: TextDirection.ltr,
                   onPressed: () {
-                    goTo(page: Review());
+                    goTo(page: ReviewView());
                   },
                 ),
               ),

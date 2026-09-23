@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:waheed_app/views/pages/home/favourite.dart';
-import 'package:waheed_app/views/splash.dart';
+import 'package:waheed_app/views/pages/splash.dart';
 import 'services/helper_methods.dart';
 
 void main() async {
@@ -25,7 +25,7 @@ class waheedApp extends StatelessWidget {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },
 
-      home: Splash(),
+      home: SplashView(),
     );
   }
 }

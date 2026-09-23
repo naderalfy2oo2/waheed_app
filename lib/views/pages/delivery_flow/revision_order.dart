@@ -6,14 +6,14 @@ import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/delivery_flow/order_successfully_confirmed.dart';
 import '../../../core/components/address_ bottom_ sheet.dart';
 
-class RevisionOrder extends StatefulWidget {
-  const RevisionOrder({super.key});
+class RevisionOrderPage extends StatefulWidget {
+  const RevisionOrderPage({super.key});
 
   @override
-  State<RevisionOrder> createState() => _RevisionOrderState();
+  State<RevisionOrderPage> createState() => _RevisionOrderPageState();
 }
 
-class _RevisionOrderState extends State<RevisionOrder> {
+class _RevisionOrderPageState extends State<RevisionOrderPage> {
   int selectedMethod = 0;
   @override
   Widget build(BuildContext context) {
@@ -470,7 +470,7 @@ class _RevisionOrderState extends State<RevisionOrder> {
           title: 'تأكيد الطلب',
           icon: 'circle_correct.svg',
           onPressed: () {
-            goTo(page: OrderSuccessfullyConfirmed());
+            goTo(page: OrderSuccessfullyConfirmedPage());
           },
         ),
       ),

@@ -8,15 +8,15 @@ import '../../core/components/item_listview_builder.dart';
 import '../../model/product_model_id.dart';
 import '../../services/dio_helper.dart';
 
-class DetailProduct extends StatefulWidget {
+class DetailProductPage extends StatefulWidget {
   final int id;
-  const DetailProduct({super.key, required this.id});
+  const DetailProductPage({super.key, required this.id});
 
   @override
-  State<DetailProduct> createState() => _DetailProductState();
+  State<DetailProductPage> createState() => _DetailProductPageState();
 }
 
-class _DetailProductState extends State<DetailProduct> {
+class _DetailProductPageState extends State<DetailProductPage> {
   Color selectedColor = const Color(0xff3F4651);
 
   ProductModelId? product;
