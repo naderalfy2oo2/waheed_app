@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/home/favourite.dart';
@@ -24,7 +25,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int countIndex = 0;
 
-  final List<String> image = [
+  final List image = [
     'assets/images/home.png',
     'assets/images/home.png',
     'assets/images/home.png',
@@ -100,8 +101,8 @@ class _HomePageState extends State<HomePage> {
           title: Row(
             children: [
               SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.w,
+                height: 50.h,
                 child: GestureDetector(
                   onTap: () {
                     goTo(page: NoticesPage());
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(30).r,
                       border: Border.all(
                         style: BorderStyle.solid,
                         color: Color(0xffEAEAEA),
@@ -121,17 +122,17 @@ class _HomePageState extends State<HomePage> {
 
                     child: AppImage(
                       image: 'notification_sound.svg',
-                      width: 150,
-                      height: 150,
+                      width: 150.w,
+                      height: 150.h,
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 4),
+              SizedBox(width: 4.w),
 
               SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.w,
+                height: 50.h,
                 child: GestureDetector(
                   onTap: () {
                     goTo(page: FavouritePage());
@@ -142,14 +143,18 @@ class _HomePageState extends State<HomePage> {
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(30).r,
                       border: Border.all(
                         style: BorderStyle.solid,
                         color: Color(0xffECECEC),
                       ),
                     ),
 
-                    child: AppImage(image: 'heart.svg', width: 24, height: 24),
+                    child: AppImage(
+                      image: 'heart.svg',
+                      width: 24.w,
+                      height: 24.h,
+                    ),
                   ),
                 ),
               ),
@@ -165,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                     text: 'WAHEED HASSAN\n',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
@@ -175,21 +180,21 @@ class _HomePageState extends State<HomePage> {
 
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 10,
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
                 ],
               ),
             ),
-            AppImage(image: 'splash.svg', width: 32, height: 32),
+            AppImage(image: 'splash.svg', width: 32.w, height: 32.h),
           ],
         ),
 
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 25),
+              SizedBox(height: 25.h),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Builder(
@@ -213,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              SizedBox(height: 26),
+              SizedBox(height: 26.h),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -224,12 +229,12 @@ class _HomePageState extends State<HomePage> {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: SizedBox(
-                        width: double.infinity,
-                        height: 220,
+                        width: double.infinity.w,
+                        height: 220.h,
 
                         child: AppImage(
                           image: 'home.png',
-                          width: double.infinity,
+                          width: double.infinity.w,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -237,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                   },
 
                   options: CarouselOptions(
-                    height: 220,
+                    height: 220.h,
                     viewportFraction: 1,
 
                     autoPlay: true,
@@ -252,7 +257,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               Padding(
                 padding: const EdgeInsets.only(top: 1),
@@ -262,22 +267,22 @@ class _HomePageState extends State<HomePage> {
                   count: image.length,
 
                   effect: WormEffect(
-                    dotWidth: 8,
-                    dotHeight: 8,
+                    dotWidth: 8.w,
+                    dotHeight: 8.h,
                     dotColor: Color(0xffB5B5B5),
                     activeDotColor: Color(0xff000000),
                   ),
                 ),
               ),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               CustomRowTextHome(
                 title: 'تسوق حسب التصنيف',
                 subtitle: 'عرض الكل',
               ),
 
-              SizedBox(height: 15),
+              SizedBox(height: 15.h),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -306,7 +311,7 @@ class _HomePageState extends State<HomePage> {
 
               CustomRowTextHome(title: 'أحدث المنتجات', subtitle: 'عرض المزيد'),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/app_input.dart';
@@ -80,8 +81,8 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
               Positioned.fill(
                 child: AppImage(
                   image: 'start_now.jpg',
-                  width: 402,
-                  height: 947,
+                  width: 402.w,
+                  height: 947.h,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -93,20 +94,20 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
               Align(
                 alignment: AlignmentGeometry.bottomCenter,
                 child: Container(
-                  width: double.infinity,
-                  height: 620,
+                  width: double.infinity.w,
+                  height: 620.h,
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(32),
-                      topRight: Radius.circular(32),
+                      topLeft: Radius.circular(32).r,
+                      topRight: Radius.circular(32).r,
                     ),
                   ),
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        SizedBox(height: 24),
+                        SizedBox(height: 24.h),
                         Text.rich(
                           TextSpan(
                             children: [
@@ -114,7 +115,7 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                                 text: 'إنشاء حساب\n',
                                 style: TextStyle(
                                   color: Color(0xff000000),
-                                  fontSize: 24,
+                                  fontSize: 24.sp,
 
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
@@ -125,7 +126,7 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                                 text: 'لديك حساب بالفعل؟ تسجيل الدخول',
                                 style: TextStyle(
                                   color: Color(0xff000000),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -135,7 +136,7 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                           textAlign: TextAlign.center,
                         ),
 
-                        SizedBox(height: 16),
+                        SizedBox(height: 16.h),
 
                         Align(
                           alignment: AlignmentGeometry.topRight,
@@ -143,14 +144,14 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                             'الاسم بالكامل',
                             style: TextStyle(
                               color: Color(0xff000000),
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.fullNameValidator,
@@ -158,13 +159,13 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                           labelText: 'اكتب اسمك الكامل',
                           preifixIcon: AppImage(
                             image: 'profile.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                           fillColor: Color(0xffFFFFFF),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         Align(
                           alignment: AlignmentGeometry.centerRight,
@@ -173,14 +174,14 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         Directionality(
                           textDirection: TextDirection.ltr,
@@ -193,15 +194,15 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
 
                             suffixIcon: AppImage(
                               image: 'call.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                               color: Color(0xff939393),
                             ),
                             fillColor: Color(0xffFFFFFF),
                           ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         Align(
                           alignment: AlignmentGeometry.centerRight,
@@ -210,14 +211,14 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.emailValidator,
@@ -225,13 +226,13 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                           labelText: 'Name@example.com',
                           preifixIcon: AppImage(
                             image: 'sms.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                             color: Color(0xff939393),
                           ),
                           fillColor: Color(0xffFFFFFF),
                         ),
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         Align(
                           alignment: AlignmentGeometry.centerRight,
@@ -240,13 +241,13 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.passwordValidator,
@@ -263,14 +264,14 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                               image: isPasswordVisible
                                   ? 'visibility_icon_on.svg'
                                   : 'visibility_icon_off.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                           fillColor: Color(0xffFFFFFF),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         Align(
                           alignment: AlignmentGeometry.centerRight,
@@ -279,13 +280,13 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.confirmpasswordValidator,
@@ -302,18 +303,18 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                               image: isobscureTextVisible
                                   ? 'visibility_icon_on.svg'
                                   : 'visibility_icon_off.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                           fillColor: Color(0xffFFFFFF),
                         ),
 
-                        SizedBox(height: 24),
+                        SizedBox(height: 24.h),
 
                         SizedBox(
-                          width: 370,
-                          height: 56,
+                          width: 370.w,
+                          height: 56.h,
                           child: AppButton(
                             isLoading: false,
 
@@ -339,35 +340,35 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                             title: 'إنشاء حساب',
                           ),
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 16.h),
 
                         Row(
                           children: [
                             Container(
-                              width: 137,
-                              height: 1,
+                              width: 137.w,
+                              height: 1.h,
                               decoration: BoxDecoration(
                                 color: Color(0xffEAEAEA),
                               ),
                             ),
 
-                            SizedBox(width: 12),
+                            SizedBox(width: 12.w),
 
                             Text(
                               'أو تـــــــابــع بواسطة',
                               style: TextStyle(
                                 color: Color(0xff939393),
-                                fontSize: 12,
+                                fontSize: 12.sp,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'IBMPlexSansArabic',
                               ),
                             ),
 
-                            SizedBox(width: 12),
+                            SizedBox(width: 12.w),
 
                             Container(
-                              width: 137,
-                              height: 1,
+                              width: 137.w,
+                              height: 1.h,
                               decoration: BoxDecoration(
                                 color: Color(0xffEAEAEA),
                               ),
@@ -375,17 +376,17 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                           ],
                         ),
 
-                        SizedBox(height: 16),
+                        SizedBox(height: 16.h),
 
                         Row(
                           children: [
                             Expanded(
                               child: Container(
-                                width: 179,
-                                height: 48,
+                                width: 179.w,
+                                height: 48.h,
                                 decoration: BoxDecoration(
                                   color: Color(0xffFFFFFF),
-                                  borderRadius: BorderRadius.circular(14),
+                                  borderRadius: BorderRadius.circular(14).r,
                                   border: Border.all(color: Color(0xffEAEAEA)),
                                 ),
                                 child: Row(
@@ -393,17 +394,17 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                                   children: [
                                     AppImage(
                                       image: 'apple.svg',
-                                      width: 20,
-                                      height: 20,
+                                      width: 20.w,
+                                      height: 20.h,
                                     ),
-                                    SizedBox(width: 4),
+                                    SizedBox(width: 4.w),
 
                                     Text(
                                       'Apple',
                                       style: TextStyle(
                                         color: Color(0xff000000),
 
-                                        fontSize: 13,
+                                        fontSize: 13.sp,
                                         fontWeight: FontWeight.w400,
                                         fontFamily: 'IBMPlexSansArabic',
                                       ),
@@ -413,15 +414,15 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                               ),
                             ),
 
-                            SizedBox(width: 12),
+                            SizedBox(width: 12.w),
 
                             Expanded(
                               child: Container(
-                                width: 179,
-                                height: 48,
+                                width: 179.w,
+                                height: 48.h,
                                 decoration: BoxDecoration(
                                   color: Color(0xffFFFFFF),
-                                  borderRadius: BorderRadius.circular(14),
+                                  borderRadius: BorderRadius.circular(14).r,
                                   border: Border.all(color: Color(0xffEAEAEA)),
                                 ),
                                 child: Row(
@@ -429,17 +430,17 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                                   children: [
                                     AppImage(
                                       image: 'google.svg',
-                                      width: 20,
-                                      height: 20,
+                                      width: 20.w,
+                                      height: 20.h,
                                     ),
-                                    SizedBox(width: 4),
+                                    SizedBox(width: 4.w),
 
                                     Text(
                                       'Google',
                                       style: TextStyle(
                                         color: Color(0xff000000),
 
-                                        fontSize: 13,
+                                        fontSize: 13.sp,
                                         fontWeight: FontWeight.w400,
                                         fontFamily: 'IBMPlexSansArabic',
                                       ),
@@ -451,7 +452,7 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                           ],
                         ),
 
-                        SizedBox(height: 6),
+                        SizedBox(height: 6.h),
                       ],
                     ),
                   ),

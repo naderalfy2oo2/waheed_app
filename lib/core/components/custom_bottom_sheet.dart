@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
@@ -18,34 +19,34 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
     return SafeArea(
       top: false,
       child: Container(
-        width: double.infinity,
+        width: double.infinity.w,
 
         padding: EdgeInsets.all(16),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24).r),
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Row(
                 children: [
                   Container(
-                    width: 106,
-                    height: 42,
+                    width: 106.w,
+                    height: 42.h,
                     decoration: BoxDecoration(
                       color: Color(0xffF8FAFC),
 
-                      borderRadius: BorderRadius.circular(99),
+                      borderRadius: BorderRadius.circular(99).r,
                       border: Border.all(color: Color(0xffEAEAEA)),
                     ),
 
                     child: Directionality(
                       textDirection: TextDirection.ltr,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -56,16 +57,16 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                 });
                               },
                               child: Container(
-                                width: 32,
-                                height: 32,
-                                decoration: const BoxDecoration(
+                                width: 32.w,
+                                height: 32.h,
+                                decoration: BoxDecoration(
                                   color: Colors.black,
                                   shape: BoxShape.circle,
                                 ),
                                 child: AppImage(
                                   image: 'add.svg',
-                                  width: 24,
-                                  height: 24,
+                                  width: 24.w,
+                                  height: 24.h,
                                 ),
                               ),
                             ),
@@ -73,7 +74,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                             Text(
                               "$counter",
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -87,19 +88,17 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                 });
                               },
                               child: Container(
-                                width: 32,
-                                height: 32,
+                                width: 32.w,
+                                height: 32.h,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xffFFFFFF),
+                                  color: Color(0xffFFFFFF),
                                   shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: const Color(0xffECECEC),
-                                  ),
+                                  border: Border.all(color: Color(0xffECECEC)),
                                 ),
                                 child: AppImage(
                                   image: 'minus.svg',
-                                  width: 24,
-                                  height: 24,
+                                  width: 24.w,
+                                  height: 24.h,
                                 ),
                               ),
                             ),
@@ -113,7 +112,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
                   Column(
                     children: [
-                      SizedBox(height: 16),
+                      SizedBox(height: 16.h),
 
                       Text(
                         'إجمالي السعر',
@@ -122,11 +121,11 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
                           fontFamily: 'IBMPlexSansArabic',
                           fontWeight: FontWeight.w400,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
 
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
 
                       Row(
                         children: [
@@ -138,13 +137,13 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w400,
-                              fontSize: 14,
+                              fontSize: 14.sp,
 
                               decoration: TextDecoration.lineThrough,
                             ),
                           ),
 
-                          SizedBox(width: 9),
+                          SizedBox(width: 9.w),
 
                           Text(
                             '1,800 ج',
@@ -154,7 +153,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w700,
-                              fontSize: 25,
+                              fontSize: 25.sp,
                             ),
                           ),
                         ],
@@ -164,7 +163,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                 ],
               ),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Divider(thickness: 1, color: Color(0xffEAEAEA)),
 

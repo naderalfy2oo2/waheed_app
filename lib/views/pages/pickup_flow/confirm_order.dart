@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
@@ -23,9 +24,9 @@ class ConfirmOrderPage extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: const BoxDecoration(
+                    width: double.infinity.w,
+                    height: double.infinity.h,
+                    decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -38,11 +39,11 @@ class ConfirmOrderPage extends StatelessWidget {
                     top: -40,
                     right: -25,
                     child: Container(
-                      width: 140,
-                      height: 140,
+                      width: 140.w,
+                      height: 140.h,
                       decoration: BoxDecoration(
                         color: const Color(0xff343632),
-                        borderRadius: BorderRadius.circular(100),
+                        borderRadius: BorderRadius.circular(100).r,
                       ),
                     ),
                   ),
@@ -52,66 +53,66 @@ class ConfirmOrderPage extends StatelessWidget {
                     left: -40,
 
                     child: Container(
-                      width: 145,
-                      height: 145,
+                      width: 145.w,
+                      height: 145.h,
                       decoration: BoxDecoration(
-                        color: const Color(0xff29323A),
-                        borderRadius: BorderRadius.circular(100),
+                        color: Color(0xff29323A),
+                        borderRadius: BorderRadius.circular(100).r,
                       ),
                     ),
                   ),
 
                   Column(
                     children: [
-                      const SizedBox(height: 17),
+                      SizedBox(height: 17.h),
 
                       Center(
                         child: Container(
-                          width: 80,
-                          height: 80,
+                          width: 80.w,
+                          height: 80.h,
                           decoration: BoxDecoration(
                             color: Color(0xffC9A961),
-                            borderRadius: BorderRadius.circular(26843500),
+                            borderRadius: BorderRadius.circular(26843500).r,
 
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 color: Color(0xff000000),
                                 offset: Offset(0, 25),
-                                blurRadius: 50,
-                                spreadRadius: -12,
+                                blurRadius: 50.r,
+                                spreadRadius: -12.r,
                               ),
                             ],
                           ),
                           child: AppImage(
                             image: 'true.svg',
-                            width: 40,
-                            height: 40,
+                            width: 40.w,
+                            height: 40.h,
                             color: Color(0xffFFFFFF),
                           ),
                         ),
                       ),
 
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       Text(
                         'تم تأكيد الحجز',
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
                           color: Color(0xffFFFFFF),
-                          fontSize: 22,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.w700,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
                       ),
 
-                      SizedBox(height: 4),
+                      SizedBox(height: 4.h),
 
                       Text(
                         'استلم بدلتك من الفرع في الموعد المحدد',
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
                           color: Color(0xffFFFFFF).withOpacity(0.8),
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
@@ -128,29 +129,29 @@ class ConfirmOrderPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
 
               Center(
                 child: Container(
                   padding: EdgeInsets.all(24),
-                  width: 370,
-                  height: 431,
+                  width: 370.w,
+                  height: 431.h,
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(24).r,
 
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         color: Color(0xff000000),
                         offset: Offset(0, 8),
-                        blurRadius: 10,
-                        spreadRadius: -6,
+                        blurRadius: 10.r,
+                        spreadRadius: -6.r,
                       ),
                     ],
                   ),
                   child: Column(
                     children: [
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
 
                       Row(
                         children: [
@@ -160,7 +161,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 TextSpan(
                                   text: 'رقم الطلب\n',
                                   style: TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 11.sp,
                                     fontWeight: FontWeight.w400,
                                     fontFamily: 'IBMPlexSansArabic',
 
@@ -172,7 +173,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                   text: 'EQ-862334',
                                   style: TextStyle(
                                     color: Color(0xff000000),
-                                    fontSize: 16,
+                                    fontSize: 16.sp,
 
                                     fontWeight: FontWeight.w700,
                                     fontFamily: 'IBMPlexSansArabic',
@@ -191,7 +192,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xff000000),
 
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
 
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'IBMPlexSansArabic',
@@ -202,8 +203,8 @@ class ConfirmOrderPage extends StatelessWidget {
                                 onPressed: () {},
                                 icon: AppImage(
                                   image: 'copy.svg',
-                                  width: 14,
-                                  height: 14,
+                                  width: 14.w,
+                                  height: 14.h,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -212,9 +213,9 @@ class ConfirmOrderPage extends StatelessWidget {
                         ],
                       ),
 
-                      AppImage(image: 'scan.svg', width: 295, height: 280),
+                      AppImage(image: 'scan.svg', width: 295.w, height: 280.h),
 
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -223,17 +224,17 @@ class ConfirmOrderPage extends StatelessWidget {
                             'اعرض هذا الرمز في الفرع للاستلام',
                             style: TextStyle(
                               color: Color(0xff314158),
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
 
-                          SizedBox(width: 6),
+                          SizedBox(width: 6.w),
                           AppImage(
                             image: 'scan_color.svg',
-                            width: 14,
-                            height: 14,
+                            width: 14.w,
+                            height: 14.h,
                           ),
                         ],
                       ),
@@ -242,35 +243,35 @@ class ConfirmOrderPage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Container(
                 padding: EdgeInsets.all(16),
-                width: 370,
-                height: 245,
+                width: 370.w,
+                height: 245.h,
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
 
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       color: Color(0xff000000),
                       offset: Offset(0, 1),
-                      blurRadius: 2,
-                      spreadRadius: -1,
+                      blurRadius: 2.r,
+                      spreadRadius: -1.r,
                     ),
 
                     BoxShadow(
                       color: Color(0xff000000),
                       offset: Offset(0, 1),
-                      blurRadius: 3,
-                      spreadRadius: 0,
+                      blurRadius: 3.r,
+                      spreadRadius: 0.r,
                     ),
                   ],
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
                     Row(
                       children: [
@@ -280,7 +281,7 @@ class ConfirmOrderPage extends StatelessWidget {
                               TextSpan(
                                 text: 'فرع الاستلام\n',
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -290,7 +291,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 text: 'الفرع الرئيسي – ميت غمر\n',
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -301,7 +302,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                     'ميت غمر، شارع المعاهده بجوار كلية التربية النوعية',
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 10,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -313,24 +314,24 @@ class ConfirmOrderPage extends StatelessWidget {
                         Spacer(),
 
                         Container(
-                          width: 40,
-                          height: 40,
+                          width: 40.w,
+                          height: 40.h,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
+                            borderRadius: BorderRadius.circular(14).r,
 
                             color: Color(0xff1E3A8A).withOpacity(0.063),
                           ),
                           child: AppImage(
                             image: 'shop.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                             color: Color(0xff314158),
                           ),
                         ),
                       ],
                     ),
 
-                    SizedBox(height: 13),
+                    SizedBox(height: 13.h),
 
                     Row(
                       children: [
@@ -340,7 +341,7 @@ class ConfirmOrderPage extends StatelessWidget {
                               TextSpan(
                                 text: 'موعد الاستلام\n',
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -350,7 +351,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 text: 'الأربعاء، ٢٠ مايو\n',
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -360,7 +361,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 text: '١١:٠٠ ص',
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 10,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -372,24 +373,24 @@ class ConfirmOrderPage extends StatelessWidget {
                         Spacer(),
 
                         Container(
-                          width: 40,
-                          height: 40,
+                          width: 40.w,
+                          height: 40.h,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
+                            borderRadius: BorderRadius.circular(14).r,
 
                             color: Color(0xff1E3A8A).withOpacity(0.063),
                           ),
                           child: AppImage(
                             image: 'clender_icon.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                             color: Color(0xff314158),
                           ),
                         ),
                       ],
                     ),
 
-                    SizedBox(height: 13),
+                    SizedBox(height: 13.h),
 
                     Row(
                       children: [
@@ -399,7 +400,7 @@ class ConfirmOrderPage extends StatelessWidget {
                               TextSpan(
                                 text: 'حالة التفصيل\n',
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -409,7 +410,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 text: 'قيد التحضير\n',
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -419,7 +420,7 @@ class ConfirmOrderPage extends StatelessWidget {
                                 text: 'جاهز خلال ٣ أيام',
                                 style: TextStyle(
                                   color: Color(0xffC9A961),
-                                  fontSize: 10,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -431,17 +432,17 @@ class ConfirmOrderPage extends StatelessWidget {
                         Spacer(),
 
                         Container(
-                          width: 40,
-                          height: 40,
+                          width: 40.w,
+                          height: 40.h,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
+                            borderRadius: BorderRadius.circular(14).r,
 
                             color: Color(0xffC9A961).withOpacity(0.0125),
                           ),
                           child: AppImage(
                             image: 'scissor.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                         ),
                       ],
@@ -450,7 +451,7 @@ class ConfirmOrderPage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 79),
+              SizedBox(height: 79.h),
             ],
           ),
         ),
@@ -465,19 +466,19 @@ class ConfirmOrderPage extends StatelessWidget {
                     goTo(page: HomePage());
                   },
                   child: Container(
-                    width: 180,
-                    height: 56,
+                    width: 180.w,
+                    height: 56.h,
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16).r,
                       border: Border.all(color: Color(0xff000000)),
 
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           color: Color(0xff000000),
                           offset: Offset(0, 2),
-                          blurRadius: 8,
-                          spreadRadius: 0,
+                          blurRadius: 8.r,
+                          spreadRadius: 0.r,
                         ),
                       ],
                     ),
@@ -486,17 +487,17 @@ class ConfirmOrderPage extends StatelessWidget {
                       children: [
                         AppImage(
                           image: 'home.svg',
-                          width: 20,
-                          height: 20,
+                          width: 20.w,
+                          height: 20.h,
                           color: Color(0xff000000),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: 10.w),
 
                         Text(
                           'الرئيسية',
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontSize: 16,
+                            fontSize: 16.sp,
 
                             fontWeight: FontWeight.w600,
                             fontFamily: 'IBMPlexSansArabic',
@@ -508,7 +509,7 @@ class ConfirmOrderPage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(width: 10),
+              SizedBox(width: 10.w),
 
               Expanded(
                 child: AppButton(

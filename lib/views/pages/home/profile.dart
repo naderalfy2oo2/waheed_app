@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
@@ -60,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
             'حسابي',
             style: TextStyle(
               color: Color(0xff000000),
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               fontFamily: 'IBMPlexSansArabic',
             ),
@@ -92,62 +93,62 @@ class _UserProfile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 24.5),
+              SizedBox(height: 24.5.h),
               Center(
                 child: AppImage(
                   image: user.profilePictureUrl.isEmpty
                       ? user.profilePictureUrl
                       : 'profile_icon.svg',
-                  width: 80,
-                  height: 80,
+                  width: 80.w,
+                  height: 80.h,
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Center(
                 child: Text(
                   user.fullName,
                   style: TextStyle(
                     color: Color(0xff000000),
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                     fontFamily: 'IBMPlexSansArabic',
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               Container(
                 padding: EdgeInsets.all(16),
-                width: 370,
+                width: 370.w,
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Row(
                       children: [
                         Container(
                           padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
+                          width: 36.w,
+                          height: 36.h,
                           decoration: BoxDecoration(
                             color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
+                            borderRadius: BorderRadius.circular(999).r,
                           ),
                           child: AppImage(
                             image: 'person.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                             color: Color(0xff1B1B1B),
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         Text(
                           'تعديل الملف الشخصي',
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
@@ -155,8 +156,8 @@ class _UserProfile extends StatelessWidget {
                         Spacer(),
                         AppImage(
                           image: 'arrow_left_blue_color.svg',
-                          width: 25,
-                          height: 25,
+                          width: 25.w,
+                          height: 25.h,
                           color: Color(0xff4F4F4F),
                         ),
                       ],
@@ -164,30 +165,30 @@ class _UserProfile extends StatelessWidget {
                     Center(
                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Row(
                       children: [
                         Container(
                           padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
+                          width: 36.w,
+                          height: 36.h,
                           decoration: BoxDecoration(
                             color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
+                            borderRadius: BorderRadius.circular(999).r,
                           ),
                           child: AppImage(
                             image: 'earth.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                             color: Color(0xff1B1B1B),
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         Text(
                           'اللغة',
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
@@ -199,7 +200,7 @@ class _UserProfile extends StatelessWidget {
                             'الإنجليزية',
                             style: TextStyle(
                               color: Color(0xff595959),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
@@ -207,8 +208,8 @@ class _UserProfile extends StatelessWidget {
                         ),
                         AppImage(
                           image: 'arrow_left_blue_color.svg',
-                          width: 25,
-                          height: 25,
+                          width: 25.w,
+                          height: 25.h,
                           color: Color(0xff4F4F4F),
                         ),
                       ],
@@ -216,7 +217,7 @@ class _UserProfile extends StatelessWidget {
                     Center(
                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Row(
                       children: [
                         GestureDetector(
@@ -225,25 +226,25 @@ class _UserProfile extends StatelessWidget {
                           },
                           child: Container(
                             padding: EdgeInsets.all(8),
-                            width: 36,
-                            height: 36,
+                            width: 36.w,
+                            height: 36.h,
                             decoration: BoxDecoration(
                               color: Color(0xffEAEAEA),
-                              borderRadius: BorderRadius.circular(999),
+                              borderRadius: BorderRadius.circular(999).r,
                             ),
                             child: AppImage(
                               image: 'heart_icon.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         Text(
                           'المفضلة',
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
@@ -253,7 +254,7 @@ class _UserProfile extends StatelessWidget {
                     Center(
                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Row(
                       children: [
                         GestureDetector(
@@ -262,25 +263,25 @@ class _UserProfile extends StatelessWidget {
                           },
                           child: Container(
                             padding: EdgeInsets.all(8),
-                            width: 36,
-                            height: 36,
+                            width: 36.w,
+                            height: 36.h,
                             decoration: BoxDecoration(
                               color: Color(0xffEAEAEA),
-                              borderRadius: BorderRadius.circular(999),
+                              borderRadius: BorderRadius.circular(999).r,
                             ),
                             child: AppImage(
                               image: 'box.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         Text(
                           'طلباتي',
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
@@ -290,29 +291,29 @@ class _UserProfile extends StatelessWidget {
                     Center(
                       child: Divider(thickness: 1, color: Color(0xffEEEEEE)),
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Row(
                       children: [
                         Container(
                           padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
+                          width: 36.w,
+                          height: 36.h,
                           decoration: BoxDecoration(
                             color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
+                            borderRadius: BorderRadius.circular(999).r,
                           ),
                           child: AppImage(
                             image: 'headphone.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         Text(
                           'مركز المساعدة',
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
@@ -322,35 +323,35 @@ class _UserProfile extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               Container(
                 padding: EdgeInsets.all(16),
-                width: 370,
-                constraints: BoxConstraints(minHeight: 128),
+                width: 370.w,
+                constraints: BoxConstraints(minHeight: 128.h),
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
                     Row(
                       children: [
                         Container(
                           padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
+                          width: 36.w,
+                          height: 36.h,
                           decoration: BoxDecoration(
                             color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
+                            borderRadius: BorderRadius.circular(999).r,
                           ),
                           child: AppImage(
                             image: 'earth.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         TextButton(
                           onPressed: () {
                             goTo(page: TermsConditionsPage());
@@ -359,7 +360,7 @@ class _UserProfile extends StatelessWidget {
                             'الشروط والأحكام',
                             style: TextStyle(
                               color: Color(0xff000000),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
@@ -374,19 +375,19 @@ class _UserProfile extends StatelessWidget {
                       children: [
                         Container(
                           padding: EdgeInsets.all(8),
-                          width: 36,
-                          height: 36,
+                          width: 36.w,
+                          height: 36.h,
                           decoration: BoxDecoration(
                             color: Color(0xffEAEAEA),
-                            borderRadius: BorderRadius.circular(999),
+                            borderRadius: BorderRadius.circular(999).r,
                           ),
                           child: AppImage(
                             image: 'earth.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 8.w),
                         TextButton(
                           onPressed: () {
                             goTo(page: PrivacyPolicyPage());
@@ -395,7 +396,7 @@ class _UserProfile extends StatelessWidget {
                             'سياسة الخصوصية',
                             style: TextStyle(
                               color: Color(0xff000000),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
@@ -406,47 +407,47 @@ class _UserProfile extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               Container(
                 padding: EdgeInsets.all(16),
-                width: 370,
-                height: 68,
+                width: 370.w,
+                height: 68.h,
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
                 ),
                 child: Row(
                   children: [
                     Container(
                       padding: EdgeInsets.all(8),
-                      width: 36,
-                      height: 36,
+                      width: 36.w,
+                      height: 36.h,
                       decoration: BoxDecoration(
                         color: Color(0xffFF4B4B).withOpacity(0.20),
-                        borderRadius: BorderRadius.circular(999),
+                        borderRadius: BorderRadius.circular(999).r,
                       ),
                       child: AppImage(
                         image: 'delete.svg',
-                        width: 20,
-                        height: 20,
+                        width: 20.w,
+                        height: 20.h,
                         color: Color(0xffFF4B4B),
                       ),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
                     TextButton(
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
                           backgroundColor: Colors.transparent,
                           isScrollControlled: true,
-                          builder: (_) => const DeleteAccountBottomSheet(),
+                          builder: (_) => DeleteAccountBottomSheet(),
                         );
                       },
                       child: Text(
                         'حذف الحساب',
                         style: TextStyle(
                           color: Color(0xffFF4B4B),
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
@@ -455,14 +456,14 @@ class _UserProfile extends StatelessWidget {
                     Spacer(),
                     AppImage(
                       image: 'arrow_left_blue_color.svg',
-                      width: 25,
-                      height: 25,
+                      width: 25.w,
+                      height: 25.h,
                       color: Color(0xffFF4B4B),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 32),
+              SizedBox(height: 32.h),
               AppButton(
                 title: 'تسجيل الخروج',
                 onPressed: () {},
@@ -471,7 +472,7 @@ class _UserProfile extends StatelessWidget {
                 iconOnRight: true,
                 textColor: Color(0xFFFF4B4B),
               ),
-              SizedBox(height: 86),
+              SizedBox(height: 86.h),
             ],
           ),
         ),
@@ -487,19 +488,19 @@ class ProfileGuest extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xffEAEAEA),
+        backgroundColor: Color(0xffEAEAEA),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
               Center(
                 child: Container(
-                  width: 370,
+                  width: 370.w,
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    color: const Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16),
+                    color: Color(0xffFFFFFF),
+                    borderRadius: BorderRadius.circular(16).r,
                   ),
                   child: Column(
                     children: [
@@ -512,7 +513,7 @@ class ProfileGuest extends StatelessWidget {
                                 text: 'أهلاً بيك في ',
                                 style: TextStyle(
                                   color: Color(0xff000000),
-                                  fontSize: 16,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -523,7 +524,7 @@ class ProfileGuest extends StatelessWidget {
 
                                 style: TextStyle(
                                   color: Color(0xff000000),
-                                  fontSize: 18,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -532,7 +533,7 @@ class ProfileGuest extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 2),
+                      SizedBox(height: 2.h),
                       Align(
                         alignment: AlignmentGeometry.topRight,
                         child: Text(
@@ -540,13 +541,13 @@ class ProfileGuest extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Color(0xff595959),
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       InkWell(
                         onTap: () {
                           goTo(page: Register());
@@ -555,7 +556,7 @@ class ProfileGuest extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 14),
                           decoration: BoxDecoration(
                             color: Color(0xff000000),
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12).r,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -569,16 +570,16 @@ class ProfileGuest extends StatelessWidget {
                                 child: AppImage(
                                   image: 'profile_circle.svg',
                                   color: Color(0xff314158),
-                                  width: 16,
-                                  height: 16,
+                                  width: 16.w,
+                                  height: 16.h,
                                 ),
                               ),
-                              SizedBox(width: 8),
+                              SizedBox(width: 8.w),
                               Text(
                                 'تسجيل الدخول / إنشاء حساب',
                                 style: TextStyle(
                                   color: Color(0xffFFFFFF),
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -591,7 +592,7 @@ class ProfileGuest extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 child: Align(
@@ -600,21 +601,21 @@ class ProfileGuest extends StatelessWidget {
                     'الإعدادات',
                     style: TextStyle(
                       color: Color(0xff000000),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Center(
                 child: Container(
                   padding: EdgeInsets.all(16),
-                  width: 370,
+                  width: 370.w,
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16).r,
                   ),
                   child: Column(
                     children: [
@@ -637,14 +638,14 @@ class ProfileGuest extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               Center(
                 child: Container(
                   padding: EdgeInsets.all(16),
-                  width: 370,
+                  width: 370.w,
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16).r,
                   ),
                   child: Column(
                     children: [
@@ -670,7 +671,7 @@ class ProfileGuest extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 40.h),
             ],
           ),
         ),
@@ -688,25 +689,25 @@ class ProfileGuest extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(8),
-          width: 36,
-          height: 36,
+          width: 36.w,
+          height: 36.h,
           decoration: BoxDecoration(
             color: Color(0xffEAEAEA),
-            borderRadius: BorderRadius.circular(999),
+            borderRadius: BorderRadius.circular(999).r,
           ),
           child: AppImage(
             image: iconName,
-            width: 20,
-            height: 20,
-            color: const Color(0xff4F4F4F),
+            width: 20.w,
+            height: 20.h,
+            color: Color(0xff4F4F4F),
           ),
         ),
-        const SizedBox(width: 8),
+        SizedBox(width: 8.w),
         Text(
           title,
           style: TextStyle(
             color: Color(0xff000000),
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w400,
             fontFamily: 'IBMPlexSansArabic',
           ),
@@ -717,9 +718,9 @@ class ProfileGuest extends StatelessWidget {
             padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               subtitle,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Color(0xff595959),
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'IBMPlexSansArabic',
               ),
@@ -727,10 +728,10 @@ class ProfileGuest extends StatelessWidget {
           ),
         GestureDetector(
           onTap: onTap,
-          child: const AppImage(
+          child: AppImage(
             image: 'arrow_left_blue_color.svg',
-            width: 16,
-            height: 16,
+            width: 16.w,
+            height: 16.h,
             color: Color(0xff4F4F4F),
           ),
         ),

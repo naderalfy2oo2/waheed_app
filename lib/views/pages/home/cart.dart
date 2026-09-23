@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import '../../../core/components/app_button.dart';
 
@@ -17,7 +18,7 @@ class CartPage extends StatelessWidget {
             style: TextStyle(
               color: Color(0xff000000),
 
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               fontFamily: 'IBMPlexSansArabic',
             ),
@@ -27,30 +28,30 @@ class CartPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 90),
+              SizedBox(height: 90.h),
 
               Center(
                 child: AppImage(
                   image: 'cart_shopping.png',
-                  width: 240,
-                  height: 240,
+                  width: 240.w,
+                  height: 240.h,
                 ),
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               Text(
                 'عربة التسوق فارعة...',
                 style: TextStyle(
                   color: Color(0xff000000),
 
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
               ),
 
-              SizedBox(height: 32),
+              SizedBox(height: 32.h),
 
               Directionality(
                 textDirection: TextDirection.ltr,

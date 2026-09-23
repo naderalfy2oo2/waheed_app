@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/custom_container_notices.dart';
 import '../../../core/components/app_image.dart';
 
@@ -19,21 +20,25 @@ class NoticesPage extends StatelessWidget {
                 Navigator.pop(context);
               },
               child: Container(
-                width: 48,
-                height: 48,
+                width: 48.w,
+                height: 48.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(99),
-                  border: Border.all(color: const Color(0xffE5E7EB)),
-                  boxShadow: const [
+                  borderRadius: BorderRadius.circular(99).r,
+                  border: Border.all(color: Color(0xffE5E7EB)),
+                  boxShadow: [
                     BoxShadow(
                       color: Color(0x14000000),
-                      blurRadius: 16,
+                      blurRadius: 16.r,
                       offset: Offset(0, 4),
                     ),
                   ],
                 ),
-                child: AppImage(image: 'arrow-left.svg', width: 24, height: 24),
+                child: AppImage(
+                  image: 'arrow-left.svg',
+                  width: 24.w,
+                  height: 24.h,
+                ),
               ),
             ),
           ),
@@ -41,7 +46,7 @@ class NoticesPage extends StatelessWidget {
             'الإشعارات',
             style: TextStyle(
               color: Color(0xff000000),
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'IBMPlexSansArabic',
             ),
@@ -56,7 +61,7 @@ class NoticesPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
 
             children: [
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
 
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 16),
@@ -64,14 +69,14 @@ class NoticesPage extends StatelessWidget {
                   'الــيوم',
                   style: TextStyle(
                     color: Color(0xffBFBFBF),
-                    fontSize: 11,
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'IBMPlexSansArabic',
                   ),
                 ),
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
               CustomContainerNotices(
                 title1: 'موعد إعادة البدلة',
                 title2: 'يرجى إعادة البدلة خلال يومين لتجنب أي رسوم إضافية.',
@@ -79,7 +84,7 @@ class NoticesPage extends StatelessWidget {
                 showIconContainer: false,
               ),
 
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               CustomContainerNotices(
                 title1: 'اقترب موعد استلام البدلة',
@@ -90,7 +95,7 @@ class NoticesPage extends StatelessWidget {
                 icon: 'clender_icon.svg',
               ),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 16),
@@ -98,14 +103,14 @@ class NoticesPage extends StatelessWidget {
                   'سابقاً',
                   style: TextStyle(
                     color: Color(0xffBFBFBF),
-                    fontSize: 11,
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'IBMPlexSansArabic',
                   ),
                 ),
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               CustomContainerNotices(
                 title1: 'تم تأكيد طلبك',
@@ -116,7 +121,7 @@ class NoticesPage extends StatelessWidget {
                 icon: 'talabat_icon.svg',
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               CustomContainerNotices(
                 title1: 'اقترب موعد استلام البدلة',

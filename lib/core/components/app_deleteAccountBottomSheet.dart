@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'app_Identity_verification.dart';
 
@@ -15,75 +16,75 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24).r),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 50,
-            height: 5,
+            width: 50.w,
+            height: 5.h,
             decoration: BoxDecoration(
               color: Colors.grey.shade300,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20).r,
             ),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
           CircleAvatar(
-            radius: 35,
+            radius: 35.r,
             backgroundColor: Color(0xffFFECEC),
             child: AppImage(
               image: 'delete_container.svg',
-              width: 33,
-              height: 29,
+              width: 33.w,
+              height: 29.h,
             ),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
           Text(
             "تأكيد حذف الحساب",
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w600,
               fontFamily: 'IBMPlexSansArabic',
               color: Color(0xff000000),
             ),
           ),
 
-          SizedBox(height: 4),
+          SizedBox(height: 4.h),
 
           Text(
             "سيتم حذف حسابك وجميع بياناتك بشكل نهائي ولا\n يمكن استعادتها.",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xff444748),
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w400,
               fontFamily: 'IBMPlexSansArabic',
             ),
           ),
 
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           Container(
             padding: EdgeInsets.all(16),
-            width: 370,
-            height: 50,
+            width: 370.w,
+            height: 50.h,
 
             decoration: BoxDecoration(
               color: Color(0xffF3F3F4),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12).r,
             ),
 
             child: Row(
               children: [
-                SizedBox(height: 18),
+                SizedBox(height: 18.h),
 
                 Checkbox(
                   checkColor: Color(0xffFFFFFF),
@@ -97,12 +98,12 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
                   },
                 ),
 
-                SizedBox(width: 2),
+                SizedBox(width: 2.w),
 
                 Text(
                   "لقد فهمت أن هذا الإجراء نهائي.",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'IBMPlexSansArabic',
                     color: Color(0xff000000),
@@ -112,19 +113,19 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
             ),
           ),
 
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: isChecked
-                    ? const Color(0xffFF4B4B)
-                    : const Color(0xffFF4B4B).withValues(alpha: .30),
+                    ? Color(0xffFF4B4B)
+                    : Color(0xffFF4B4B).withValues(alpha: .30),
 
                 minimumSize: Size.fromHeight(55),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
                 ),
               ),
               onPressed: isChecked
@@ -141,7 +142,7 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
                 "حذف الحساب",
                 style: TextStyle(
                   color: Color(0xffFFFFFF),
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
@@ -149,7 +150,7 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
             ),
           ),
 
-          SizedBox(height: 8),
+          SizedBox(height: 8.h),
 
           SizedBox(
             width: double.infinity,
@@ -159,7 +160,7 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
                 backgroundColor: Color(0xffFFFFFF),
                 minimumSize: Size.fromHeight(55),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
 
                   side: BorderSide(
                     color: Color(0xff000000),
@@ -174,7 +175,7 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
                 "إلغاء",
                 style: TextStyle(
                   color: Color(0xff000000),
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
@@ -182,7 +183,7 @@ class _DeleteAccountBottomSheetState extends State<DeleteAccountBottomSheet> {
             ),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
         ],
       ),
     );

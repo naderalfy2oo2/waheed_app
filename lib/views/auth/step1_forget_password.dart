@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_input.dart';
 import 'package:waheed_app/services/input_validator.dart';
 import '../../core/components/app_image.dart';
@@ -56,27 +57,26 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Color(0xffFFFFFF),
-
           appBar: AppBar(
             backgroundColor: Color(0xffFFFFFF),
             leading: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Container(
                 padding: EdgeInsets.all(12),
 
-                width: 48,
-                height: 48,
+                width: 48.w,
+                height: 48.h,
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.circular(99),
+                  borderRadius: BorderRadius.circular(99).r,
                   border: Border.all(color: Color(0xffECECEC)),
                 ),
 
                 child: Center(
                   child: AppImage(
                     image: 'arrow-left.svg',
-                    width: 24,
-                    height: 24,
+                    width: 24.w,
+                    height: 24.h,
                   ),
                 ),
               ),
@@ -86,7 +86,7 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
               style: TextStyle(
                 color: Color(0xff000000),
 
-                fontSize: 18,
+                fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'IBMPlexSansArabic',
               ),
@@ -100,7 +100,7 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 32),
+                  SizedBox(height: 32.h),
 
                   Center(
                     child: Text(
@@ -108,39 +108,39 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                       style: TextStyle(
                         color: Color(0xff314158),
 
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
                     ),
                   ),
 
-                  SizedBox(height: 12),
+                  SizedBox(height: 12.h),
                   ChangeIndicator(currentIndex: 1),
 
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
 
                   Container(
                     padding: EdgeInsets.all(24),
-                    width: double.infinity,
+                    width: double.infinity.w,
 
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(24).r,
                       border: Border.all(color: Color(0xffEAEAEA)),
 
                       boxShadow: [
                         BoxShadow(
                           color: Color(0xff0000000).withOpacity(0.06),
                           offset: Offset(0, 2),
-                          blurRadius: 2,
-                          spreadRadius: 0,
+                          blurRadius: 2.r,
+                          spreadRadius: 0.r,
                         ),
                       ],
                     ),
                     child: Column(
                       children: [
-                        SizedBox(height: 24),
+                        SizedBox(height: 24.h),
                         Align(
                           alignment: AlignmentGeometry.topRight,
                           child: Text(
@@ -148,14 +148,14 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 24,
+                              fontSize: 24.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         Align(
                           alignment: AlignmentGeometry.topRight,
@@ -164,14 +164,14 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 24),
+                        SizedBox(height: 24.h),
 
                         Align(
                           alignment: AlignmentGeometry.topRight,
@@ -180,14 +180,14 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.emailValidator,
@@ -195,17 +195,17 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                           labelText: 'Name@example.com',
                           preifixIcon: AppImage(
                             image: 'sms.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                           fillColor: Color(0xffFFFFFF),
                         ),
 
-                        SizedBox(height: 40),
+                        SizedBox(height: 40.h),
 
                         SizedBox(
-                          width: 370,
-                          height: 56,
+                          width: 370.w,
+                          height: 56.h,
                           child: GestureDetector(
                             onTap: () async {
                               isLoginClicked = true;
@@ -227,34 +227,34 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                             },
                             child: Container(
                               padding: EdgeInsets.all(16),
-                              width: 370,
-                              height: 56,
+                              width: 370.w,
+                              height: 56.h,
                               decoration: BoxDecoration(
                                 color: Color(0xff000000).withOpacity(0.40),
 
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     color: Color(0x1A000000),
                                     offset: Offset(0, 4),
-                                    blurRadius: 6,
-                                    spreadRadius: -4,
+                                    blurRadius: 6.r,
+                                    spreadRadius: -4.r,
                                   ),
 
                                   BoxShadow(
                                     color: Color(0x1A000000),
                                     offset: Offset(0, 10),
-                                    blurRadius: 15,
-                                    spreadRadius: -3,
+                                    blurRadius: 15.r,
+                                    spreadRadius: -3.r,
                                   ),
                                 ],
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16).r,
                               ),
                               child: Center(
                                 child: Text(
                                   'إرسال رابط',
                                   style: TextStyle(
                                     color: Color(0xffFFFFFF),
-                                    fontSize: 16,
+                                    fontSize: 16.sp,
                                     fontWeight: FontWeight.w600,
                                     fontFamily: 'IBMPlexSansArabic',
                                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 class CustomContainerClothes extends StatelessWidget {
@@ -34,11 +35,11 @@ class CustomContainerClothes extends StatelessWidget {
     Color circleColor;
 
     if (isCurrentIndex) {
-      circleColor = const Color(0xff314158);
+      circleColor = Color(0xff314158);
     } else if (isCompleted) {
-      circleColor = const Color(0xffC9A961);
+      circleColor = Color(0xffC9A961);
     } else {
-      circleColor = const Color(0xffE2E8F0);
+      circleColor = Color(0xffE2E8F0);
     }
 
     return Column(
@@ -47,30 +48,30 @@ class CustomContainerClothes extends StatelessWidget {
         Row(
           children: [
             Container(
-              width: 40,
-              height: 40,
+              width: 40.w,
+              height: 40.h,
               decoration: BoxDecoration(
                 color: circleColor,
-                borderRadius: BorderRadius.circular(44909232),
+                borderRadius: BorderRadius.circular(44909232).r,
               ),
 
               child: Center(
                 child: isCompleted
                     ? AppImage(
                         image: 'circle_correct.svg',
-                        width: 24,
-                        height: 24,
+                        width: 24.w,
+                        height: 24.h,
                       )
                     : Text(
                         toArabicDigits(Steplevel),
 
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'IBMPlexSansArabic',
                           color: lineCompleted
-                              ? const Color(0xff94A3B8)
-                              : const Color(0xffFFFFFF),
+                              ? Color(0xff94A3B8)
+                              : Color(0xffFFFFFF),
                         ),
                       ),
               ),
@@ -79,27 +80,27 @@ class CustomContainerClothes extends StatelessWidget {
             if (showLineColor)
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 8),
                   child: Container(
-                    width: 42,
-                    height: 1,
+                    width: 42.w,
+                    height: 1.h,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(42770700),
+                      borderRadius: BorderRadius.circular(42770700).r,
                       color: lineCompleted
-                          ? const Color(0xffC49A3A)
-                          : const Color(0xffE2E8F0),
+                          ? Color(0xffC49A3A)
+                          : Color(0xffE2E8F0),
                     ),
                   ),
                 ),
               ),
           ],
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: 8.h),
 
         Text(
           title,
           style: TextStyle(
-            fontSize: 12,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w600,
             fontFamily: 'IBMPlexSansArabic',
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/item_gridView_home.dart';
 import 'package:waheed_app/model/product_ model.dart';
@@ -49,10 +50,10 @@ class _FavouritePageState extends State<FavouritePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xffEAEAEA),
+        backgroundColor: Color(0xffEAEAEA),
 
         appBar: AppBar(
-          backgroundColor: const Color(0xffFFFFFF),
+          backgroundColor: Color(0xffFFFFFF),
 
           leading: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
@@ -61,30 +62,34 @@ class _FavouritePageState extends State<FavouritePage> {
                 goTo(page: HomePage());
               },
               child: Container(
-                width: 48,
-                height: 48,
+                width: 48.w,
+                height: 48.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(99),
-                  border: Border.all(color: const Color(0xffE5E7EB)),
-                  boxShadow: const [
+                  borderRadius: BorderRadius.circular(99).r,
+                  border: Border.all(color: Color(0xffE5E7EB)),
+                  boxShadow: [
                     BoxShadow(
                       color: Color(0x14000000),
-                      blurRadius: 16,
+                      blurRadius: 16.r,
                       offset: Offset(0, 4),
                     ),
                   ],
                 ),
-                child: AppImage(image: 'arrow-left.svg', width: 24, height: 24),
+                child: AppImage(
+                  image: 'arrow-left.svg',
+                  width: 24.w,
+                  height: 24.h,
+                ),
               ),
             ),
           ),
 
-          title: const Text(
+          title: Text(
             'المفضلة',
             style: TextStyle(
               color: Color(0xff000000),
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'IBMPlexSansArabic',
             ),
@@ -96,7 +101,7 @@ class _FavouritePageState extends State<FavouritePage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 32),
+              SizedBox(height: 32.h),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -141,7 +146,7 @@ class _FavouritePageState extends State<FavouritePage> {
                       ),
               ),
 
-              const SizedBox(height: 135),
+              SizedBox(height: 135.h),
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/services/helper_methods.dart';
 import 'add_ card_ bottom_ sheet.dart';
@@ -19,13 +20,13 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8),
-      width: 402,
-      height: 496,
+      width: 402.w,
+      height: 496.h,
       decoration: BoxDecoration(
         color: Color(0xffFFFFFF),
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(32),
-          topLeft: Radius.circular(32),
+          topRight: Radius.circular(32).r,
+          topLeft: Radius.circular(32).r,
         ),
         border: Border.all(color: Color(0xffEAEAEA)),
       ),
@@ -34,7 +35,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 38),
+              SizedBox(height: 38.h),
 
               Row(
                 children: [
@@ -42,17 +43,21 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: AppImage(image: 'close.svg', width: 24, height: 24),
+                    child: AppImage(
+                      image: 'close.svg',
+                      width: 24.w,
+                      height: 24.h,
+                    ),
                   ),
 
-                  SizedBox(width: 99),
+                  SizedBox(width: 99.w),
 
                   Text(
                     'طريقة الدفع',
                     style: TextStyle(
                       color: Color(0xff000000),
 
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -60,32 +65,32 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                 ],
               ),
 
-              SizedBox(height: 26),
+              SizedBox(height: 26.h),
 
               Text(
                 'الكروت المحفوظة',
                 style: TextStyle(
                   color: Color(0xff000000),
 
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
               ),
-              SizedBox(height: 4),
+              SizedBox(height: 4.h),
 
               Text(
                 'اختر طريقة الدفع لهذا الطلب',
                 style: TextStyle(
                   color: Color(0xff5E5E5E),
 
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
               ),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               PaymentOption(
                 index: 2,
                 selectedPayment: selectedPayment,
@@ -99,7 +104,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                 },
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               PaymentOption(
                 index: 3,
@@ -114,7 +119,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                 },
               ),
 
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
 
               DottedBorder(
                 child: GestureDetector(
@@ -122,33 +127,33 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                     goTo(page: AddCardBottomSheet());
                   },
                   child: Container(
-                    width: 370,
-                    height: 48,
+                    width: 370.w,
+                    height: 48.h,
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12).r,
                     ),
 
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: 13),
+                        SizedBox(height: 13.h),
 
                         AppImage(
                           image: 'add.svg',
-                          width: 14,
-                          height: 14,
+                          width: 14.w,
+                          height: 14.h,
                           color: Color(0xff314158),
                         ),
 
-                        SizedBox(width: 4),
+                        SizedBox(width: 4.w),
 
                         Text(
                           'إضافة عنوان جديد',
                           style: TextStyle(
                             color: Color(0xff314158),
 
-                            fontSize: 14,
+                            fontSize: 14.sp,
 
                             fontWeight: FontWeight.w400,
                             fontFamily: 'IBMPlexSansArabic',
@@ -159,7 +164,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
                   ),
                 ),
               ),
-              SizedBox(height: 45),
+              SizedBox(height: 45.h),
 
               Center(
                 child: AppButton(title: 'حفظ', onPressed: () {}),

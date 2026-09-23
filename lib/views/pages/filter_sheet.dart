@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_range_slider.dart';
 import '../../core/components/app_button.dart';
 import '../../core/components/app_image.dart';
@@ -19,15 +20,15 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
     return Padding(
       padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: SizedBox(
-        width: double.maxFinite,
+        width: double.maxFinite.w,
         child: Container(
           padding: EdgeInsets.all(16),
-          width: 402,
-          height: 501,
+          width: 402.w,
+          height: 501.h,
 
           decoration: BoxDecoration(
             color: Color(0xffFFFFFF),
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.circular(32).r,
           ),
           child: SingleChildScrollView(
             child: Column(
@@ -35,7 +36,7 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
               children: [
                 _Item(),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Align(
                   alignment: AlignmentDirectional.topStart,
@@ -43,14 +44,14 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                     'الأقسام',
                     style: TextStyle(
                       color: Color(0xff314158),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
                   ),
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 Wrap(
                   spacing: 6,
@@ -66,14 +67,14 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                         });
                       },
                       child: Container(
-                        width: 110,
-                        height: 41,
+                        width: 110.w,
+                        height: 41.h,
 
                         decoration: BoxDecoration(
                           color: isSelected
                               ? Color(0xff000000)
                               : Color(0xffEAEAEA),
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(16).r,
 
                           boxShadow: isSelected
                               ? [BoxShadow(color: Colors.transparent)]
@@ -83,7 +84,7 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                           child: Text(
                             Categories[index],
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w900,
                               color: isSelected ? Colors.white : Colors.black,
@@ -95,7 +96,7 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                   }),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Align(
                   alignment: AlignmentDirectional.topStart,
@@ -103,14 +104,14 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                     'نطاق السعر',
                     style: TextStyle(
                       color: Color(0xff314158),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
                   ),
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 SliderTheme(
                   data: SliderTheme.of(context).copyWith(
@@ -120,8 +121,8 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                     thumbColor: Color(0xffFFFFFF),
                     overlayColor: Colors.black.withOpacity(.1),
 
-                    rangeThumbShape: const RoundRangeSliderThumbShape(
-                      enabledThumbRadius: 10,
+                    rangeThumbShape: RoundRangeSliderThumbShape(
+                      enabledThumbRadius: 10.r,
                     ),
                   ),
                   child: RangeSlider(
@@ -136,7 +137,7 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
 
                 Row(
                   textDirection: TextDirection.ltr,
@@ -146,14 +147,14 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                       price: _currentRange.end.round(),
                     ),
 
-                    SizedBox(width: 20),
+                    SizedBox(width: 20.w),
                     Container(
-                      width: 100,
-                      height: 2,
+                      width: 100.w,
+                      height: 2.h,
                       decoration: BoxDecoration(color: Color(0xffE2E8F0)),
                     ),
 
-                    SizedBox(width: 25),
+                    SizedBox(width: 25.w),
 
                     AppRangeSlider(
                       title: 'الأدنى',
@@ -162,7 +163,7 @@ class _FilterSheetPageState extends State<FilterSheetPage> {
                   ],
                 ),
 
-                SizedBox(height: 32),
+                SizedBox(height: 32.h),
 
                 AppButton(title: 'عرض النتائج (24)', onPressed: () {}),
               ],
@@ -185,10 +186,10 @@ class _Item extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {},
-          child: AppImage(image: 'close.svg', width: 24, height: 24),
+          child: AppImage(image: 'close.svg', width: 24.w, height: 24.h),
         ),
 
-        SizedBox(width: 100),
+        SizedBox(width: 100.w),
 
         Text.rich(
           TextSpan(
@@ -197,7 +198,7 @@ class _Item extends StatelessWidget {
                 text: 'تصفية المنتجات\n',
                 style: TextStyle(
                   color: Color(0xff000000),
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
@@ -207,7 +208,7 @@ class _Item extends StatelessWidget {
                 text: '     2 فلتر مفعّل',
                 style: TextStyle(
                   color: Color(0xff686868),
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
@@ -222,7 +223,7 @@ class _Item extends StatelessWidget {
           children: [
             AppImage(image: 're_loading.svg'),
 
-            SizedBox(width: 4),
+            SizedBox(width: 4.w),
 
             Text(
               'إعادة التعيين',

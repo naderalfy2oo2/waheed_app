@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppRangeSlider extends StatefulWidget {
   final String title;
@@ -14,16 +15,16 @@ class _AppRangeSliderState extends State<AppRangeSlider> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 110,
-      height: 60,
+      width: 110.w,
+      height: 60.h,
       decoration: BoxDecoration(
         color: Color(0xffF6F6F6),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16).r,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Text(
             widget.title,
             style: TextStyle(
@@ -38,7 +39,7 @@ class _AppRangeSliderState extends State<AppRangeSlider> {
             style: TextStyle(
               color: Color(0xff000000),
               fontFamily: 'IBMPlexSansArabic',
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w400,
             ),
           ),

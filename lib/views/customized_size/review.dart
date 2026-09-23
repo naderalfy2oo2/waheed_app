@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/custom_container_review.dart';
 import '../../core/components/app_bar_widget.dart';
 import '../../core/components/app_button.dart';
@@ -27,7 +28,7 @@ class _ReviewViewState extends State<ReviewView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -48,7 +49,7 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -61,7 +62,7 @@ class _ReviewViewState extends State<ReviewView> {
                     'الخطوة ٤ من ٤',
                     style: TextStyle(
                       color: Color(0xffC9A961),
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -69,7 +70,7 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 4),
+            SizedBox(height: 4.h),
 
             Align(
               alignment: AlignmentGeometry.centerRight,
@@ -81,7 +82,7 @@ class _ReviewViewState extends State<ReviewView> {
                   style: TextStyle(
                     color: Color(0xff0A0A0A),
 
-                    fontSize: 22,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.w700,
                   ),
                   textDirection: TextDirection.rtl,
@@ -89,7 +90,7 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 4),
+            SizedBox(height: 4.h),
 
             Align(
               alignment: AlignmentGeometry.centerRight,
@@ -99,7 +100,7 @@ class _ReviewViewState extends State<ReviewView> {
                   'تأكيد القياسات',
                   style: TextStyle(
                     color: Color(0xff62748E),
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
 
@@ -108,21 +109,21 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
               padding: EdgeInsets.all(16),
-              width: 370,
-              height: 132,
+              width: 370.w,
+              height: 132.h,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(24).r,
                 border: Border.all(color: Color(0xffE5E7EB)),
                 boxShadow: [
                   BoxShadow(
                     color: Color(0x14000000),
-                    blurRadius: 16,
+                    blurRadius: 16.r,
                     offset: Offset(0, 4),
                   ),
                 ],
@@ -138,35 +139,35 @@ class _ReviewViewState extends State<ReviewView> {
                         style: TextStyle(
                           color: Color(0xff62748E),
                           fontWeight: FontWeight.w400,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
                       ),
                     ),
 
-                    SizedBox(height: 15),
+                    SizedBox(height: 15.h),
 
                     Row(
                       children: [
                         Container(
-                          width: 48,
-                          height: 48,
+                          width: 48.w,
+                          height: 48.h,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [Color(0xffC9A961), Color(0xff473100)],
                             ),
-                            borderRadius: BorderRadius.circular(14),
+                            borderRadius: BorderRadius.circular(14).r,
                           ),
                           child: Center(
                             child: AppImage(
                               image: 'white_stars.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                         ),
 
-                        SizedBox(width: 12),
+                        SizedBox(width: 12.w),
 
                         Text.rich(
                           TextSpan(
@@ -177,7 +178,7 @@ class _ReviewViewState extends State<ReviewView> {
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16,
+                                  fontSize: 16.sp,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
@@ -188,7 +189,7 @@ class _ReviewViewState extends State<ReviewView> {
                                 style: TextStyle(
                                   color: Color(0xff62748E),
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
@@ -202,21 +203,21 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             Container(
-              width: 370,
-              height: 107,
+              width: 370.w,
+              height: 107.h,
               margin: EdgeInsets.symmetric(horizontal: 10),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(24).r,
                 border: Border.all(color: Color(0xffE5E7EB)),
                 boxShadow: [
                   BoxShadow(
                     color: Color(0x14000000),
-                    blurRadius: 16,
+                    blurRadius: 16.r,
                     offset: Offset(0, 4),
                   ),
                 ],
@@ -231,18 +232,18 @@ class _ReviewViewState extends State<ReviewView> {
                           color: Color(0xff62748E),
                           fontFamily: 'IBMPlexSansArabic',
                           fontWeight: FontWeight.w400,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                         ),
                       ),
 
                       Spacer(),
 
                       Container(
-                        width: 36,
-                        height: 19,
+                        width: 36.w,
+                        height: 19.h,
                         decoration: BoxDecoration(
                           color: Color(0xffC9A961).withOpacity(0.125),
-                          borderRadius: BorderRadius.circular(42770700),
+                          borderRadius: BorderRadius.circular(42770700).r,
                         ),
                         child: Center(
                           child: Text(
@@ -251,7 +252,7 @@ class _ReviewViewState extends State<ReviewView> {
                               color: Color(0xffC9A961),
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w600,
-                              fontSize: 10,
+                              fontSize: 10.sp,
                             ),
                           ),
                         ),
@@ -259,7 +260,7 @@ class _ReviewViewState extends State<ReviewView> {
                     ],
                   ),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
 
                   Row(
                     children: List.generate(
@@ -284,7 +285,7 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             CustomContainerReview(
               title1: 'الجاكيت',
@@ -300,7 +301,7 @@ class _ReviewViewState extends State<ReviewView> {
               title10: '70 سم',
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             CustomContainerReview(
               title1: 'القميص',
@@ -318,7 +319,7 @@ class _ReviewViewState extends State<ReviewView> {
               dynamicHeight: 57,
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             CustomContainerReview(
               title1: 'البنطلون',
@@ -336,33 +337,33 @@ class _ReviewViewState extends State<ReviewView> {
               title10: '63 سم',
             ),
 
-            SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             Container(
               padding: EdgeInsets.all(12),
-              width: 370,
-              height: 44,
+              width: 370.w,
+              height: 44.h,
               decoration: BoxDecoration(
                 color: Color(0xffFFFBEB),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16).r,
               ),
               child: Row(
                 children: [
-                  SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
                   AppImage(
                     image: 'information_icon.svg',
-                    width: 16,
-                    height: 16,
+                    width: 16.w,
+                    height: 16.h,
                   ),
 
-                  SizedBox(width: 4),
+                  SizedBox(width: 4.w),
 
                   Text(
                     'سيتواصل معك خياطنا لتأكيد القياسات قبل البدء في التفصيل',
                     style: TextStyle(
                       color: Color(0xff7B3306),
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -371,7 +372,7 @@ class _ReviewViewState extends State<ReviewView> {
               ),
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: 16.h),
           ],
         ),
       ),
@@ -386,16 +387,16 @@ class _ReviewViewState extends State<ReviewView> {
                     Navigator.pop(context);
                   },
                   child: Container(
-                    height: 56,
+                    height: 56.h,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16).r,
                       border: Border.all(color: Colors.black),
                     ),
                     child: Center(
                       child: Text(
                         'السابق',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -404,7 +405,7 @@ class _ReviewViewState extends State<ReviewView> {
                 ),
               ),
 
-              SizedBox(width: 10),
+              SizedBox(width: 10.w),
 
               Expanded(
                 flex: 2,
@@ -436,16 +437,16 @@ void showBanner(BuildContext context) {
       elevation: 0,
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       content: Container(
-        height: 48,
+        height: 48.h,
         decoration: BoxDecoration(
           color: Color(0xff38B67A).withValues(alpha: .80),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12).r,
         ),
         padding: EdgeInsets.symmetric(horizontal: 12),
         child: Row(
           children: [
-            AppImage(image: 'circle_correct.svg', width: 20, height: 20),
-            SizedBox(width: 8),
+            AppImage(image: 'circle_correct.svg', width: 20.w, height: 20.h),
+            SizedBox(width: 8.w),
             Expanded(
               child: Text(
                 "تم حفظ القياسات",
@@ -453,7 +454,7 @@ void showBanner(BuildContext context) {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
               ),

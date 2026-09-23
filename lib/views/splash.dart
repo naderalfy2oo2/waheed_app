@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
@@ -31,14 +32,14 @@ class _SplashViewState extends State<SplashView> {
           padding: const EdgeInsets.symmetric(horizontal: 141),
           child: Column(
             children: [
-              SizedBox(height: 300),
-              AppImage(image: 'splash.png', width: 120, height: 120),
+              SizedBox(height: 300.h),
+              AppImage(image: 'splash.png', width: 120.w, height: 120.h),
 
               Text(
                 'WAHEED HASSAN\n     MEN’S SUITS',
                 style: TextStyle(
                   color: Color(0xff000000),
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w900,
                 ),
               ),

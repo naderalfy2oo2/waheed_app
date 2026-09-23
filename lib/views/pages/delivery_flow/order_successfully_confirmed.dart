@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import '../../../core/components/app_shipping_hint.dart';
@@ -18,7 +19,7 @@ class _OrderSuccessfullyConfirmedPageState
 
     final entry = OverlayEntry(
       builder: (context) {
-        return Positioned(top: 15, right: 25, child: const ShippingHint());
+        return Positioned(top: 15, right: 25, child: ShippingHint());
       },
     );
 
@@ -41,12 +42,12 @@ class _OrderSuccessfullyConfirmedPageState
                 top: -100,
                 right: -70,
                 child: Container(
-                  width: 300,
-                  height: 300,
+                  width: 300.w,
+                  height: 300.h,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
 
-                    color: const Color(0xffF0F1F7),
+                    color: Color(0xffF0F1F7),
                   ),
                 ),
               ),
@@ -56,13 +57,16 @@ class _OrderSuccessfullyConfirmedPageState
                   padding: const EdgeInsets.all(32),
                   child: Column(
                     children: [
-                      SizedBox(height: 60, child: Row(children: [])),
-                      SizedBox(height: 50),
+                      SizedBox(
+                        height: 60.h,
+                        child: Row(children: []),
+                      ),
+                      SizedBox(height: 50.h),
 
                       AppImage(
                         image: 'order_sucess_container.svg',
-                        width: 250,
-                        height: 250,
+                        width: 250.w,
+                        height: 250.h,
                       ),
 
                       Text(
@@ -71,11 +75,11 @@ class _OrderSuccessfullyConfirmedPageState
                           color: Color(0xff0F172B),
                           fontWeight: FontWeight.w700,
                           fontFamily: 'IBMPlexSansArabic',
-                          fontSize: 24,
+                          fontSize: 24.sp,
                         ),
                       ),
 
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.h),
 
                       Text(
                         'شكراً لاختيارك متجرنا. سنرسل لك إشعاراً عند شحن طلبك',
@@ -83,11 +87,11 @@ class _OrderSuccessfullyConfirmedPageState
                           color: Color(0xff62748E),
                           fontWeight: FontWeight.w400,
                           fontFamily: 'IBMPlexSansArabic',
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
 
-                      SizedBox(height: 32),
+                      SizedBox(height: 32.h),
 
                       Text(
                         'رقم الطلب',
@@ -95,10 +99,10 @@ class _OrderSuccessfullyConfirmedPageState
                           color: Color(0xff62748E),
                           fontWeight: FontWeight.w400,
                           fontFamily: 'IBMPlexSansArabic',
-                          fontSize: 13,
+                          fontSize: 13.sp,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      SizedBox(height: 4.h),
 
                       Text(
                         'EQ-815069',
@@ -106,22 +110,22 @@ class _OrderSuccessfullyConfirmedPageState
                           color: Color(0xff292D32),
                           fontWeight: FontWeight.w700,
                           fontFamily: 'IBMPlexSansArabic',
-                          fontSize: 18,
+                          fontSize: 18.sp,
                         ),
                       ),
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AppImage(
                             image: 'truck-fast.svg',
-                            width: 16,
-                            height: 16,
+                            width: 16.w,
+                            height: 16.h,
                             color: Color(0xffC9A961),
                           ),
 
-                          SizedBox(width: 8),
+                          SizedBox(width: 8.w),
 
                           Text(
                             'التوصيل المتوقع: ٣–٥ أيام عمل',
@@ -129,13 +133,13 @@ class _OrderSuccessfullyConfirmedPageState
                               color: Color(0xff62748E),
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
-                              fontSize: 12,
+                              fontSize: 12.sp,
                             ),
                           ),
                         ],
                       ),
 
-                      SizedBox(height: 142),
+                      SizedBox(height: 142.h),
 
                       AppButton(
                         title: 'تتبع الطلب',
@@ -146,7 +150,7 @@ class _OrderSuccessfullyConfirmedPageState
                         },
                       ),
 
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.h),
                       AppButton(
                         title: 'العودة للرئيسية',
                         textColor: Color(0xff000000),

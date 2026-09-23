@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 class CustomRevisionContainerOrder extends StatefulWidget {
@@ -15,34 +16,34 @@ class _CustomRevisionContainerOrderState
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 370,
+      width: 370.w,
 
       decoration: BoxDecoration(
         color: Color(0xffFFFFFF),
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(24).r,
         border: Border.all(color: Color(0xffEAEAEA)),
       ),
 
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: Column(
           children: [
             Row(
               children: [
                 AppImage(
                   image: 'talabat.svg',
-                  width: 20,
-                  height: 20,
+                  width: 20.w,
+                  height: 20.h,
                   color: Color(0xff292D32),
                 ),
 
-                SizedBox(width: 4),
+                SizedBox(width: 4.w),
 
                 Text(
                   'ملخص الطلب',
                   style: TextStyle(
                     color: Color(0xff0A0A0A),
-                    fontSize: 15,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'IBMPlexSansArabic',
                   ),
@@ -58,11 +59,11 @@ class _CustomRevisionContainerOrderState
                   },
                   child: AnimatedRotation(
                     turns: isExpanded ? 0.5 : 0,
-                    duration: const Duration(milliseconds: 200),
+                    duration: Duration(milliseconds: 200),
                     child: AppImage(
                       image: 'arrow-down.svg',
-                      width: 16,
-                      height: 16,
+                      width: 16.w,
+                      height: 16.h,
                       color: Color(0xff292D32),
                     ),
                   ),
@@ -71,7 +72,7 @@ class _CustomRevisionContainerOrderState
             ),
 
             if (isExpanded) ...[
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Row(
                 children: [
@@ -79,7 +80,7 @@ class _CustomRevisionContainerOrderState
                     'المجموع الفرعي',
                     style: TextStyle(
                       color: Color(0xff000000).withValues(alpha: 0.60),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -91,7 +92,7 @@ class _CustomRevisionContainerOrderState
                     '٦٬٦٠٠ ج.م',
                     style: TextStyle(
                       color: Color(0xff000000),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -99,7 +100,7 @@ class _CustomRevisionContainerOrderState
                 ],
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               Row(
                 children: [
@@ -107,7 +108,7 @@ class _CustomRevisionContainerOrderState
                     'التوصيل',
                     style: TextStyle(
                       color: Color(0xff000000).withValues(alpha: 0.60),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -119,7 +120,7 @@ class _CustomRevisionContainerOrderState
                     '٦٠ ج.م',
                     style: TextStyle(
                       color: Color(0xff000000),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -127,7 +128,7 @@ class _CustomRevisionContainerOrderState
                 ],
               ),
 
-              SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               Row(
                 children: [
@@ -135,7 +136,7 @@ class _CustomRevisionContainerOrderState
                     'الخصم',
                     style: TextStyle(
                       color: Color(0xff000000).withValues(alpha: 0.60),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -147,7 +148,7 @@ class _CustomRevisionContainerOrderState
                     '_',
                     style: TextStyle(
                       color: Color(0xff000000),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -155,7 +156,7 @@ class _CustomRevisionContainerOrderState
                 ],
               ),
 
-              SizedBox(height: 25),
+              SizedBox(height: 25.h),
 
               Row(
                 children: [
@@ -163,7 +164,7 @@ class _CustomRevisionContainerOrderState
                     'الإجمالي',
                     style: TextStyle(
                       color: Color(0xff000000).withValues(alpha: 0.60),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
@@ -179,7 +180,7 @@ class _CustomRevisionContainerOrderState
 
                           style: TextStyle(
                             color: Color(0xff0A0A0A),
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w700,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
@@ -190,7 +191,7 @@ class _CustomRevisionContainerOrderState
 
                           style: TextStyle(
                             color: Color(0xff000000).withValues(alpha: 0.50),
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'IBMPlexSansArabic',
                           ),

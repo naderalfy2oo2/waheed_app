@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/components/app_bar_widget.dart';
 import '../../core/components/app_image.dart';
 
-class TermsConditions extends StatelessWidget {
-  const TermsConditions({super.key});
+class TermsConditionsPage extends StatelessWidget {
+  const TermsConditionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +17,10 @@ class TermsConditions extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
 
           children: [
-            SizedBox(height: 64),
-            Center(child: AppImage(image: 'splash.png', width: 64, height: 64)),
+            SizedBox(height: 64.h),
+            Center(
+              child: AppImage(image: 'splash.png', width: 64.w, height: 64.h),
+            ),
           ],
         ),
       ),

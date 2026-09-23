@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomContainerChoice extends StatefulWidget {
   const CustomContainerChoice({super.key});
@@ -21,7 +22,7 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
           price: '٦٠ ج.م',
         ),
 
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
 
         _containerOption(
           index: 1,
@@ -52,14 +53,14 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
 
-        width: double.infinity,
-        height: 77,
+        width: double.infinity.w,
+        height: 77.h,
 
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
 
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(24).r,
 
           border: Border.all(
             color: isSelected ? Colors.black : Color(0xffD9D9D9),
@@ -70,23 +71,23 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
         child: Row(
           children: [
             Container(
-              width: 20,
-              height: 20,
+              width: 20.w,
+              height: 20.h,
 
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
 
                 border: Border.all(
                   color: isSelected ? Colors.black : Color(0xffD0D5DD),
-                  width: 1.5,
+                  width: 1.5.w,
                 ),
               ),
 
               child: isSelected
                   ? Center(
                       child: Container(
-                        width: 10,
-                        height: 10,
+                        width: 10.w,
+                        height: 10.h,
 
                         decoration: BoxDecoration(
                           color: Colors.black,
@@ -97,7 +98,7 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
                   : null,
             ),
 
-            SizedBox(width: 10),
+            SizedBox(width: 10.w),
 
             Expanded(
               child: Column(
@@ -109,7 +110,7 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
                       Text(
                         title,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'IBMPlexSansArabic',
                           color: Color(0xff0A0A0A),
@@ -117,7 +118,7 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
                       ),
 
                       if (isFast) ...[
-                        SizedBox(width: 6),
+                        SizedBox(width: 6.w),
 
                         Container(
                           padding: EdgeInsets.symmetric(
@@ -127,14 +128,14 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
 
                           decoration: BoxDecoration(
                             color: Color(0xffC9A961),
-                            borderRadius: BorderRadius.circular(26843500),
+                            borderRadius: BorderRadius.circular(26843500).r,
                           ),
 
                           child: Center(
                             child: Text(
                               'موصى به',
                               style: TextStyle(
-                                fontSize: 10,
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xffFFFFFF),
                                 fontFamily: 'IBMPlexSansArabic',
@@ -146,12 +147,12 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
                     ],
                   ),
 
-                  SizedBox(height: 2),
+                  SizedBox(height: 2.h),
 
                   Text(
                     subtitle,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       color: Color(0xff62748E),
                       fontFamily: 'IBMPlexSansArabic',
                       fontWeight: FontWeight.w500,
@@ -164,7 +165,7 @@ class _CustomContainerChoiceState extends State<CustomContainerChoice> {
             Text(
               price,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: Color(0xff000000),
                 fontFamily: 'IBMPlexSansArabic',

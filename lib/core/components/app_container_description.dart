@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppContainerDescription extends StatelessWidget {
   final String title;
@@ -8,17 +9,17 @@ class AppContainerDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-      width: 77,
-      height: 25,
+      width: 77.w,
+      height: 25.h,
       decoration: BoxDecoration(
         color: Color(0xffC9A961).withOpacity(0.08),
-        borderRadius: BorderRadius.circular(99),
+        borderRadius: BorderRadius.circular(99).r,
       ),
       child: Text(
         title,
         style: TextStyle(
           color: Color(0xffC9A961),
-          fontSize: 11,
+          fontSize: 11.sp,
           fontWeight: FontWeight.w500,
           fontFamily: 'IBMPlexSansArabic',
         ),

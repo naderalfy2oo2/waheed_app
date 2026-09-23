@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/components/app_image.dart';
 import '../../../core/order_card.dart';
 
@@ -22,7 +23,7 @@ class _TalabatPageState extends State<TalabatPage> {
             'طلباتي',
             style: TextStyle(
               color: Color(0xff000000),
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'IBMPlexSansArabic',
             ),
@@ -35,7 +36,7 @@ class _TalabatPageState extends State<TalabatPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
 
               Row(
                 children: [
@@ -43,10 +44,10 @@ class _TalabatPageState extends State<TalabatPage> {
                     onTap: () {},
                     child: Container(
                       padding: EdgeInsets.all(8),
-                      width: 132,
-                      height: 36,
+                      width: 132.w,
+                      height: 36.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(99),
+                        borderRadius: BorderRadius.circular(99).r,
 
                         border: Border.all(
                           style: BorderStyle.solid,
@@ -59,18 +60,18 @@ class _TalabatPageState extends State<TalabatPage> {
                         children: [
                           AppImage(
                             image: 'calendar.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
 
-                          SizedBox(width: 8),
+                          SizedBox(width: 8.w),
 
                           Text(
                             'كل الفترات',
                             style: TextStyle(
                               color: Color(0xff334155),
                               fontWeight: FontWeight.w500,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
@@ -78,15 +79,15 @@ class _TalabatPageState extends State<TalabatPage> {
                           Spacer(),
                           AppImage(
                             image: 'arrow-down.svg',
-                            width: 16,
-                            height: 16,
+                            width: 16.w,
+                            height: 16.h,
                           ),
                         ],
                       ),
                     ),
                   ),
 
-                  SizedBox(width: 8),
+                  SizedBox(width: 8.w),
 
                   Expanded(
                     child: SingleChildScrollView(
@@ -106,14 +107,14 @@ class _TalabatPageState extends State<TalabatPage> {
                               });
                             },
                             child: Container(
-                              width: 110,
-                              height: 41,
+                              width: 110.w,
+                              height: 41.h,
 
                               decoration: BoxDecoration(
                                 color: isSelected
                                     ? Color(0xff000000)
                                     : Colors.white,
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16).r,
                                 border: Border.all(
                                   style: BorderStyle.solid,
 
@@ -130,7 +131,7 @@ class _TalabatPageState extends State<TalabatPage> {
                                 child: Text(
                                   Categories[index],
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontFamily: 'IBMPlexSansArabic',
                                     fontWeight: FontWeight.w900,
                                     color: isSelected
@@ -148,7 +149,7 @@ class _TalabatPageState extends State<TalabatPage> {
                 ],
               ),
 
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
 
               Align(
                 alignment: AlignmentGeometry.centerRight,
@@ -156,14 +157,14 @@ class _TalabatPageState extends State<TalabatPage> {
                   'مايو ٢٠٢٦',
                   style: TextStyle(
                     color: Color(0xff90A1B9),
-                    fontSize: 12,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'IBMPlexSansArabic',
                   ),
                 ),
               ),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               Expanded(
                 child: ListView.builder(
@@ -183,7 +184,7 @@ class _TalabatPageState extends State<TalabatPage> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
+                                borderRadius: BorderRadius.circular(14).r,
                               ),
                               backgroundColor: Color(
                                 0xff0000001A,
@@ -196,7 +197,7 @@ class _TalabatPageState extends State<TalabatPage> {
 
                               style: TextStyle(
                                 color: Color(0xff000000),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: 'IBMPlexSansArabic',
                               ),
@@ -206,18 +207,18 @@ class _TalabatPageState extends State<TalabatPage> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
+                                borderRadius: BorderRadius.circular(14).r,
                               ),
 
                               backgroundColor: Color(0xff000000),
                             ),
                             onPressed: () {},
-                            child: const Text(
+                            child: Text(
                               "تتبع الطلب",
 
                               style: TextStyle(
                                 color: Color(0xffFFFFFF),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: 'IBMPlexSansArabic',
                               ),
@@ -237,7 +238,7 @@ class _TalabatPageState extends State<TalabatPage> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
+                                borderRadius: BorderRadius.circular(14).r,
                               ),
                               backgroundColor: Color(
                                 0xff0000001A,
@@ -250,7 +251,7 @@ class _TalabatPageState extends State<TalabatPage> {
 
                               style: TextStyle(
                                 color: Color(0xff000000),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: 'IBMPlexSansArabic',
                               ),
@@ -269,7 +270,7 @@ class _TalabatPageState extends State<TalabatPage> {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
+                              borderRadius: BorderRadius.circular(14).r,
                             ),
                             backgroundColor: Color(
                               0xff0000001A,
@@ -282,7 +283,7 @@ class _TalabatPageState extends State<TalabatPage> {
 
                             style: TextStyle(
                               color: Color(0xff000000),
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/components/app_bar_widget.dart';
@@ -52,19 +53,19 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 21),
+                SizedBox(height: 21.h),
 
                 Row(
                   children: [
-                    AppImage(image: 'date.svg', width: 16, height: 16),
+                    AppImage(image: 'date.svg', width: 16.w, height: 16.h),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'اختر التاريخ',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -72,38 +73,38 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                   ],
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(16),
-                  width: 420,
-                  height: 170,
+                  width: 420.w,
+                  height: 170.h,
 
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16).r,
 
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         color: Color(0x1A000000),
                         offset: Offset(0, 1),
-                        blurRadius: 2,
-                        spreadRadius: -1,
+                        blurRadius: 2.r,
+                        spreadRadius: -1.r,
                       ),
 
                       BoxShadow(
                         color: Color(0x1A000000),
                         offset: Offset(0, 1),
-                        blurRadius: 3,
-                        spreadRadius: 0,
+                        blurRadius: 3.r,
+                        spreadRadius: 0.r,
                       ),
                     ],
                   ),
 
                   child: Column(
                     children: [
-                      SizedBox(height: 16),
+                      SizedBox(height: 16.h),
 
                       Align(
                         alignment: AlignmentGeometry.topRight,
@@ -112,16 +113,16 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                           style: TextStyle(
                             color: Color(0xff62748E),
 
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'IBMPlexSansArabic',
                           ),
                         ),
                       ),
 
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
                       SizedBox(
-                        height: 90,
+                        height: 90.h,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           physics: const BouncingScrollPhysics(),
@@ -149,15 +150,15 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                                 });
                               },
                               child: Container(
-                                width: 65,
+                                width: 65.w,
                                 margin: const EdgeInsets.symmetric(
                                   horizontal: 4,
                                 ),
                                 decoration: BoxDecoration(
                                   color: isSelected
-                                      ? const Color(0xFF314158)
-                                      : const Color(0xffF8FAFC),
-                                  borderRadius: BorderRadius.circular(16),
+                                      ? Color(0xFF314158)
+                                      : Color(0xffF8FAFC),
+                                  borderRadius: BorderRadius.circular(16).r,
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -165,24 +166,24 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                                     Text(
                                       DateFormat.E('ar').format(date),
                                       style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 12.sp,
                                         color: textColor,
                                       ),
                                     ),
-                                    const SizedBox(height: 4),
+                                    SizedBox(height: 4.h),
                                     Text(
                                       date.day.toString(),
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold,
                                         color: textColor,
                                       ),
                                     ),
-                                    const SizedBox(height: 2),
+                                    SizedBox(height: 2.h),
                                     Text(
                                       DateFormat.MMM('ar').format(date),
                                       style: TextStyle(
-                                        fontSize: 11,
+                                        fontSize: 11.sp,
                                         color: textColor,
                                       ),
                                     ),
@@ -197,19 +198,19 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
-                    AppImage(image: 'time.svg', width: 16, height: 16),
+                    AppImage(image: 'time.svg', width: 16.w, height: 16.h),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'اختر الوقت',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -217,35 +218,35 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                   ],
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 Container(
                   padding: EdgeInsets.all(24),
-                  width: double.infinity,
-                  height: 235,
+                  width: double.infinity.w,
+                  height: 235.h,
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16).r,
 
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         color: Color(0x1A000000),
                         offset: Offset(0, 1),
-                        blurRadius: 2,
-                        spreadRadius: -1,
+                        blurRadius: 2.r,
+                        spreadRadius: -1.r,
                       ),
 
                       BoxShadow(
                         color: Color(0x1A000000),
                         offset: Offset(0, 1),
-                        blurRadius: 3,
-                        spreadRadius: 0,
+                        blurRadius: 3.r,
+                        spreadRadius: 0.r,
                       ),
                     ],
                   ),
                   child: Column(
                     children: [
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
 
                       GridView.builder(
                         shrinkWrap: true,
@@ -268,17 +269,17 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                           Color textColor;
 
                           if (isSelected) {
-                            containerColor = const Color(0xFF314158);
-                            borderColor = const Color(0xFF314158);
-                            textColor = const Color(0xFFFFFFFF);
+                            containerColor = Color(0xFF314158);
+                            borderColor = Color(0xFF314158);
+                            textColor = Color(0xFFFFFFFF);
                           } else if (!enabled) {
-                            containerColor = const Color(0xFFF8FAFC);
-                            borderColor = const Color(0xFFE2E8F0);
-                            textColor = const Color(0xFFCBD5E1);
+                            containerColor = Color(0xFFF8FAFC);
+                            borderColor = Color(0xFFE2E8F0);
+                            textColor = Color(0xFFCBD5E1);
                           } else {
-                            containerColor = const Color(0xFFFFFFFF);
-                            borderColor = const Color(0xFFE2E8F0);
-                            textColor = const Color(0xFF0F172A);
+                            containerColor = Color(0xFFFFFFFF);
+                            borderColor = Color(0xFFE2E8F0);
+                            textColor = Color(0xFF0F172A);
                           }
 
                           return GestureDetector(
@@ -289,16 +290,16 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 color: containerColor,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10).r,
                                 border: Border.all(
                                   color: borderColor,
-                                  width: 1,
+                                  width: 1.w,
                                 ),
                               ),
                               child: Text(
                                 slot['time'] as String,
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: isSelected
                                       ? FontWeight.w600
                                       : FontWeight.normal,
@@ -318,34 +319,34 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Align(
                   alignment: Alignment.topRight,
                   child: Container(
                     padding: EdgeInsets.all(16),
-                    width: 385,
-                    height: 74,
+                    width: 385.w,
+                    height: 74.h,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16).r,
                       color: Color(0xffFFFFFF),
                       border: Border.all(
                         color: Color(0xff1E3A8A).withOpacity(0.082),
                       ),
 
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           color: Color(0x1A000000),
                           offset: Offset(0, 1),
-                          blurRadius: 2,
-                          spreadRadius: -1,
+                          blurRadius: 2.r,
+                          spreadRadius: -1.r,
                         ),
 
                         BoxShadow(
                           color: Color(0x1A000000),
                           offset: Offset(0, 1),
-                          blurRadius: 3,
-                          spreadRadius: 0,
+                          blurRadius: 3.r,
+                          spreadRadius: 0.r,
                         ),
                       ],
                     ),
@@ -359,24 +360,24 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                               child: Container(
                                 padding: EdgeInsets.all(8),
 
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
                                   color: Color(0xffF1F5F9),
                                 ),
                                 child: Center(
                                   child: AppImage(
                                     image: 'home_black.svg',
-                                    width: 24,
-                                    height: 24,
+                                    width: 24.w,
+                                    height: 24.h,
                                     color: Color(0xff314158),
                                   ),
                                 ),
                               ),
                             ),
 
-                            SizedBox(width: 12),
+                            SizedBox(width: 12.w),
 
                             Text.rich(
                               TextSpan(
@@ -386,8 +387,7 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
 
                                     style: TextStyle(
                                       color: Color(0xff0A0A0A),
-
-                                      fontSize: 16,
+                                      fontSize: 16.sp,
                                       fontFamily: 'IBMPlexSansArabic',
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -399,8 +399,7 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
 
                                     style: TextStyle(
                                       color: Color(0xff62748E),
-
-                                      fontSize: 12,
+                                      fontSize: 12.sp,
                                       fontFamily: 'IBMPlexSansArabic',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -415,7 +414,7 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
                   ),
                 ),
 
-                SizedBox(height: 157),
+                SizedBox(height: 157.h),
               ],
             ),
           ),
@@ -444,34 +443,34 @@ class _ChooseDatePageState extends State<ChooseDatePage> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 padding: EdgeInsets.all(16),
-                width: 370,
-                height: 56,
+                width: 370.w,
+                height: 56.h,
                 decoration: BoxDecoration(
                   color: Color(0xff000000).withOpacity(0.40),
 
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       color: Color(0x1A000000),
                       offset: Offset(0, 4),
-                      blurRadius: 6,
-                      spreadRadius: -4,
+                      blurRadius: 6.r,
+                      spreadRadius: -4.r,
                     ),
 
                     BoxShadow(
                       color: Color(0x1A000000),
                       offset: Offset(0, 10),
-                      blurRadius: 15,
-                      spreadRadius: -3,
+                      blurRadius: 15.r,
+                      spreadRadius: -3.r,
                     ),
                   ],
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16).r,
                 ),
                 child: Center(
                   child: Text(
                     'اختر وقتاً للمتابعة',
                     style: TextStyle(
                       color: Color(0xffFFFFFF),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'IBMPlexSansArabic',
                     ),

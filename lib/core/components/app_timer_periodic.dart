@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 class AppTimerPeriodic extends StatefulWidget {
@@ -71,13 +72,13 @@ class _AppTimerPeriodicState extends State<AppTimerPeriodic> {
             'لم تستلم الرمز ؟',
             style: TextStyle(
               color: Color(0xff000000),
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w700,
               fontFamily: 'IBMPlexSansArabic',
             ),
           ),
 
-          SizedBox(height: 4),
+          SizedBox(height: 4.h),
 
           GestureDetector(
             onTap: resendCode,
@@ -86,12 +87,12 @@ class _AppTimerPeriodicState extends State<AppTimerPeriodic> {
               children: [
                 AppImage(
                   image: 're_loading.svg',
-                  width: 16,
-                  height: 16,
+                  width: 16.w,
+                  height: 16.h,
                   color: Color(0xff686868),
                 ),
 
-                SizedBox(width: 4),
+                SizedBox(width: 4.w),
 
                 Column(
                   mainAxisSize: MainAxisSize.min,
@@ -100,15 +101,19 @@ class _AppTimerPeriodicState extends State<AppTimerPeriodic> {
                       'إعادة الإرسال',
                       style: TextStyle(
                         color: Color(0xff000000),
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
                     ),
 
-                    SizedBox(height: 1),
+                    SizedBox(height: 1.h),
 
-                    Container(height: 0.5, width: 68, color: Color(0xff000000)),
+                    Container(
+                      height: 0.5.h,
+                      width: 68.w,
+                      color: Color(0xff000000),
+                    ),
                   ],
                 ),
               ],
@@ -124,13 +129,13 @@ class _AppTimerPeriodicState extends State<AppTimerPeriodic> {
           'لم تستلم الرمز ؟',
           style: TextStyle(
             color: Color(0xff000000),
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w700,
             fontFamily: 'IBMPlexSansArabic',
           ),
         ),
 
-        SizedBox(height: 2),
+        SizedBox(height: 2.h),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -140,19 +145,19 @@ class _AppTimerPeriodicState extends State<AppTimerPeriodic> {
               style: TextStyle(
                 color: Color(0xff000000),
 
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 fontFamily: 'IBMPlexSansArabic',
               ),
             ),
 
-            SizedBox(width: 4),
+            SizedBox(width: 4.w),
 
             Text(
               formatTime(),
               style: TextStyle(
                 color: Color(0xff000000),
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'IBMPlexSansArabic',
               ),

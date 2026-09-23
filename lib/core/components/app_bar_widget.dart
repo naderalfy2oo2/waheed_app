@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -9,7 +10,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leadingWidth: 85,
+      leadingWidth: 85.w,
 
       automaticallyImplyLeading: false,
       backgroundColor: Color(0xffFFFFFF),
@@ -19,7 +20,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(
           color: Color(0xff000000),
 
-          fontSize: 18,
+          fontSize: 18.sp,
 
           fontWeight: FontWeight.w500,
         ),
@@ -30,15 +31,15 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         child: InkWell(
           onTap: () => Navigator.pop(context),
           child: Container(
-            width: 48,
-            height: 48,
+            width: 48.w,
+            height: 48.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(99),
+              borderRadius: BorderRadius.circular(99).r,
 
               color: Color(0xffFFFFFF),
               border: Border.all(color: Color(0xffECECEC)),
             ),
-            child: AppImage(image: icon ?? "", width: 24, height: 24),
+            child: AppImage(image: icon ?? "", width: 24.w, height: 24.h),
           ),
         ),
       ),
@@ -46,5 +47,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }

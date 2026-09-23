@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppInput extends StatefulWidget {
   final String? labelText;
@@ -40,39 +41,39 @@ class _AppInputState extends State<AppInput> {
         filled: widget.filled ?? true,
 
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10).r,
           borderSide: BorderSide(color: Color(0xffEAEAEA)),
         ),
         labelText: widget.labelText,
 
         labelStyle: TextStyle(
           color: Color(0xff9E9E9E),
-          fontSize: 16,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w400,
         ),
 
         prefixIcon: widget.suffixText != null
             ? SizedBox(
-                width: 65,
+                width: 65.w,
                 child: Row(
                   children: [
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12.w),
 
                     Text(
                       widget.suffixText!,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Color(0xff9E9E9E),
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
 
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10.w),
 
                     Container(
-                      width: 1,
-                      height: 24,
-                      color: const Color(0xffEAEAEA),
+                      width: 1.w,
+                      height: 24.h,
+                      color: Color(0xffEAEAEA),
                     ),
                   ],
                 ),

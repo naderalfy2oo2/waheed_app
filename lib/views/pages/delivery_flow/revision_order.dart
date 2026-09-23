@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_bar_widget.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/bottom_sheet.dart';
@@ -26,19 +27,23 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 21),
+                SizedBox(height: 21.h),
 
                 Row(
                   children: [
-                    AppImage(image: 'truck_blue.svg', width: 20, height: 20),
+                    AppImage(
+                      image: 'truck_blue.svg',
+                      width: 20.w,
+                      height: 20.h,
+                    ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'طريقة الاستلام',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -46,7 +51,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,25 +64,25 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        width: 177,
-                        height: 150,
+                        width: 177.w,
+                        height: 150.h,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: const Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(16).r,
+                          color: Color(0xffFFFFFF),
 
                           border: Border.all(
                             color: selectedMethod == 0
-                                ? const Color(0xff314158)
+                                ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5,
+                            width: 1.5.w,
                           ),
 
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               color: Color(0x10000000),
-                              blurRadius: 2,
+                              blurRadius: 2.r,
                               offset: Offset(0, 2),
-                              spreadRadius: 0,
+                              spreadRadius: 0.r,
                             ),
                           ],
                         ),
@@ -86,10 +91,10 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                             Align(
                               alignment: AlignmentGeometry.topLeft,
                               child: Container(
-                                width: 37,
-                                height: 19,
+                                width: 37.w,
+                                height: 19.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(99),
+                                  borderRadius: BorderRadius.circular(99).r,
                                   color: Color(0xffF8F4EB),
                                 ),
                                 child: Center(
@@ -97,7 +102,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                                     'مجاناً',
                                     style: TextStyle(
                                       color: Color(0xffC9A961),
-                                      fontSize: 10,
+                                      fontSize: 10.sp,
                                       fontWeight: FontWeight.w600,
                                       fontFamily: 'IBMPlexSansArabic',
                                     ),
@@ -111,24 +116,24 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                               child: Container(
                                 padding: EdgeInsets.all(8),
                                 margin: EdgeInsets.all(8),
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
                                   color: Color(0xffF1F5F9),
                                 ),
                                 child: Center(
                                   child: AppImage(
                                     image: 'shop.svg',
-                                    width: 24,
-                                    height: 24,
+                                    width: 24.w,
+                                    height: 24.h,
                                     color: Color(0xff314158),
                                   ),
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 12),
+                            SizedBox(height: 12.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -137,14 +142,14 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -153,7 +158,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -164,7 +169,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                       ),
                     ),
 
-                    SizedBox(width: 16),
+                    SizedBox(width: 16.w),
 
                     GestureDetector(
                       onTap: () {
@@ -174,43 +179,43 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        width: 177,
-                        height: 150,
+                        width: 177.w,
+                        height: 150.h,
                         decoration: BoxDecoration(
-                          color: const Color(0xffFFFFFF),
-                          borderRadius: BorderRadius.circular(16),
+                          color: Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(16).r,
 
                           border: Border.all(
                             color: selectedMethod == 1
-                                ? const Color(0xff314158)
+                                ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5,
+                            width: 1.5.w,
                           ),
 
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               color: Color(0x10000000),
-                              blurRadius: 2,
+                              blurRadius: 2.r,
                               offset: Offset(0, 2),
-                              spreadRadius: 0,
+                              spreadRadius: 0.r,
                             ),
                           ],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 16),
+                            SizedBox(height: 16.h),
 
                             Align(
                               alignment: AlignmentGeometry.topRight,
                               child: Container(
                                 padding: EdgeInsets.all(8),
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
 
-                                  gradient: const LinearGradient(
+                                  gradient: LinearGradient(
                                     begin: Alignment(-0.85, -0.53),
                                     end: Alignment(0.85, 0.53),
                                     colors: [
@@ -222,14 +227,14 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                                 ),
                                 child: AppImage(
                                   image: 'truck_blue.svg',
-                                  width: 30,
-                                  height: 30,
+                                  width: 30.w,
+                                  height: 30.h,
                                   color: Color(0xffFFFFFF),
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 12),
+                            SizedBox(height: 12.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -238,14 +243,14 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -254,7 +259,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -267,18 +272,18 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
                     AppImage(
                       image: 'location.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color: Color(0xff000000),
                     ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'عنوان التوصيل',
@@ -286,7 +291,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                         color: Color(0xff314158),
                         fontFamily: 'IBMPlexSansArabic',
 
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -310,7 +315,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                           color: Color(0xff000000),
                           fontFamily: 'IBMPlexSansArabic',
 
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -318,38 +323,38 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Container(
-                  width: 370,
-                  height: 100,
+                  width: 370.w,
+                  height: 100.h,
                   padding: EdgeInsets.all(10),
 
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16).r,
                     border: Border.all(color: Color(0xffEAEAEA)),
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 40,
-                        height: 40,
+                        width: 40.w,
+                        height: 40.h,
                         decoration: BoxDecoration(
                           color: Color(0xff0000000).withValues(alpha: 0.06),
-                          borderRadius: BorderRadius.circular(14),
+                          borderRadius: BorderRadius.circular(14).r,
                         ),
                         child: Center(
                           child: AppImage(
                             image: 'home_black.svg',
-                            width: 20,
-                            height: 20,
+                            width: 20.w,
+                            height: 20.h,
                           ),
                         ),
                       ),
 
-                      SizedBox(width: 12),
+                      SizedBox(width: 12.w),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -360,19 +365,19 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                                   'المنزل',
                                   style: TextStyle(
                                     color: Color(0xff0A0A0A),
-                                    fontSize: 18,
+                                    fontSize: 18.sp,
                                     fontFamily: 'IBMPlexSansArabic',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
 
-                                SizedBox(width: 12),
+                                SizedBox(width: 12.w),
 
                                 Container(
-                                  width: 51,
-                                  height: 22,
+                                  width: 51.w,
+                                  height: 22.h,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(999),
+                                    borderRadius: BorderRadius.circular(999).r,
                                     color: Color(
                                       0xff6A7282,
                                     ).withValues(alpha: 0.20),
@@ -383,7 +388,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                                       style: TextStyle(
                                         color: Color(0xff000000),
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 14,
+                                        fontSize: 14.sp,
                                         fontFamily: 'IBMPlexSansArabic',
                                       ),
                                     ),
@@ -392,25 +397,25 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                               ],
                             ),
 
-                            SizedBox(height: 8),
+                            SizedBox(height: 8.h),
 
                             Text(
                               'أحمد صبري • +15 55 123 4567',
                               style: TextStyle(
                                 color: Color(0xff45556C),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontFamily: 'IBMPlexSansArabic',
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
 
-                            SizedBox(height: 4),
+                            SizedBox(height: 4.h),
 
                             Text(
                               'المنصورة، حي الزعفران',
                               style: TextStyle(
                                 color: Color(0xff62748E),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontFamily: 'IBMPlexSansArabic',
                                 fontWeight: FontWeight.w400,
                               ),
@@ -422,42 +427,46 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Container(
                   padding: EdgeInsets.all(4),
-                  width: 370,
-                  height: 63,
+                  width: 370.w,
+                  height: 63.h,
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
 
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(24).r,
                   ),
                   child: Row(
                     children: [
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
 
                       AppImage(
                         image: 'box.svg',
-                        width: 20,
-                        height: 20,
+                        width: 20.w,
+                        height: 20.h,
                         color: Color(0xff292D32),
                       ),
 
-                      SizedBox(width: 4),
+                      SizedBox(width: 4.w),
 
                       Text(
                         'ملخص الطلب',
                         style: TextStyle(
                           color: Color(0xff0A0A0A),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
                       ),
 
                       Spacer(),
-                      AppImage(image: 'arrow-down.svg', width: 16, height: 16),
+                      AppImage(
+                        image: 'arrow-down.svg',
+                        width: 16.w,
+                        height: 16.h,
+                      ),
                     ],
                   ),
                 ),

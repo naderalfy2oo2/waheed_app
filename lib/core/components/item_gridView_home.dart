@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/views/pages/detail_product.dart';
 
@@ -39,15 +40,15 @@ class ItemGridviewHome extends StatelessWidget {
         );
       },
       child: Container(
-        width: 177,
+        width: 177.w,
 
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16).r,
           color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
-              blurRadius: 5,
+              blurRadius: 5.r,
               offset: Offset(0, 2),
             ),
           ],
@@ -60,15 +61,15 @@ class ItemGridviewHome extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16),
+                    topLeft: Radius.circular(16).r,
+                    topRight: Radius.circular(16).r,
                   ),
 
                   child: AppImage(
                     image: image ?? "",
-                    width: double.infinity,
+                    width: double.infinity.w,
                     fit: BoxFit.cover,
-                    height: 176,
+                    height: 176.h,
                   ),
                 ),
 
@@ -77,64 +78,64 @@ class ItemGridviewHome extends StatelessWidget {
                     top: 8,
                     left: 8,
                     child: Container(
-                      width: 32,
-                      height: 32,
+                      width: 32.w,
+                      height: 32.h,
                       decoration: BoxDecoration(
                         color: Color(0xffFFFFFFE5).withValues(alpha: 0.9),
-                        borderRadius: BorderRadius.circular(42770700),
+                        borderRadius: BorderRadius.circular(42770700).r,
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0x1A000000),
-                            offset: const Offset(0, 1),
-                            blurRadius: 2,
-                            spreadRadius: -1,
+                            color: Color(0x1A000000),
+                            offset: Offset(0, 1),
+                            blurRadius: 2.r,
+                            spreadRadius: -1.r,
                           ),
                           BoxShadow(
-                            color: const Color(0x1A000000),
-                            offset: const Offset(0, 1),
-                            blurRadius: 3,
-                            spreadRadius: 0,
+                            color: Color(0x1A000000),
+                            offset: Offset(0, 1),
+                            blurRadius: 3.r,
+                            spreadRadius: 0.r,
                           ),
                         ],
                       ),
                       child: AppImage(
                         image: heartIcon,
-                        width: 20,
-                        height: 20,
-                        color: const Color(0xff292D32),
+                        width: 20.w,
+                        height: 20.h,
+                        color: Color(0xff292D32),
                       ),
                     ),
                   ),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 textDirection: TextDirection.rtl,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  AppImage(image: 'star.svg', width: 12, height: 12),
+                  AppImage(image: 'star.svg', width: 12.w, height: 12.h),
 
-                  SizedBox(width: 4),
+                  SizedBox(width: 4.w),
 
                   Text(
                     '4.9',
                     style: TextStyle(
                       color: Color(0xff000000),
-                      fontSize: 12,
+                      fontSize: 12.sp,
 
                       fontFamily: 'IBMPlexSansArabic',
                       fontWeight: FontWeight.w400,
                     ),
                   ),
 
-                  SizedBox(width: 4),
+                  SizedBox(width: 4.w),
 
                   Text(
                     '(128)',
                     style: TextStyle(
                       color: Color(0xff99A1AF),
-                      fontSize: 10,
+                      fontSize: 10.sp,
 
                       fontFamily: 'IBMPlexSansArabic',
                       fontWeight: FontWeight.w400,
@@ -144,17 +145,17 @@ class ItemGridviewHome extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 8),
+            SizedBox(height: 8.h),
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 textDirection: TextDirection.rtl,
                 title ?? "",
                 maxLines: 2,
                 style: TextStyle(
                   color: Color(0xff000000),
-                  fontSize: 14,
+                  fontSize: 14.sp,
 
                   fontFamily: 'IBMPlexSansArabic',
                   fontWeight: FontWeight.w500,
@@ -162,17 +163,17 @@ class ItemGridviewHome extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 2),
+            SizedBox(height: 2.h),
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 textDirection: TextDirection.rtl,
                 subTitle ?? "",
                 maxLines: 2,
                 style: TextStyle(
                   color: Color(0xff6A7282),
-                  fontSize: 11,
+                  fontSize: 11.sp,
 
                   fontFamily: 'IBMPlexSansArabic',
                   fontWeight: FontWeight.w500,
@@ -181,7 +182,7 @@ class ItemGridviewHome extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 textDirection: TextDirection.rtl,
                 children: [
@@ -195,7 +196,7 @@ class ItemGridviewHome extends StatelessWidget {
 
                             style: TextStyle(
                               color: Color(0xff000000),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w400,
                             ),
@@ -206,7 +207,7 @@ class ItemGridviewHome extends StatelessWidget {
 
                             style: TextStyle(
                               color: Color(0xff6A7282),
-                              fontSize: 10,
+                              fontSize: 10.sp,
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w400,
                             ),
@@ -221,13 +222,13 @@ class ItemGridviewHome extends StatelessWidget {
                     Directionality(
                       textDirection: TextDirection.rtl,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Container(
                           alignment: Alignment.center,
-                          width: 42,
-                          height: 23,
+                          width: 42.w,
+                          height: 23.h,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(99),
+                            borderRadius: BorderRadius.circular(99).r,
                             border: Border.all(
                               style: BorderStyle.solid,
                               color: Color(0xffE5E7EB),
@@ -238,7 +239,7 @@ class ItemGridviewHome extends StatelessWidget {
                             name ?? "",
                             style: TextStyle(
                               color: Color(0xff000000),
-                              fontSize: 10,
+                              fontSize: 10.sp,
                               fontFamily: 'IBMPlexSansArabic',
                               fontWeight: FontWeight.w500,
                             ),

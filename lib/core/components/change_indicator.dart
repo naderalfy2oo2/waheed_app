@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChangeIndicator extends StatelessWidget {
   final int currentIndex;
@@ -15,17 +16,15 @@ class ChangeIndicator extends StatelessWidget {
         return Row(
           children: [
             Container(
-              width: 115,
-              height: 6,
+              width: 115.w,
+              height: 6.h,
               decoration: BoxDecoration(
-                color: isActive
-                    ? const Color(0xff000000)
-                    : const Color(0xffE5E7EB),
-                borderRadius: BorderRadius.circular(99),
+                color: isActive ? Color(0xff000000) : Color(0xffE5E7EB),
+                borderRadius: BorderRadius.circular(99).r,
               ),
             ),
 
-            if (index != 2) const SizedBox(width: 8),
+            if (index != 2) SizedBox(width: 8.w),
           ],
         );
       }),

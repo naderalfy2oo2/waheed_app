@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
 class CustomContainerHome extends StatelessWidget {
@@ -14,11 +15,11 @@ class CustomContainerHome extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 8),
-        width: 181,
-        height: 56,
+        width: 181.w,
+        height: 56.h,
 
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16).r,
           color: Color(0xffFFFFFF),
         ),
         child: Column(
@@ -27,10 +28,10 @@ class CustomContainerHome extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  width: 40,
-                  height: 40,
+                  width: 40.w,
+                  height: 40.r,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(999),
+                    borderRadius: BorderRadius.circular(999).r,
                     border: Border.all(
                       style: BorderStyle.solid,
                       color: Color(0xffDADADA),
@@ -40,14 +41,14 @@ class CustomContainerHome extends StatelessWidget {
                   child: AppImage(image: image ?? ""),
                 ),
 
-                SizedBox(width: 8),
+                SizedBox(width: 8.w),
 
                 Text(
                   title ?? "",
                   style: TextStyle(
                     color: Color(0xff000000),
 
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontFamily: 'IBMPlexSansArabic',
                     fontWeight: FontWeight.w500,
                   ),

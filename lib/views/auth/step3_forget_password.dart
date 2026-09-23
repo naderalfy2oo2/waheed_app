@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
@@ -91,19 +92,19 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                 child: Container(
                   padding: EdgeInsets.all(12),
 
-                  width: 48,
-                  height: 48,
+                  width: 48.w,
+                  height: 48.h,
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(99),
+                    borderRadius: BorderRadius.circular(99).r,
                     border: Border.all(color: Color(0xffECECEC)),
                   ),
 
                   child: Center(
                     child: AppImage(
                       image: 'arrow-left.svg',
-                      width: 24,
-                      height: 24,
+                      width: 24.w,
+                      height: 24.h,
                     ),
                   ),
                 ),
@@ -114,7 +115,7 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
               style: TextStyle(
                 color: Color(0xff000000),
 
-                fontSize: 18,
+                fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'IBMPlexSansArabic',
               ),
@@ -128,7 +129,7 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 32),
+                  SizedBox(height: 32.h),
 
                   Center(
                     child: Text(
@@ -136,40 +137,40 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                       style: TextStyle(
                         color: Color(0xff314158),
 
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
                     ),
                   ),
 
-                  SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
                   ChangeIndicator(currentIndex: 3),
 
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
 
                   Container(
                     padding: EdgeInsets.all(24),
-                    width: double.infinity,
+                    width: double.infinity.w,
 
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(24).r,
                       border: Border.all(color: Color(0xffEAEAEA)),
 
                       boxShadow: [
                         BoxShadow(
                           color: Color(0xff0000000).withOpacity(0.06),
                           offset: Offset(0, 2),
-                          blurRadius: 2,
-                          spreadRadius: 0,
+                          blurRadius: 2.r,
+                          spreadRadius: 0.r,
                         ),
                       ],
                     ),
                     child: Column(
                       children: [
-                        SizedBox(height: 24),
+                        SizedBox(height: 24.h),
                         Align(
                           alignment: AlignmentGeometry.topRight,
                           child: Text(
@@ -177,13 +178,13 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.passwordValidator,
@@ -202,13 +203,13 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                               image: isPasswordVisible
                                   ? 'visibility_icon_on.svg'
                                   : 'visibility_icon_off.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 16),
+                        SizedBox(height: 16.h),
 
                         Align(
                           alignment: AlignmentGeometry.topRight,
@@ -217,13 +218,13 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                             style: TextStyle(
                               color: Color(0xff000000),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
-                        SizedBox(height: 8),
+                        SizedBox(height: 8.h),
 
                         AppInput(
                           validator: InputValidator.confirmpasswordValidator,
@@ -242,17 +243,17 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                               image: isobscureTextVisible
                                   ? 'visibility_icon_on.svg'
                                   : 'visibility_icon_off.svg',
-                              width: 20,
-                              height: 20,
+                              width: 20.w,
+                              height: 20.h,
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 40),
+                        SizedBox(height: 40.h),
 
                         SizedBox(
-                          width: 322,
-                          height: 56,
+                          width: 322.w,
+                          height: 56.h,
                           child: AppButton(
                             title: 'تأكيد كلمة المرور الجديدة',
                             onPressed: () async {

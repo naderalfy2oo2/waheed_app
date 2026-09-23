@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/custom_container_choice.dart';
 import 'package:waheed_app/core/components/custom_payment_choice.dart';
 import 'package:waheed_app/services/helper_methods.dart';
@@ -34,19 +35,23 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 21),
+                SizedBox(height: 21.h),
 
                 Row(
                   children: [
-                    AppImage(image: 'truck_blue.svg', width: 20, height: 20),
+                    AppImage(
+                      image: 'truck_blue.svg',
+                      width: 20.w,
+                      height: 20.h,
+                    ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'طريقة الاستلام',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -54,7 +59,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,25 +72,25 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        width: 177,
-                        height: 150,
+                        width: 177.w,
+                        height: 150.h,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: const Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(16).r,
+                          color: Color(0xffFFFFFF),
 
                           border: Border.all(
                             color: selectedMethod == 0
-                                ? const Color(0xff314158)
+                                ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5,
+                            width: 1.5.w,
                           ),
 
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               color: Color(0x10000000),
-                              blurRadius: 2,
+                              blurRadius: 2.r,
                               offset: Offset(0, 2),
-                              spreadRadius: 0,
+                              spreadRadius: 0.r,
                             ),
                           ],
                         ),
@@ -94,10 +99,10 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                             Align(
                               alignment: AlignmentGeometry.topLeft,
                               child: Container(
-                                width: 37,
-                                height: 19,
+                                width: 37.w,
+                                height: 19.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(99),
+                                  borderRadius: BorderRadius.circular(99).r,
                                   color: Color(0xffF8F4EB),
                                 ),
                                 child: Center(
@@ -105,7 +110,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                                     'مجاناً',
                                     style: TextStyle(
                                       color: Color(0xffC9A961),
-                                      fontSize: 10,
+                                      fontSize: 10.sp,
                                       fontWeight: FontWeight.w600,
                                       fontFamily: 'IBMPlexSansArabic',
                                     ),
@@ -119,24 +124,24 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                               child: Container(
                                 padding: EdgeInsets.all(8),
                                 margin: EdgeInsets.all(8),
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
                                   color: Color(0xffF1F5F9),
                                 ),
                                 child: Center(
                                   child: AppImage(
                                     image: 'shop.svg',
-                                    width: 24,
-                                    height: 24,
+                                    width: 24.w,
+                                    height: 24.h,
                                     color: Color(0xff314158),
                                   ),
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 12),
+                            SizedBox(height: 12.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -145,14 +150,14 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.h,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -161,7 +166,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -172,7 +177,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                       ),
                     ),
 
-                    SizedBox(width: 16),
+                    SizedBox(width: 16.w),
 
                     GestureDetector(
                       onTap: () {
@@ -182,43 +187,43 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        width: 177,
-                        height: 150,
+                        width: 177.w,
+                        height: 150.h,
                         decoration: BoxDecoration(
-                          color: const Color(0xffFFFFFF),
-                          borderRadius: BorderRadius.circular(16),
+                          color: Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(16).r,
 
                           border: Border.all(
                             color: selectedMethod == 1
-                                ? const Color(0xff314158)
+                                ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5,
+                            width: 1.5.h,
                           ),
 
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               color: Color(0x10000000),
-                              blurRadius: 2,
+                              blurRadius: 2.r,
                               offset: Offset(0, 2),
-                              spreadRadius: 0,
+                              spreadRadius: 0.r,
                             ),
                           ],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 16),
+                            SizedBox(height: 16.h),
 
                             Align(
                               alignment: AlignmentGeometry.topRight,
                               child: Container(
                                 padding: EdgeInsets.all(8),
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
 
-                                  gradient: const LinearGradient(
+                                  gradient: LinearGradient(
                                     begin: Alignment(-0.85, -0.53),
                                     end: Alignment(0.85, 0.53),
                                     colors: [
@@ -230,14 +235,14 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                                 ),
                                 child: AppImage(
                                   image: 'truck_blue.svg',
-                                  width: 30,
-                                  height: 30,
+                                  width: 30.w,
+                                  height: 30.h,
                                   color: Color(0xffFFFFFF),
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 12),
+                            SizedBox(height: 12.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -246,14 +251,14 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -262,7 +267,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -275,18 +280,18 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
                     AppImage(
                       image: 'location.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color: Color(0xff000000),
                     ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'عنوان التوصيل',
@@ -294,14 +299,14 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                         color: Color(0xff314158),
                         fontFamily: 'IBMPlexSansArabic',
 
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 DottedBorder(
                   child: GestureDetector(
@@ -309,33 +314,33 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                       goTo(page: AddNewAddressPage());
                     },
                     child: Container(
-                      width: 370,
-                      height: 48,
+                      width: 370.w,
+                      height: 48.h,
                       decoration: BoxDecoration(
                         color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12).r,
                       ),
 
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(height: 13),
+                          SizedBox(height: 13.h),
 
                           AppImage(
                             image: 'add.svg',
-                            width: 14,
-                            height: 14,
+                            width: 14.w,
+                            height: 14.h,
                             color: Color(0xff314158),
                           ),
 
-                          SizedBox(width: 4),
+                          SizedBox(width: 4.w),
 
                           Text(
                             'إضافة عنوان جديد',
                             style: TextStyle(
                               color: Color(0xff314158),
 
-                              fontSize: 14,
+                              fontSize: 14.sp,
 
                               fontWeight: FontWeight.w400,
                               fontFamily: 'IBMPlexSansArabic',
@@ -347,18 +352,18 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
                     AppImage(
                       image: 'truck_fas_whitet.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color: Color(0xff292D32),
                     ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'طريقة التوصيل',
@@ -366,30 +371,30 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                         color: Color(0xff314158),
                         fontFamily: 'IBMPlexSansArabic',
 
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 CustomContainerChoice(),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
-                    AppImage(image: 'card.svg', width: 20, height: 20),
+                    AppImage(image: 'card.svg', width: 20.w, height: 20.h),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'طريقة الدفع',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -397,7 +402,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 PaymentOption(
                   index: 0,
@@ -412,7 +417,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                   },
                 ),
 
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
 
                 PaymentOption(
                   index: 1,
@@ -437,7 +442,7 @@ class _CompleteOrderPageState extends State<CompleteOrderPage> {
                   },
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 CustomRevisionContainerOrder(),
               ],

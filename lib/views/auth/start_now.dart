@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'register.dart';
@@ -16,62 +17,60 @@ class StartNow extends StatelessWidget {
             Positioned.fill(
               child: AppImage(
                 image: 'start_now.jpg',
-                width: double.infinity,
-                height: double.infinity,
+                width: double.infinity.w,
+                height: double.infinity.h,
                 fit: BoxFit.cover,
               ),
             ),
 
             Positioned.fill(
-              child: Container(
-                color: const Color(0xff000000).withOpacity(0.70),
-              ),
+              child: Container(color: Color(0xff000000).withOpacity(0.70)),
             ),
 
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-                width: double.infinity,
+                width: double.infinity.w,
 
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32),
-                    topRight: Radius.circular(32),
+                    topLeft: Radius.circular(32).r,
+                    topRight: Radius.circular(32).r,
                   ),
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 24),
+                    SizedBox(height: 24.h),
 
                     Text(
                       'إطلالة تليق بك',
                       style: TextStyle(
                         color: Color(0xff000000),
-                        fontSize: 24,
+                        fontSize: 24.sp,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
                     ),
 
-                    SizedBox(height: 4),
+                    SizedBox(height: 4.h),
 
                     Text(
                       'تسوّق أو استأجر بدلتك المفضلة بخطوات بسيطة\n وتجربة فاخرة.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
                     ),
 
-                    SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: EdgeInsets.all(16),
                       child: AppButton(
                         title: 'البدء الآن',
                         onPressed: () {
@@ -83,7 +82,7 @@ class StartNow extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 9),
+                    SizedBox(height: 9.h),
                   ],
                 ),
               ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_bar_widget.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import '../../../core/components/address_ bottom_ sheet.dart';
 
-class AddNewAddress extends StatelessWidget {
-  const AddNewAddress({super.key});
+class AddNewAddressPage extends StatelessWidget {
+  const AddNewAddressPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class AddNewAddress extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 32),
+                SizedBox(height: 32.h),
 
                 Align(
                   alignment: AlignmentGeometry.topRight,
@@ -26,36 +27,36 @@ class AddNewAddress extends StatelessWidget {
                     'الاسم الكامل',
                     style: TextStyle(
                       color: Color(0xff314158),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
                   ),
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 TextFormField(
                   decoration: InputDecoration(
                     hintText: 'أدخل اسمك الكامل',
                     hintStyle: TextStyle(
                       color: Color(0xff0A0A0A).withValues(alpha: 0.5),
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                     ),
 
                     prefixIcon: AppImage(
                       image: 'profile.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16).r,
                       borderSide: BorderSide(color: Color(0xffEAEAEA)),
                     ),
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
@@ -68,29 +69,29 @@ class AddNewAddress extends StatelessWidget {
                             'المدينة',
                             style: TextStyle(
                               color: Color(0xff314158),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 12),
+                        SizedBox(height: 12.h),
 
                         SizedBox(
-                          width: 178,
-                          height: 48,
+                          width: 178.w,
+                          height: 48.h,
                           child: TextFormField(
                             decoration: InputDecoration(
                               hintText: 'أدخل المدينة',
                               hintStyle: TextStyle(
                                 color: Color(0xff0A0A0A).withValues(alpha: 0.5),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16).r,
                                 borderSide: BorderSide(
                                   color: Color(0xffEAEAEA),
                                 ),
@@ -100,7 +101,7 @@ class AddNewAddress extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: 16.w),
 
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,29 +112,29 @@ class AddNewAddress extends StatelessWidget {
                             'المنطقة / الحي',
                             style: TextStyle(
                               color: Color(0xff314158),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
                         ),
 
-                        SizedBox(height: 12),
+                        SizedBox(height: 12.h),
 
                         SizedBox(
-                          width: 178,
-                          height: 48,
+                          width: 178.w,
+                          height: 48.h,
                           child: TextFormField(
                             decoration: InputDecoration(
                               hintText: 'أدخل المنطقة او الحي',
                               hintStyle: TextStyle(
                                 color: Color(0xff0A0A0A).withValues(alpha: 0.5),
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,
                               ),
 
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16).r,
                                 borderSide: BorderSide(
                                   color: Color(0xffEAEAEA),
                                 ),
@@ -146,7 +147,7 @@ class AddNewAddress extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Align(
                   alignment: AlignmentGeometry.topRight,
@@ -154,36 +155,36 @@ class AddNewAddress extends StatelessWidget {
                     'رقم الهاتف',
                     style: TextStyle(
                       color: Color(0xff314158),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
                   ),
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 TextFormField(
                   decoration: InputDecoration(
                     hintText: '+15 5X XXX XXXX',
                     hintStyle: TextStyle(
                       color: Color(0xff0A0A0A).withValues(alpha: 0.5),
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                     ),
 
                     prefixIcon: AppImage(
                       image: 'call.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16).r,
                       borderSide: BorderSide(color: Color(0xffEAEAEA)),
                     ),
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Align(
                   alignment: AlignmentGeometry.topRight,
@@ -191,17 +192,17 @@ class AddNewAddress extends StatelessWidget {
                     'العنوان بالتفصيل',
                     style: TextStyle(
                       color: Color(0xff314158),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'IBMPlexSansArabic',
                     ),
                   ),
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 SizedBox(
-                  width: double.infinity,
-                  height: 80,
+                  width: double.infinity.w,
+                  height: 80.h,
                   child: TextFormField(
                     maxLines: 1,
                     textAlignVertical: TextAlignVertical.center,
@@ -210,24 +211,24 @@ class AddNewAddress extends StatelessWidget {
                       hintText: 'الشارع، رقم المبنى، علامة مميزة',
                       hintStyle: TextStyle(
                         color: Color(0xff0A0A0A).withValues(alpha: 0.5),
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                       ),
 
                       prefixIcon: AppImage(
                         image: 'location.svg',
-                        width: 20,
-                        height: 20,
+                        width: 20.w,
+                        height: 20.h,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(16).r,
                         borderSide: BorderSide(color: Color(0xffEAEAEA)),
                       ),
                     ),
                   ),
                 ),
 
-                SizedBox(height: 212),
+                SizedBox(height: 212.h),
 
                 AppButton(
                   title: 'حفظ العنوان',
@@ -243,7 +244,7 @@ class AddNewAddress extends StatelessWidget {
                   },
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
               ],
             ),
           ),

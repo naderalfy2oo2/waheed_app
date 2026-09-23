@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomRowTextHome extends StatelessWidget {
   final String? title;
@@ -8,7 +9,7 @@ class CustomRowTextHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         textDirection: TextDirection.rtl,
 
@@ -17,7 +18,7 @@ class CustomRowTextHome extends StatelessWidget {
             title ?? "",
             style: TextStyle(
               color: Color(0xff000000),
-              fontSize: 16,
+              fontSize: 16.sp,
               fontFamily: 'IBMPlexSansArabic',
               fontWeight: FontWeight.w800,
             ),
@@ -31,7 +32,7 @@ class CustomRowTextHome extends StatelessWidget {
               subtitle ?? "",
               style: TextStyle(
                 color: Color(0xff314158),
-                fontSize: 12,
+                fontSize: 12.sp,
                 fontFamily: 'IBMPlexSansArabic',
                 fontWeight: FontWeight.w500,
               ),

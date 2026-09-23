@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
@@ -13,13 +14,13 @@ class AdressBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8),
-      width: 402,
-      height: 407,
+      width: 402.w,
+      height: 407.h,
       decoration: BoxDecoration(
         color: Color(0xffFFFFFF),
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(32),
-          topLeft: Radius.circular(32),
+          topRight: Radius.circular(32).r,
+          topLeft: Radius.circular(32).r,
         ),
         border: Border.all(color: Color(0xffEAEAEA)),
       ),
@@ -27,7 +28,7 @@ class AdressBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           Row(
             children: [
@@ -35,41 +36,41 @@ class AdressBottomSheet extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: AppImage(image: 'close.svg', width: 24, height: 24),
+                child: AppImage(image: 'close.svg', width: 24.w, height: 24.h),
               ),
 
-              SizedBox(width: 110),
+              SizedBox(width: 110.w),
 
               Text(
                 'عنوان التوصيل',
                 style: TextStyle(
                   color: Color(0xff000000),
                   fontWeight: FontWeight.w500,
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
               ),
             ],
           ),
 
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           Row(
             children: [
               AppImage(
                 image: 'location.svg',
-                width: 20,
-                height: 20,
+                width: 20.w,
+                height: 20.h,
                 color: Color(0xff000000),
               ),
 
-              SizedBox(width: 8),
+              SizedBox(width: 8.w),
 
               Text(
                 'عنوان التوصيل',
                 style: TextStyle(
                   color: Color(0xff314158),
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'IBMPlexSansArabic',
                 ),
@@ -77,13 +78,13 @@ class AdressBottomSheet extends StatelessWidget {
             ],
           ),
 
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           Container(
-            width: 370,
-            height: 105,
+            width: 370.w,
+            height: 105.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(16).r,
               color: Color(0xffFFFFFF),
               border: Border.all(color: Color(0xff000000)),
             ),
@@ -92,28 +93,28 @@ class AdressBottomSheet extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
                   Container(
-                    width: 40,
-                    height: 40,
+                    width: 40.w,
+                    height: 40.h,
                     decoration: BoxDecoration(
                       color: Color(0xff0000000).withValues(alpha: 0.06),
 
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(14).r,
                     ),
 
                     child: Center(
                       child: AppImage(
                         image: 'home_black.svg',
-                        width: 20,
-                        height: 20,
+                        width: 20.w,
+                        height: 20.h,
                         color: Color(0xff3F3F3F),
                       ),
                     ),
                   ),
 
-                  SizedBox(width: 12),
+                  SizedBox(width: 12.w),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -124,19 +125,19 @@ class AdressBottomSheet extends StatelessWidget {
                             'المنزل',
                             style: TextStyle(
                               color: Color(0xff0A0A0A),
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'IBMPlexSansArabic',
                             ),
                           ),
 
-                          SizedBox(width: 12),
+                          SizedBox(width: 12.w),
 
                           Container(
-                            width: 51,
-                            height: 22,
+                            width: 51.w,
+                            height: 22.h,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(999),
+                              borderRadius: BorderRadius.circular(999).r,
                               color: Color(0xff6A7282).withOpacity(0.20),
                             ),
                             child: Center(
@@ -144,7 +145,7 @@ class AdressBottomSheet extends StatelessWidget {
                                 'افتراضي',
                                 style: TextStyle(
                                   color: Color(0xff000000),
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -154,25 +155,25 @@ class AdressBottomSheet extends StatelessWidget {
                         ],
                       ),
 
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.h),
 
                       Text(
                         'أحمد صبري • +15 55 123 4567',
                         style: TextStyle(
                           color: Color(0xff45556C),
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
                       ),
 
-                      SizedBox(width: 4),
+                      SizedBox(width: 4.w),
 
                       Text(
                         'المنصورة، حي الزعفران',
                         style: TextStyle(
                           color: Color(0xff45556C),
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'IBMPlexSansArabic',
                         ),
@@ -184,7 +185,7 @@ class AdressBottomSheet extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
 
           DottedBorder(
             child: GestureDetector(
@@ -192,33 +193,33 @@ class AdressBottomSheet extends StatelessWidget {
                 goTo(page: AddNewAddressPage());
               },
               child: Container(
-                width: 370,
-                height: 48,
+                width: 370.w,
+                height: 48.h,
                 decoration: BoxDecoration(
                   color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12).r,
                 ),
 
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 13),
+                    SizedBox(height: 13.h),
 
                     AppImage(
                       image: 'add.svg',
-                      width: 14,
-                      height: 14,
+                      width: 14.w,
+                      height: 14.h,
                       color: Color(0xff314158),
                     ),
 
-                    SizedBox(width: 4),
+                    SizedBox(width: 4.w),
 
                     Text(
                       'إضافة عنوان جديد',
                       style: TextStyle(
                         color: Color(0xff314158),
 
-                        fontSize: 14,
+                        fontSize: 14.sp,
 
                         fontWeight: FontWeight.w400,
                         fontFamily: 'IBMPlexSansArabic',
@@ -230,7 +231,7 @@ class AdressBottomSheet extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 32),
+          SizedBox(height: 32.h),
 
           AppButton(
             title: 'تأكيد العنوان',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_bar_widget.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 
@@ -14,8 +15,10 @@ class PrivacyPolicyPage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 64),
-            Center(child: AppImage(image: 'splash.png', width: 64, height: 64)),
+            SizedBox(height: 64.h),
+            Center(
+              child: AppImage(image: 'splash.png', width: 64.w, height: 64.h),
+            ),
           ],
         ),
       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/components/app_image.dart';
-
 import 'home/cart.dart';
 import 'home/home.dart';
 import 'home/profile.dart';
@@ -50,7 +49,7 @@ class _HomeViewState extends State<HomeView> {
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
-        width: double.infinity,
+        width: double.infinity.w,
 
         decoration: BoxDecoration(color: Colors.white),
 

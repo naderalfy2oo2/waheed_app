@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppContainerSize extends StatelessWidget {
   final String title;
@@ -17,11 +18,11 @@ class AppContainerSize extends StatelessWidget {
       onTap: onTap,
 
       child: Container(
-        width: 62,
-        height: 42,
+        width: 62.w,
+        height: 42.h,
         decoration: BoxDecoration(
           color: isSelected ? Color(0xffC9A961) : Colors.white,
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(14).r,
           border: Border.all(
             color: isSelected ? Colors.green : Color(0xffE5E7EB),
           ),
@@ -38,7 +39,7 @@ class AppContainerSize extends StatelessWidget {
 
               fontFamily: 'IBMPlexSansArabic',
               fontWeight: FontWeight.w600,
-              fontSize: 14,
+              fontSize: 14.sp,
             ),
           ),
         ),

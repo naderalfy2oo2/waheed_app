@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/pages/pickup_flow/choose_date.dart';
 
@@ -11,14 +12,14 @@ import '../../../core/components/custom_revision_container_order.dart';
 import '../../../core/components/payment _bottom_ sheet.dart';
 import '../delivery_flow/revision_order.dart';
 
-class InquiryMethod extends StatefulWidget {
-  const InquiryMethod({super.key});
+class InquiryMethodPage extends StatefulWidget {
+  const InquiryMethodPage({super.key});
 
   @override
-  State<InquiryMethod> createState() => _InquiryMethodState();
+  State<InquiryMethodPage> createState() => _InquiryMethodPageState();
 }
 
-class _InquiryMethodState extends State<InquiryMethod> {
+class _InquiryMethodPageState extends State<InquiryMethodPage> {
   int selectedMethod = 0;
   int selectedPayment = 0;
   @override
@@ -32,11 +33,15 @@ class _InquiryMethodState extends State<InquiryMethod> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 21),
+                SizedBox(height: 21.h),
 
                 Row(
                   children: [
-                    AppImage(image: 'truck_blue.svg', width: 20, height: 20),
+                    AppImage(
+                      image: 'truck_blue.svg',
+                      width: 20.w,
+                      height: 20.h,
+                    ),
 
                     SizedBox(width: 8),
 
@@ -44,7 +49,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                       'طريقة الاستلام',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -52,7 +57,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,25 +70,25 @@ class _InquiryMethodState extends State<InquiryMethod> {
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        width: 177,
-                        height: 150,
+                        width: 177.w,
+                        height: 150.h,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: const Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(16).r,
+                          color: Color(0xffFFFFFF),
 
                           border: Border.all(
                             color: selectedMethod == 0
-                                ? const Color(0xff314158)
+                                ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5,
+                            width: 1.5.w,
                           ),
 
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               color: Color(0x10000000),
-                              blurRadius: 2,
+                              blurRadius: 2.r,
                               offset: Offset(0, 2),
-                              spreadRadius: 0,
+                              spreadRadius: 0.r,
                             ),
                           ],
                         ),
@@ -92,10 +97,10 @@ class _InquiryMethodState extends State<InquiryMethod> {
                             Align(
                               alignment: AlignmentGeometry.topLeft,
                               child: Container(
-                                width: 37,
-                                height: 19,
+                                width: 37.w,
+                                height: 19.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(99),
+                                  borderRadius: BorderRadius.circular(99).r,
                                   color: Color(0xffF8F4EB),
                                 ),
                                 child: Center(
@@ -103,7 +108,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                                     'مجاناً',
                                     style: TextStyle(
                                       color: Color(0xffC9A961),
-                                      fontSize: 10,
+                                      fontSize: 10.sp,
                                       fontWeight: FontWeight.w600,
                                       fontFamily: 'IBMPlexSansArabic',
                                     ),
@@ -116,12 +121,12 @@ class _InquiryMethodState extends State<InquiryMethod> {
                               alignment: AlignmentGeometry.topRight,
                               child: Container(
                                 padding: EdgeInsets.all(8),
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
 
-                                  gradient: const LinearGradient(
+                                  gradient: LinearGradient(
                                     begin: Alignment(-0.85, -0.53),
                                     end: Alignment(0.85, 0.53),
                                     colors: [
@@ -133,14 +138,14 @@ class _InquiryMethodState extends State<InquiryMethod> {
                                 ),
                                 child: AppImage(
                                   image: 'shop.svg',
-                                  width: 30,
-                                  height: 30,
+                                  width: 30.w,
+                                  height: 30.h,
                                   color: Color(0xffFFFFFF),
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 12),
+                            SizedBox(height: 12.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -149,14 +154,14 @@ class _InquiryMethodState extends State<InquiryMethod> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -165,7 +170,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
 
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -176,7 +181,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                       ),
                     ),
 
-                    SizedBox(width: 16),
+                    SizedBox(width: 16.w),
 
                     GestureDetector(
                       onTap: () {
@@ -186,57 +191,57 @@ class _InquiryMethodState extends State<InquiryMethod> {
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        width: 177,
-                        height: 150,
+                        width: 177.w,
+                        height: 150.h,
                         decoration: BoxDecoration(
-                          color: const Color(0xffFFFFFF),
-                          borderRadius: BorderRadius.circular(16),
+                          color: Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(16).r,
 
                           border: Border.all(
                             color: selectedMethod == 1
-                                ? const Color(0xff314158)
+                                ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5,
+                            width: 1.5.w,
                           ),
 
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               color: Color(0x10000000),
-                              blurRadius: 2,
+                              blurRadius: 2.r,
                               offset: Offset(0, 2),
-                              spreadRadius: 0,
+                              spreadRadius: 0.r,
                             ),
                           ],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 16),
+                            SizedBox(height: 16.h),
                             Align(
                               alignment: AlignmentGeometry.centerRight,
                               child: Container(
                                 padding: EdgeInsets.all(8),
 
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
                                   color: Color(0xffF1F5F9),
                                 ),
                                 child: Center(
                                   child: AppImage(
                                     image: 'truck_blue.svg',
-                                    width: 24,
-                                    height: 24,
+                                    width: 24.w,
+                                    height: 24.h,
                                     color: Color(0xff314158),
                                   ),
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 12),
+                            SizedBox(height: 12.h),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -245,14 +250,14 @@ class _InquiryMethodState extends State<InquiryMethod> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
                               ),
                             ),
 
-                            SizedBox(height: 3),
+                            SizedBox(height: 3.h),
 
                             Align(
                               alignment: AlignmentGeometry.centerRight,
@@ -261,7 +266,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
 
                                 style: TextStyle(
                                   color: Color(0xff62748E),
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -274,18 +279,18 @@ class _InquiryMethodState extends State<InquiryMethod> {
                   ],
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
                     AppImage(
                       image: 'location.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color: Color(0xff000000),
                     ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'تفاصيل الاستلام',
@@ -293,41 +298,41 @@ class _InquiryMethodState extends State<InquiryMethod> {
                         color: Color(0xff314158),
                         fontFamily: 'IBMPlexSansArabic',
 
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 8),
+                SizedBox(height: 8.h),
 
                 Align(
                   alignment: Alignment.topRight,
                   child: Container(
                     padding: EdgeInsets.all(16),
-                    width: 385,
-                    height: 74,
+                    width: 385.w,
+                    height: 74.h,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16).r,
                       color: Color(0xffFFFFFF),
                       border: Border.all(
                         color: Color(0xff1E3A8A).withOpacity(0.082),
                       ),
 
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           color: Color(0x1A000000),
                           offset: Offset(0, 1),
-                          blurRadius: 2,
-                          spreadRadius: -1,
+                          blurRadius: 2.r,
+                          spreadRadius: -1.r,
                         ),
 
                         BoxShadow(
                           color: Color(0x1A000000),
                           offset: Offset(0, 1),
-                          blurRadius: 3,
-                          spreadRadius: 0,
+                          blurRadius: 3.r,
+                          spreadRadius: 0.r,
                         ),
                       ],
                     ),
@@ -341,24 +346,24 @@ class _InquiryMethodState extends State<InquiryMethod> {
                               child: Container(
                                 padding: EdgeInsets.all(8),
 
-                                width: 40,
-                                height: 40,
+                                width: 40.w,
+                                height: 40.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(12).r,
                                   color: Color(0xffF1F5F9),
                                 ),
                                 child: Center(
                                   child: AppImage(
                                     image: 'home_black.svg',
-                                    width: 24,
-                                    height: 24,
+                                    width: 24.w,
+                                    height: 24.h,
                                     color: Color(0xff314158),
                                   ),
                                 ),
                               ),
                             ),
 
-                            SizedBox(width: 12),
+                            SizedBox(width: 12.w),
 
                             Text.rich(
                               TextSpan(
@@ -369,7 +374,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                                     style: TextStyle(
                                       color: Color(0xff0A0A0A),
 
-                                      fontSize: 16,
+                                      fontSize: 16.sp,
                                       fontFamily: 'IBMPlexSansArabic',
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -382,7 +387,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                                     style: TextStyle(
                                       color: Color(0xff62748E),
 
-                                      fontSize: 12,
+                                      fontSize: 12.sp,
                                       fontFamily: 'IBMPlexSansArabic',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -397,24 +402,24 @@ class _InquiryMethodState extends State<InquiryMethod> {
                   ),
                 ),
 
-                SizedBox(height: 24),
+                SizedBox(height: 24.h),
 
                 Row(
                   children: [
                     AppImage(
                       image: 'card.svg',
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color: Color(0xff292D32),
                     ),
 
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
 
                     Text(
                       'طريقة الدفع',
                       style: TextStyle(
                         color: Color(0xff314158),
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'IBMPlexSansArabic',
                       ),
@@ -422,7 +427,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                   ],
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 12.h),
 
                 PaymentOption(
                   index: 0,
@@ -437,7 +442,7 @@ class _InquiryMethodState extends State<InquiryMethod> {
                   },
                 ),
 
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
 
                 PaymentOption(
                   index: 1,
@@ -456,13 +461,13 @@ class _InquiryMethodState extends State<InquiryMethod> {
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
                       builder: (context) {
-                        return const PaymentBottomSheet();
+                        return PaymentBottomSheet();
                       },
                     );
                   },
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 CustomRevisionContainerOrder(),
               ],
