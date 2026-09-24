@@ -4,8 +4,8 @@ import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'register.dart';
 
-class StartNow extends StatelessWidget {
-  const StartNow({super.key});
+class StartNowView extends StatelessWidget {
+  const StartNowView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,9 @@ class StartNow extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => Register()),
+                            MaterialPageRoute(
+                              builder: (context) => RegisterView(),
+                            ),
                           );
                         },
                       ),

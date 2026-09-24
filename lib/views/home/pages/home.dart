@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-import 'package:waheed_app/views/pages/home/favourite.dart';
-import 'package:waheed_app/views/pages/home/notices.dart';
+import 'package:waheed_app/views/home/pages/favourite.dart';
+import 'package:waheed_app/views/home/pages/notices.dart';
 import '../../../core/components/custom_row_text_home.dart';
 import '../../../core/components/app_image.dart';
 import '../../../core/components/app_input.dart';
@@ -25,7 +25,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int countIndex = 0;
 
-  final List image = [
+  final image = [
     'assets/images/home.png',
     'assets/images/home.png',
     'assets/images/home.png',

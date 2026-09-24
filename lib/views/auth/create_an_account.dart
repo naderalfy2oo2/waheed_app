@@ -7,16 +7,15 @@ import 'package:waheed_app/services/input_validator.dart';
 import '../../services/dio_helper.dart';
 import '../../services/helper_methods.dart';
 import 'complete_account.dart';
-import 'confirm_an_account.dart';
 
-class CreateAnAccount extends StatefulWidget {
-  const CreateAnAccount({super.key});
+class CreateAnAccountView extends StatefulWidget {
+  const CreateAnAccountView({super.key});
 
   @override
-  State<CreateAnAccount> createState() => _CreateAnAccountState();
+  State<CreateAnAccountView> createState() => _CreateAnAccountViewState();
 }
 
-class _CreateAnAccountState extends State<CreateAnAccount> {
+class _CreateAnAccountViewState extends State<CreateAnAccountView> {
   bool isPasswordVisible = false;
   bool isobscureTextVisible = false;
   bool isLoginClicked = false;
@@ -332,7 +331,7 @@ class _CreateAnAccountState extends State<CreateAnAccount> {
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CompleteAccount(),
+                                    builder: (context) => CompleteAccountView(),
                                   ),
                                 );
                               }

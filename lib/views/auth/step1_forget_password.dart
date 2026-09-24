@@ -6,17 +6,17 @@ import '../../core/components/app_image.dart';
 import '../../core/components/change_indicator.dart';
 import '../../services/dio_helper.dart';
 import '../../services/helper_methods.dart';
-import 'confirm_an_account.dart';
 import 'step2_forget_password.dart';
 
-class Step1ForgetPassword extends StatefulWidget {
-  const Step1ForgetPassword({super.key});
+class Step1ForgetPasswordView extends StatefulWidget {
+  const Step1ForgetPasswordView({super.key});
 
   @override
-  State<Step1ForgetPassword> createState() => _Step1ForgetPasswordState();
+  State<Step1ForgetPasswordView> createState() =>
+      _Step1ForgetPasswordViewState();
 }
 
-class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
+class _Step1ForgetPasswordViewState extends State<Step1ForgetPasswordView> {
   final formKey = GlobalKey<FormState>();
   bool isLoginClicked = false;
 
@@ -218,9 +218,10 @@ class _Step1ForgetPasswordState extends State<Step1ForgetPassword> {
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Step2ForgetPassword(
-                                      email: emailcontroller.text.trim(),
-                                    ),
+                                    builder: (context) =>
+                                        Step2ForgetPasswordView(
+                                          email: emailcontroller.text.trim(),
+                                        ),
                                   ),
                                 );
                               }

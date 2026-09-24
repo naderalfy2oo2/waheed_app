@@ -7,7 +7,6 @@ import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/custom_container_clothes.dart';
 import 'package:waheed_app/services/helper_methods.dart';
 import 'package:waheed_app/views/customized_size/shirt_size.dart';
-
 import '../../core/components/app_container_size _selection _counter.dart';
 
 class JacketSizeView extends StatefulWidget {
@@ -21,7 +20,7 @@ class _JacketSizeViewState extends State<JacketSizeView> {
   int currentStepIndex = 0;
   String selectedSize = 'M';
 
-  final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
+  final titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
   final sizes = ['S', 'M', 'L', 'XL', 'XXL'];
   @override
   Widget build(BuildContext context) {

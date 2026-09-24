@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/components/app_image.dart';
-import 'home/cart.dart';
-import 'home/home.dart';
-import 'home/profile.dart';
-import 'home/talabat.dart';
+import 'pages/cart.dart';
+import 'pages/home.dart';
+import 'pages/profile.dart';
+import 'pages/talabat.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

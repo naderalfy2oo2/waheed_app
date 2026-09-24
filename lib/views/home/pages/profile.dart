@@ -550,7 +550,7 @@ class ProfileGuest extends StatelessWidget {
                       SizedBox(height: 16.h),
                       InkWell(
                         onTap: () {
-                          goTo(page: Register());
+                          goTo(page: RegisterView());
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 14),

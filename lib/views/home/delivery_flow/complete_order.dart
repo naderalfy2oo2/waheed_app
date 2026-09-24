@@ -1,20 +1,26 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed_app/core/components/app_bar_widget.dart';
-import 'package:waheed_app/core/components/app_image.dart';
-import 'package:waheed_app/core/components/bottom_sheet.dart';
+import 'package:waheed_app/core/components/custom_container_choice.dart';
+import 'package:waheed_app/core/components/custom_payment_choice.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-import 'package:waheed_app/views/pages/delivery_flow/order_successfully_confirmed.dart';
-import '../../../core/components/address_ bottom_ sheet.dart';
+import 'package:waheed_app/views/home/delivery_flow/add_new_address.dart';
+import 'package:waheed_app/views/home/delivery_flow/revision_order.dart';
+import '../../../core/components/app_bar_widget.dart';
+import '../../../core/components/app_image.dart';
+import '../../../core/components/bottom_sheet.dart';
+import '../../../core/components/custom_revision_container_order.dart';
+import '../../../core/components/payment _bottom_ sheet.dart';
 
-class RevisionOrderPage extends StatefulWidget {
-  const RevisionOrderPage({super.key});
+class CompleteOrderPage extends StatefulWidget {
+  const CompleteOrderPage({super.key});
 
   @override
-  State<RevisionOrderPage> createState() => _RevisionOrderPageState();
+  State<CompleteOrderPage> createState() => _CompleteOrderPageState();
 }
 
-class _RevisionOrderPageState extends State<RevisionOrderPage> {
+class _CompleteOrderPageState extends State<CompleteOrderPage> {
+  int selectedPayment = 0;
   int selectedMethod = 0;
   @override
   Widget build(BuildContext context) {
@@ -142,7 +148,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
 
                                 style: TextStyle(
                                   color: Color(0xff0A0A0A),
-                                  fontSize: 14.sp,
+                                  fontSize: 14.h,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'IBMPlexSansArabic',
                                 ),
@@ -189,7 +195,7 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                             color: selectedMethod == 1
                                 ? Color(0xff314158)
                                 : Colors.transparent,
-                            width: 1.5.w,
+                            width: 1.5.h,
                           ),
 
                           boxShadow: [
@@ -295,29 +301,76 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
+                  ],
+                ),
 
-                    Spacer(),
+                SizedBox(height: 16.h),
 
-                    TextButton(
-                      onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: Colors.transparent,
-                          builder: (context) {
-                            return AdressBottomSheet();
-                          },
-                        );
-                      },
-                      child: Text(
-                        'تغيير',
-                        style: TextStyle(
-                          color: Color(0xff000000),
-                          fontFamily: 'IBMPlexSansArabic',
+                DottedBorder(
+                  child: GestureDetector(
+                    onTap: () {
+                      goTo(page: AddNewAddressPage());
+                    },
+                    child: Container(
+                      width: 370.w,
+                      height: 48.h,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
+                        borderRadius: BorderRadius.circular(12).r,
+                      ),
 
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 13.h),
+
+                          AppImage(
+                            image: 'add.svg',
+                            width: 14.w,
+                            height: 14.h,
+                            color: Color(0xff314158),
+                          ),
+
+                          SizedBox(width: 4.w),
+
+                          Text(
+                            'إضافة عنوان جديد',
+                            style: TextStyle(
+                              color: Color(0xff314158),
+
+                              fontSize: 14.sp,
+
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'IBMPlexSansArabic',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 16.h),
+
+                Row(
+                  children: [
+                    AppImage(
+                      image: 'truck_fas_whitet.svg',
+                      width: 20.w,
+                      height: 20.h,
+                      color: Color(0xff292D32),
+                    ),
+
+                    SizedBox(width: 8.w),
+
+                    Text(
+                      'طريقة التوصيل',
+                      style: TextStyle(
+                        color: Color(0xff314158),
+                        fontFamily: 'IBMPlexSansArabic',
+
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],
@@ -325,161 +378,79 @@ class _RevisionOrderPageState extends State<RevisionOrderPage> {
 
                 SizedBox(height: 16.h),
 
-                Container(
-                  width: 370.w,
-                  height: 100.h,
-                  padding: EdgeInsets.all(10),
+                CustomContainerChoice(),
 
-                  decoration: BoxDecoration(
-                    color: Color(0xffFFFFFF),
-                    borderRadius: BorderRadius.circular(16).r,
-                    border: Border.all(color: Color(0xffEAEAEA)),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 40.w,
-                        height: 40.h,
-                        decoration: BoxDecoration(
-                          color: Color(0xff0000000).withValues(alpha: 0.06),
-                          borderRadius: BorderRadius.circular(14).r,
-                        ),
-                        child: Center(
-                          child: AppImage(
-                            image: 'home_black.svg',
-                            width: 20.w,
-                            height: 20.h,
-                          ),
-                        ),
+                SizedBox(height: 16.h),
+
+                Row(
+                  children: [
+                    AppImage(image: 'card.svg', width: 20.w, height: 20.h),
+
+                    SizedBox(width: 8.w),
+
+                    Text(
+                      'طريقة الدفع',
+                      style: TextStyle(
+                        color: Color(0xff314158),
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'IBMPlexSansArabic',
                       ),
-
-                      SizedBox(width: 12.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'المنزل',
-                                  style: TextStyle(
-                                    color: Color(0xff0A0A0A),
-                                    fontSize: 18.sp,
-                                    fontFamily: 'IBMPlexSansArabic',
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-
-                                SizedBox(width: 12.w),
-
-                                Container(
-                                  width: 51.w,
-                                  height: 22.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(999).r,
-                                    color: Color(
-                                      0xff6A7282,
-                                    ).withValues(alpha: 0.20),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'افتراضي',
-                                      style: TextStyle(
-                                        color: Color(0xff000000),
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14.sp,
-                                        fontFamily: 'IBMPlexSansArabic',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-
-                            SizedBox(height: 8.h),
-
-                            Text(
-                              'أحمد صبري • +15 55 123 4567',
-                              style: TextStyle(
-                                color: Color(0xff45556C),
-                                fontSize: 14.sp,
-                                fontFamily: 'IBMPlexSansArabic',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-
-                            SizedBox(height: 4.h),
-
-                            Text(
-                              'المنصورة، حي الزعفران',
-                              style: TextStyle(
-                                color: Color(0xff62748E),
-                                fontSize: 14.sp,
-                                fontFamily: 'IBMPlexSansArabic',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
 
                 SizedBox(height: 16.h),
 
-                Container(
-                  padding: EdgeInsets.all(4),
-                  width: 370.w,
-                  height: 63.h,
-                  decoration: BoxDecoration(
-                    color: Color(0xffFFFFFF),
-
-                    borderRadius: BorderRadius.circular(24).r,
-                  ),
-                  child: Row(
-                    children: [
-                      SizedBox(height: 20.h),
-
-                      AppImage(
-                        image: 'box.svg',
-                        width: 20.w,
-                        height: 20.h,
-                        color: Color(0xff292D32),
-                      ),
-
-                      SizedBox(width: 4.w),
-
-                      Text(
-                        'ملخص الطلب',
-                        style: TextStyle(
-                          color: Color(0xff0A0A0A),
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'IBMPlexSansArabic',
-                        ),
-                      ),
-
-                      Spacer(),
-                      AppImage(
-                        image: 'arrow-down.svg',
-                        width: 16.w,
-                        height: 16.h,
-                      ),
-                    ],
-                  ),
+                PaymentOption(
+                  index: 0,
+                  selectedPayment: selectedPayment,
+                  title: 'الدفع عند الاستلام',
+                  subtitle: 'ادفع نقداً عند وصول الطلب',
+                  icon: 'wallet.svg',
+                  onSelected: (index) {
+                    setState(() {
+                      selectedPayment = index;
+                    });
+                  },
                 ),
+
+                SizedBox(height: 10.h),
+
+                PaymentOption(
+                  index: 1,
+                  selectedPayment: selectedPayment,
+                  title: 'بطاقة ائتمانية / ميزة',
+                  subtitle: 'فيزا، ماستركارد، ميزة',
+                  icon: 'visa.svg',
+                  onSelected: (index) {
+                    setState(() {
+                      selectedPayment = index;
+                    });
+                  },
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) {
+                        return const PaymentBottomSheet();
+                      },
+                    );
+                  },
+                ),
+
+                SizedBox(height: 16.h),
+
+                CustomRevisionContainerOrder(),
               ],
             ),
           ),
         ),
-
         bottomNavigationBar: BottomSheetWidget(
-          title: 'تأكيد الطلب',
-          icon: 'circle_correct.svg',
+          title: 'إتمام الطلب',
           onPressed: () {
-            goTo(page: OrderSuccessfullyConfirmedPage());
+            goTo(page: RevisionOrderPage());
           },
         ),
       ),

@@ -20,7 +20,7 @@ class _ShirtSizeViewState extends State<ShirtSizeView> {
   int currentStepIndex = 1;
   String selectedSize = 'M';
 
-  final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
+  final titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
   final sizes = ['S', 'M', 'L', 'XL', 'XXL'];
   @override
   Widget build(BuildContext context) {

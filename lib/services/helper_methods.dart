@@ -6,6 +6,12 @@ void goTo({required Widget page}) {
   navKey.currentState?.push(MaterialPageRoute(builder: (_) => page));
 }
 
+void goto({required Widget page}) {
+  Future.delayed(Duration(seconds: 3), () {
+    goTo(page: page);
+  });
+}
+
 void showMsg(String msg, {bool isError = false}) {
   if (msg.isEmpty) return;
   final context = navKey.currentContext;

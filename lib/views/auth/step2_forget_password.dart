@@ -8,16 +8,17 @@ import '../../services/helper_methods.dart';
 import 'step1_forget_password.dart';
 import 'step3_forget_password.dart';
 
-class Step2ForgetPassword extends StatefulWidget {
+class Step2ForgetPasswordView extends StatefulWidget {
   final String email;
 
-  const Step2ForgetPassword({super.key, required this.email});
+  const Step2ForgetPasswordView({super.key, required this.email});
 
   @override
-  State<Step2ForgetPassword> createState() => _Step2ForgetPasswordState();
+  State<Step2ForgetPasswordView> createState() =>
+      _Step2ForgetPasswordViewState();
 }
 
-class _Step2ForgetPasswordState extends State<Step2ForgetPassword> {
+class _Step2ForgetPasswordViewState extends State<Step2ForgetPasswordView> {
   bool isTimerFinished = false;
   final otpcontroller = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -61,7 +62,7 @@ class _Step2ForgetPasswordState extends State<Step2ForgetPassword> {
             backgroundColor: Color(0xffFFFFFF),
             leading: GestureDetector(
               onTap: () {
-                goTo(page: Step1ForgetPassword());
+                goTo(page: Step1ForgetPasswordView());
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -274,10 +275,11 @@ class _Step2ForgetPasswordState extends State<Step2ForgetPassword> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Step3ForgetPassword(
-                                      email: widget.email,
-                                      otp: otpcontroller.text.trim(),
-                                    ),
+                                    builder: (context) =>
+                                        Step3ForgetPasswordView(
+                                          email: widget.email,
+                                          otp: otpcontroller.text.trim(),
+                                        ),
                                   ),
                                 );
                               }

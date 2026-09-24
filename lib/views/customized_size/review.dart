@@ -18,7 +18,7 @@ class ReviewView extends StatefulWidget {
 class _ReviewViewState extends State<ReviewView> {
   int currentStepIndex = 3;
   String selectedSize = '28';
-  final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
+  final titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
   final sizes = ['28', '30', '32', '34', '36'];
   @override
   Widget build(BuildContext context) {

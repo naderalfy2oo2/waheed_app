@@ -5,7 +5,7 @@ import 'package:waheed_app/core/components/item_gridView_home.dart';
 import 'package:waheed_app/model/product_ model.dart';
 import 'package:waheed_app/services/dio_helper.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-import 'package:waheed_app/views/pages/home/home.dart';
+import 'package:waheed_app/views/home/pages/home.dart';
 
 class FavouritePage extends StatefulWidget {
   const FavouritePage({super.key});

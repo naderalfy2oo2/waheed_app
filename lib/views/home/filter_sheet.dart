@@ -13,7 +13,7 @@ class FilterSheetPage extends StatefulWidget {
 
 class _FilterSheetPageState extends State<FilterSheetPage> {
   int selectedIndex = 0;
-  final List Categories = ['الكل', 'الأحذية', 'الاكسسوارات', 'القمصان'];
+  final Categories = ['الكل', 'الأحذية', 'الاكسسوارات', 'القمصان'];
   RangeValues _currentRange = RangeValues(0, 1800);
   @override
   Widget build(BuildContext context) {

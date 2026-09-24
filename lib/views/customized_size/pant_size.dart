@@ -21,7 +21,7 @@ class _PantsSizeViewState extends State<PantsSizeView> {
   int currentStepIndex = 2;
   String selectedSize = '28';
 
-  final List titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
+  final titles = ["الجاكيت", "القميص", "البنطلون", "المراجعة"];
   final sizes = ['28', '30', '32', '34', '36'];
   @override
   Widget build(BuildContext context) {

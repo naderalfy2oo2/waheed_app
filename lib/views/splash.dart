@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-import 'package:waheed_app/views/pages/view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -17,10 +16,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
-    Future.delayed(Duration(seconds: 3), () {
-      goTo(page: Register());
-    });
+    goto(page: RegisterView());
   }
 
   @override

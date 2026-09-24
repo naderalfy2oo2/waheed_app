@@ -5,8 +5,8 @@ import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import '../../core/components/app_image.dart';
 
-class CompleteAccount extends StatelessWidget {
-  const CompleteAccount({super.key});
+class CompleteAccountView extends StatelessWidget {
+  const CompleteAccountView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class CompleteAccount extends StatelessWidget {
                 AppButton(
                   title: 'المتابعة لتسجيل الدخول',
                   onPressed: () {
-                    goTo(page: Register());
+                    goTo(page: RegisterView());
                   },
                 ),
               ],

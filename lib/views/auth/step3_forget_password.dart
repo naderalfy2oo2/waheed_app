@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pinput/pinput.dart';
 import 'package:waheed_app/views/auth/register.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/services/input_validator.dart';
@@ -9,24 +8,23 @@ import '../../core/components/app_input.dart';
 import '../../core/components/change_indicator.dart';
 import '../../services/dio_helper.dart';
 import '../../services/helper_methods.dart';
-import 'step1_forget_password.dart';
-import 'step2_forget_password.dart';
 
-class Step3ForgetPassword extends StatefulWidget {
+class Step3ForgetPasswordView extends StatefulWidget {
   final String email;
   final String otp;
 
-  const Step3ForgetPassword({
+  const Step3ForgetPasswordView({
     super.key,
     required this.email,
     required this.otp,
   });
 
   @override
-  State<Step3ForgetPassword> createState() => _Step3ForgetPasswordState();
+  State<Step3ForgetPasswordView> createState() =>
+      _Step3ForgetPasswordViewState();
 }
 
-class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
+class _Step3ForgetPasswordViewState extends State<Step3ForgetPasswordView> {
   bool isTimerFinished = false;
   bool isPasswordVisible = false;
   bool isobscureTextVisible = false;
@@ -265,7 +263,7 @@ class _Step3ForgetPasswordState extends State<Step3ForgetPassword> {
                               if (!mounted) return;
 
                               if (success) {
-                                goTo(page: Register());
+                                goTo(page: RegisterView());
                               }
                             },
                           ),

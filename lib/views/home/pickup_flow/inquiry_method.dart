@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-import 'package:waheed_app/views/pages/pickup_flow/choose_date.dart';
-
-import '../../../core/components/add_ card_ bottom_ sheet.dart';
 import '../../../core/components/app_bar_widget.dart';
 import '../../../core/components/app_image.dart';
 import '../../../core/components/bottom_sheet.dart';
 import '../../../core/components/custom_payment_choice.dart';
 import '../../../core/components/custom_revision_container_order.dart';
 import '../../../core/components/payment _bottom_ sheet.dart';
-import '../delivery_flow/revision_order.dart';
+import 'choose_date.dart';
 
 class InquiryMethodPage extends StatefulWidget {
   const InquiryMethodPage({super.key});

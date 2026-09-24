@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-
 import '../../../core/components/app_bar_widget.dart';
 import '../../../core/components/app_image.dart';
 import 'confirm_order.dart';
@@ -28,7 +27,7 @@ class _ConfirmChooseDatePageState extends State<ConfirmChooseDatePage> {
     );
   }
 
-  final List time = [
+  final time = [
     {'time': '١٢:٠٠ م', 'enabled': true},
     {'time': '١١:٠٠ ص', 'enabled': true},
     {'time': '١٠:٣٠ ص', 'enabled': false},

@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed_app/core/components/app_button.dart';
 import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/services/helper_methods.dart';
-
-import '../home/home.dart';
-import '../home/talabat.dart';
+import '../pages/home.dart';
+import '../pages/talabat.dart';
 
 class ConfirmOrderPage extends StatelessWidget {
   const ConfirmOrderPage({super.key});

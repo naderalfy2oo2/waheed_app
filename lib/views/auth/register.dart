@@ -5,20 +5,19 @@ import 'package:waheed_app/core/components/app_image.dart';
 import 'package:waheed_app/core/components/app_input.dart';
 import 'package:waheed_app/services/dio_helper.dart';
 import 'package:waheed_app/services/input_validator.dart';
-import 'package:waheed_app/views/pages/view.dart';
 import '../../services/helper_methods.dart';
-import '../pages/home/home.dart';
+import '../home/view.dart';
 import 'create_an_account.dart';
 import 'step1_forget_password.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class RegisterView extends StatefulWidget {
+  const RegisterView({super.key});
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterViewState extends State<RegisterView> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -135,7 +134,7 @@ class _RegisterState extends State<Register> {
                                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                               ),
                               onPressed: () {
-                                goTo(page: CreateAnAccount());
+                                goTo(page: CreateAnAccountView());
                               },
                               child: Text(
                                 ' إنشاء حساب جديد',
@@ -230,7 +229,7 @@ class _RegisterState extends State<Register> {
                           alignment: AlignmentGeometry.centerLeft,
                           child: TextButton(
                             onPressed: () {
-                              goTo(page: Step1ForgetPassword());
+                              goTo(page: Step1ForgetPasswordView());
                             },
                             child: Text(
                               'هل نسيت كلمة المرور ؟',
